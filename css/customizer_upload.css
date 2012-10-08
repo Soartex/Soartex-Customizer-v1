@@ -1,0 +1,90 @@
+body {
+	background: #FFFFFF;
+	font-size: 62.5%;
+	font-family: Arial, sans-serif;
+	padding: 0; margin: 0;
+}
+
+#drop-files {
+	width: 300px;
+	height: 300px;
+	background: #FFFFFF;
+	border-radius: 27px;
+	border: 2px solid #C8E4FF;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	font-size: 2em;
+	float: left;
+	font-weight: bold;
+	margin: 0 20px 20px 0;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+#drop-files .image {
+    width: 250px;
+    height: 250px;
+}
+
+#upload-button {
+	position: absolute;
+	top: 87px;
+	z-index: 9999;
+	width: 210px;
+	display: none;
+}
+
+
+#file-name-holder {
+	width: 100%;
+	float: left;
+}
+
+#file-name-holder h1 {
+	text-align: center;
+	border-bottom: 1px solid #dadada;
+	padding: 20px 0;
+	font-size: 3em;
+	margin: 0;
+}
+
+#uploaded-files {
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	width: 407px;
+	top: 100px;
+	padding: 0;
+	border: 1px solid #dadada;
+	max-height: 320px;
+	overflow: scroll;
+	color: #545454;
+}
+
+#uploaded-files li {
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 25px;
+	color: #545454;
+}
+
+#uploaded-files a {
+	color: #1bacbf;
+}
+
+#image-upload-text {
+    color: rgba(0, 99, 256, 0.3);
+    font-size: 22px;
+}
+
+#step-header {
+    font-size: 24px;
+}
+
+#upload-table td {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: 0px 0px 0px 0px
+}
