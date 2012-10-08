@@ -2,7 +2,7 @@ body {
 	background: #FFFFFF;
 	font-size: 62.5%;
 	font-family: Arial, sans-serif;
-	padding: 0; margin: 0;
+	padding: 20px 20px 20px 20px; margin: 0;
 }
 
 #drop-files {
@@ -86,5 +86,10 @@ body {
     width: 400px;
     height: 400px;
     text-align: center;
+    vertical-align:text-top;
     padding: 0px 0px 0px 0px
+}
+
+#create-type {
+    vertical-align:text-bottom;
 }
