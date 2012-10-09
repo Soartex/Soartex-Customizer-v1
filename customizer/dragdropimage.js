@@ -11,28 +11,11 @@ $(document).ready(function() {
     $('#drop-files').bind('drop', function(e) {
         // Stop the default action, which is to redirect the page
         // To the dropped file
-
+        
         var file = e.dataTransfer.files[0];
-
+        
         // Some error messaging
         if (!file.type.match('image.*')) {
-
-            if(errMessage == 0) {
-                $('#drop-files').html('Hey! Images only');
-                ++errMessage
-            }
-            else if(errMessage == 1) {
-                $('#drop-files').html('Stop it! Images only!');
-                ++errMessage
-            }
-            else if(errMessage == 2) {
-                $('#drop-files').html("Can't you read?! Images only!");
-                ++errMessage
-            }
-            else if(errMessage == 3) {
-                $('#drop-files').html("Fine! Keep dropping non-images.");
-                errMessage = 0;
-            }
             return false;
         }
 
@@ -67,14 +50,25 @@ $(document).ready(function() {
                 });
                 
                 $('#drop-files').empty();
-                $('#drop-files').append('<img class="image" draggable="false" src="'+image+'" alt="'+fileData.name+'">');
+                $('#drop-files').css('background', '#FCFCFC');
+                $('#drop-files').append('<img class="dropimage" draggable="false" src="'+image+'" alt="'+fileData.name+'">');
+                var droppedImage = $('#drop-files .dropimage');
+                droppedImage.bind('dragstart', function(event) {
+                    event.preventDefault();
+                });
+                droppedImage.load(function() {
+                    width = this.width;
+                    height = this.height;
+                    if (height > width) {
+                        $('.dropimage').css('height', '250')
+                    }
+                    else {
+                        $('.dropimage').css('width', '250')
+                    }
+                });
             };
 
         })(file);
-        $('#drop-files .image').bind('dragstart', function(event) {
-            event.preventDefault();
-        });
-        $('#drop-files .image').fadeIn('fast');
 
         // For data URI purposes
         fileReader.readAsDataURL(file);
@@ -142,7 +136,7 @@ $(document).ready(function() {
     // Just some styling for the drop file container.
     $('#drop-files').bind('dragenter', function() {
         $(this).css({
-            'background' : '#DDDDDD',
+            'background-color' : '#DDDDDD',
             'transition' : 'background 0.4s',
             '-moz-transition' : 'background 0.4s', // Firefox 4
             '-webkit-transition':  'background 0.4s', // Safari and Chrome
@@ -153,7 +147,7 @@ $(document).ready(function() {
 
     $('#drop-files').bind('dragleave', function() {
         $(this).css({
-            'background' : '#FFFFFF',
+            'background-color' : '#FCFCFC',
             'transition' : 'background 0.4s',
             '-moz-transition' : 'background 0.4s', // Firefox 4
             '-webkit-transition':  'background 0.4s', // Safari and Chrome
@@ -164,7 +158,7 @@ $(document).ready(function() {
 
     $('#drop-files').bind('drop', function() {
         $(this).css({
-            'background' : '#FFFFFF'
+            'background-color' : '#FCFCFC'
         });
         return false;
     });
