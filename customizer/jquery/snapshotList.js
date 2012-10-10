@@ -10,21 +10,25 @@ $(function() {
             
             this.selected = false
             
+            // A wrapper to put the buttons in
             var wrapper = this.wrapper = $( "<span>" )
             .insertAfter(this.element)
             .addClass('ui-widget')
             .addClass('snapshot-box');
             
+            // Background table
             this.element
             .sortable()
             .addClass('ui-widget-content')
             .addClass('snapshot-list')
             .disableSelection();
             
+            // Draggable boxes
             this.item = this.element.children( "li" )
             .addClass('ui-state-default')
             .addClass('snapshot-list-item')
             
+            // Hidden image upload button
             this.imagePicker = $("<input />", {
                 "type" : "file"
             })
@@ -38,16 +42,19 @@ $(function() {
                     return false;
                 }
                 
+                // Filereader that gets the file data
                 var fileReader = new FileReader();
                 
                 fileReader.onload = (function(file) {
                     return function(e) {
-                        // Push the data URI into an array
+                        
                         fileData = {
                             name : file.name, 
                             value : this.result
                         };
                         var image = this.result;
+                        
+                        // Add image to box
                         $('<li>')
                         .appendTo(that.element)
                         .addClass('ui-state-default')
@@ -69,6 +76,7 @@ $(function() {
                 fileReader.readAsDataURL(file);
             });
             
+            // Add button
             this.add = $( "<a>", {
                 "class": "list-edit-button"
             })
@@ -80,11 +88,13 @@ $(function() {
                 text: false
             })
             .removeClass( "ui-corner-all" )
-            .addClass( "ui-corner-bottom" )
+            .addClass( "ui-corner-right" )
             .click( function() {
                 $( that.imagePicker ).click();
-            });
+            })
+            .parent().append('<br />');
             
+            // Delete button
             this.add = $( "<a>", {
                 "class": "list-edit-button"
             })
@@ -96,7 +106,7 @@ $(function() {
                 text: false
             })
             .removeClass( "ui-corner-all" )
-            .addClass( "ui-corner-bottom" )
+            .addClass( "ui-corner-right" )
             .click( function() {
                 $( that.selected ).parent().remove();
             })

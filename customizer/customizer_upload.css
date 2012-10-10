@@ -7,11 +7,12 @@ body {
 
 #upload-table td {
     width: 400px;
-    height: 400px;
+    /*height: 400px;*/
     text-align: left;
     font-size: 16px;
     line-height: 20px;
     vertical-align: text-top;
+    padding: 10px
 }
 
 #drop-files {
@@ -20,13 +21,12 @@ body {
     background: #FFFFFF;
     border-radius: 27px;
     border: 2px solid #C8E4FF;
-    padding: 0px 0px 0px 0px;
+    padding: 2px 0px 0px 0px;
     text-align: center;
     font-size: 2em;
-    float: left;
     font-weight: bold;
-    margin: 0 20px 20px 0;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+    float:left;
 }
 
 #drop-files .dropimage {
@@ -38,52 +38,27 @@ body {
     -ms-interpolation-mode: nearest-neighbor;   /* IE */
 }
 
-#upload-button {
-    position: absolute;
-    top: 87px;
-    z-index: 9999;
-    width: 210px;
-    display: none;
-}
-
-
-#file-name-holder {
-    width: 100%;
-    float: left;
-}
-
-#file-name-holder h1 {
-    text-align: center;
-    border-bottom: 1px solid #dadada;
-    padding: 20px 0;
-    font-size: 3em;
-    margin: 0;
-}
-
-#uploaded-files {
-    background: white;
+#drop-files .dropfile {
+    background-color: white;
+    background-image: linear-gradient(30 top, #FCFCFC 0%, #FFFFFF 100%);
+    background-image: -o-linear-gradient(30 top, #FCFCFC 0%, #FFFFFF 100%);
+    background-image: -moz-linear-gradient(30 top, #FCFCFC 0%, #FFFFFF 100%);
+    background-image: -webkit-linear-gradient(30 top, #FCFCFC 0%, #FFFFFF 100%);
+    background-image: -ms-linear-gradient(30 top, #FCFCFC 0%, #FFFFFF 100%);
+    background-image: -webkit-gradient(linear, 30 top, left bottom, color-stop(0, #FCFCFC), color-stop(1, #FFFFFF));
+    
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    width: 407px;
-    top: 100px;
-    padding: 0;
-    border: 1px solid #dadada;
-    max-height: 320px;
-    overflow: scroll;
-    color: #545454;
-}
-
-#uploaded-files li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    font-size: 1.5em;
-    font-weight: bold;
-    line-height: 25px;
-    color: #545454;
-}
-
-#uploaded-files a {
-    color: #1bacbf;
+    border: 1px solid #CCCCCC;
+    box-shadow : 1px 1px 5px rgba(0, 0, 0, 0.3);
+    max-width : 228px;
+    max-height : 228px;
+    min-width : 228px;
+    min-height : 228px;
+    font : 16px "Courier New";
+    color : black;
+    overflow : hidden;
+    text-align : left;
+    padding : 10px
 }
 
 #image-upload-text {
@@ -106,6 +81,10 @@ body {
 }
 
 #tilesheet-form {
+    opacity: 0.5;
+}
+
+#fileline-form {
     opacity: 0.5;
 }
 
@@ -132,12 +111,19 @@ body {
     padding: 0.3em;
 }
 
+.custom-textfield input {
+    padding: 0.3em;
+}
+
+
 .snapshot-list {
     list-style-type: none;
-    height: 200px;
+    min-height: 200px;
+    width: 337px;
     margin: 0;
     padding: 3px;
-    border: none
+    border: none;
+    float:left;
 }
 .snapshot-list-item {
     border: 1px solid darkgrey;
@@ -150,5 +136,62 @@ body {
 }
 .list-edit-button {
     height: 36px;
-    padding-right: 6px;
+    padding-right: 0px;
 }
+
+.form-indent {
+    margin-left: 24px;
+}
+
+#edit-description {
+    width: 287px;
+    height: 100px;
+    background: #F8F8F8;
+    resize: none;
+    margin-bottom: 2px;
+    padding: 5px
+}
+
+.submit-button {
+	-moz-box-shadow:inset 0px 1px 2px 0px #770000;
+	-webkit-box-shadow:inset 0px 1px 2px 0px #770000;
+	box-shadow:inset 0px 1px 5px 0px #770000;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ee0000), color-stop(1, #990000) );
+	background:-moz-linear-gradient( center top, #ee0000 5%, #990000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc0000', endColorstr='#990000');
+	background-color:#ee0000;
+	-moz-border-radius:150px;
+	-webkit-border-radius:150px;
+	border-radius:150px;
+	border:3px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:16px;
+	font-weight:bold;
+        padding: 12px 0px;
+        width: 150px;
+        margin-top: 19px;
+	text-decoration:none;
+	text-shadow:-1px -1px 0px #990000;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+}.submit-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dd0000), color-stop(1, #880000) );
+	background:-moz-linear-gradient( center top, #dd0000 5%, #880000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dd0000', endColorstr='#880000');
+	background-color:#dd0000;
+        color:#EEEEEE;
+        text-shadow:-1px -1px 0px #880000;
+}.submit-button:active {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #990000), color-stop(1, #cc0000) );
+	background:-moz-linear-gradient( center top, #990000 5%, #cc0000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#990000', endColorstr='#cc0000');
+	background-color:#990000;
+        color:#CCCCCC;
+        text-shadow:-1px -1px 0px #770000;
+}
+/* This imageless css button was generated by CSSButtonGenerator.com */

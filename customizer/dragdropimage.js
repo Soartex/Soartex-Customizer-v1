@@ -14,12 +14,17 @@ $(document).ready(function() {
         
         var file = e.dataTransfer.files[0];
         
-        // Some error messaging
-        if (!file.type.match('image.*')) {
-            return false;
+        // Get the file type
+        var type
+        if ($.inArray(file.type, ["image/gif", "image/png", "image/jpg"]) > -1) {
+            type = 'image'
         }
-
-        // Check length of the total image elements
+        else if (file.type.match("text.*")) {
+            type = 'text'
+        }
+        else {
+            return true;
+        }
 
         // Change position of the upload button so it is centered
         var imageWidths = 110;
@@ -35,12 +40,11 @@ $(document).ready(function() {
         // When the filereader loads initiate a function
         fileReader.onload = (function(file) {
             return function(e) {
-                // Push the data URI into an array
                 fileData = {
                     name : file.name, 
                     value : this.result
                 };
-                var image = this.result;
+                var data = this.result;
                 
                 // Resise the background to fit the image
                 $('#drop-files').css({
@@ -49,88 +53,61 @@ $(document).ready(function() {
                     'padding' : '25px 25px 25px 25px'
                 });
                 
+                // Put the file into the box
                 $('#drop-files').empty();
                 $('#drop-files').css('background', '#FCFCFC');
-                $('#drop-files').append('<img class="dropimage" draggable="false" src="'+image+'" alt="'+fileData.name+'">');
-                var droppedImage = $('#drop-files .dropimage');
-                droppedImage.bind('dragstart', function(event) {
+                
+                var droppedFile;
+                if (type == 'image') {
+                    droppedFile = $('<img class="dropimage" draggable="false" src="'+data+'" alt="'+fileData.name+'">')
+                    .appendTo(('#drop-files'))
+                    .load(function() { // Restrict either the width or height, whichever one is bigger
+                        width = this.width;
+                        height = this.height;
+                        if (height > width) {
+                            $('.dropimage').css('height', '250')
+                        }
+                        else {
+                            $('.dropimage').css('width', '250')
+                        }
+                    });
+                    
+                    switchToImageForm();
+                }
+                else {
+                    droppedFile = $('<div class="dropfile">')
+                    .appendTo('#drop-files')
+                    
+                    splitData = data.split("\n")
+                    for (lineNumber in data.split("\n")) {
+                        droppedFile
+                            .append(splitData[lineNumber])
+                            .append('<br />');
+                    }
+                    
+                    switchToFileForm();
+                }
+                droppedFile.bind('dragstart', function(event) {
                     event.preventDefault();
                 });
-                droppedImage.load(function() {
-                    width = this.width;
-                    height = this.height;
-                    if (height > width) {
-                        $('.dropimage').css('height', '250')
-                    }
-                    else {
-                        $('.dropimage').css('width', '250')
-                    }
+                droppedFile.bind('select', function(event) {
+                    event.preventDefault();
                 });
+                
+                // Special effects
+                droppedFile.hide();
+                droppedFile.fadeIn('fast');
             };
 
         })(file);
 
         // For data URI purposes
-        fileReader.readAsDataURL(file);
-
-    });
-
-    $('#upload-button .upload').click(function() {
-
-        $("#loading").show();
-        var totalPercent = 100;
-        var x = 0;
-        var y = 0;
-
-        $('#loading-content').html('Uploading '+fileData.name);
-
-        $.post('upload.php', fileData, function(data) {
-
-            var fileName = fileData.name;
-            ++x;
-
-            // Change the bar to represent how much has loaded
-            $('#loading-bar .loading-color').css({
-                'width' : totalPercent*(x)+'%'
-            });
-
-            if(totalPercent*(x) == 100) {
-                // Show the upload is complete
-                $('#loading-content').html('Uploading Complete!');
-
-                // Reset everything when the loading is completed
-                setTimeout(restartFiles, 500);
-
-            } else if(totalPercent*(x) < 100) {
-
-                // Show that the files are uploading
-                $('#loading-content').html('Uploading '+fileName);
-
-            }
-
-            // Show a message showing the file URL.
-            var dataSplit = data.split(':');
-            if(dataSplit[1] == 'uploaded successfully') {
-                var realData = '<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> '+dataSplit[1]+'</li>';
-
-                $('#uploaded-files').append('<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> '+dataSplit[1]+'</li>');
-
-                // Add things to local storage
-                if(window.localStorage.length == 0) {
-                    y = 0;
-                } else {
-                    y = window.localStorage.length;
-                }
-
-                window.localStorage.setItem(y, realData);
-
-            } else {
-                $('#uploaded-files').append('<li><a href="images/'+data+'. File Name: '+fileData.name+'</li>');
-            }
-
-        });
-
-        return false;
+        if (type == 'image') {
+            fileReader.readAsDataURL(file);
+        }
+        else {
+            fileReader.readAsText(file)
+        }
     });
 
     // Just some styling for the drop file container.
@@ -162,19 +139,4 @@ $(document).ready(function() {
         });
         return false;
     });
-
-    // Append the localstorage the the uploaded files section
-    if(window.localStorage.length > 0) {
-        $('#uploaded-files').show();
-        for (var t = 0; t < window.localStorage.length; t++) {
-            var key = window.localStorage.key(t);
-            var value = window.localStorage[key];
-            // Append the list items
-            if(value != undefined || value != '') {
-                $('#uploaded-files').append(value);
-            }
-        }
-    } else {
-        $('#uploaded-files').hide();
-    }
 });

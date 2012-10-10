@@ -36,6 +36,7 @@
             .val( value )
             .attr( "title", "" )
             .addClass( "ui-widget-content ui-combobox-input" )
+            .removeClass("ui-corner-all")
             .autocomplete({
                 delay: 0,
                 minLength: 0,
@@ -123,8 +124,5 @@
 })( jQuery );
  
 $(function() {
-    $( "#combobox" ).combobox();
-    $( "#ctoggle" ).click(function() {
-        $( "#combobox" ).toggle();
-    });
+    $( ".combobox" ).combobox();
 });
