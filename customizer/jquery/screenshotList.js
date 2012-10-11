@@ -21,7 +21,13 @@ $(function() {
             .sortable()
             .addClass('ui-widget-content')
             .addClass('snapshot-list')
-            .disableSelection();
+            .disableSelection()
+            .click(function(e) {
+                if ( e.target == this && that.selected != false ) {
+                    $( that.selected ).parent().removeClass('ui-state-highlight');
+                    that.selected = false;
+                }
+            });
             
             // Draggable boxes
             this.item = this.element.children( "li" )
@@ -62,12 +68,11 @@ $(function() {
                         .append('<img class="listimage" draggable="false" src="'+image+'" alt="'+fileData.name+'" height="86" />');
                         
                         $( '.listimage' ).click(function() {
-                            console.log(that.selected);
                             if ( that.selected != this && that.selected != false ) {
-                                $( that.selected ).parent().css('background', '');
+                                $( that.selected ).parent().removeClass('ui-state-highlight');
                             }
                             that.selected = this;
-                            $( this ).parent().css('background', '#FFFF99');
+                            $( this ).parent().addClass('ui-state-highlight');
                         });
                     };
 

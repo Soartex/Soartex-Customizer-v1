@@ -6,7 +6,7 @@
                 <div class="step-header">2. Select which image it is</div>
                 <br />
                 <div class="form-indent">
-                    Image name:
+                    Texture name:
                     <select class="combobox" name="type-combobox">
                         <?php
                         $imageresult = mysql_query("SELECT * FROM Types
@@ -27,19 +27,19 @@
                 <div class="step-header">Or create a custom image type</div>
                 <br />
                 <div class="form-indent">
-                    Image path: <input name="image-path" />
+                    Image path: <input name="image-path" id="imagepath" />
                     <br />
                     <input type="checkbox" name="image-optional" /> Optional
                     <br />
                     <input type="checkbox" name="is-tile" id="TilesheetCheck" />
                     <span id="tilesheet-form">
-                        Tile start x: <input name="startx" size="2" disabled="disabled" /> 
+                        Tile start x: <input id="startx" title="" name="startx" size="2" disabled="disabled" /> 
                         start y: <input name="starty" size="2" disabled="disabled" />
                     </span>
                     <br />
-                    Image name: <input name="imageName" />
+                    Texture name: <input name="texturename" id="texturename" />
                     <br />
-                    Mod name: <input name="image-modName" />
+                    Mod name: <input name="image-modname" id="image-modname" />
                 </div>
             </td>
         </tr>

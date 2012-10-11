@@ -1,10 +1,12 @@
+// Sets up the file upload box
+
 $(document).ready(function() {
 
     // Makes sure the dataTransfer information is sent when we
     // Drop the item in the drop box.
     jQuery.event.props.push('dataTransfer');
 
-    // Get all of the data URIs and put them in an array
+    // Contains the data URI
     var fileData = {};
 
     // Bind the drop event to the dropzone.
@@ -16,7 +18,7 @@ $(document).ready(function() {
         
         // Get the file type
         var type
-        if ($.inArray(file.type, ["image/gif", "image/png", "image/jpg"]) > -1) {
+        if ($.inArray(file.type, ["image/gif", "image/png", "image/jpeg"]) > -1) {
             type = 'image'
         }
         else if (file.type.match("text.*")) {
@@ -25,14 +27,7 @@ $(document).ready(function() {
         else {
             return true;
         }
-
-        // Change position of the upload button so it is centered
-        var imageWidths = 110;
-        $('#upload-button').css({
-            'left' : imageWidths+'px', 
-            'display' : 'block'
-        });
-
+        
         // Start a new instance of FileReader
         var fileReader = new FileReader();
         
@@ -58,10 +53,14 @@ $(document).ready(function() {
                 $('#drop-files').css('background', '#FCFCFC');
                 
                 var droppedFile;
+                
+                // If the file is an image
                 if (type == 'image') {
                     droppedFile = $('<img class="dropimage" draggable="false" src="'+data+'" alt="'+fileData.name+'">')
                     .appendTo(('#drop-files'))
-                    .load(function() { // Restrict either the width or height, whichever one is bigger
+                    
+                    // Restrict either the width or height, whichever one is bigger
+                    .load(function() {
                         width = this.width;
                         height = this.height;
                         if (height > width) {
@@ -74,6 +73,7 @@ $(document).ready(function() {
                     
                     switchToImageForm();
                 }
+                // If the file is text
                 else {
                     droppedFile = $('<div class="dropfile">')
                     .appendTo('#drop-files')
