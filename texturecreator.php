@@ -1,5 +1,6 @@
 <?php
-$con = mysql_connect('localhost', 'root', 'ari2ari');
+// Enter MySQL information here
+$con = mysql_connect('host', 'username', 'password');
 if (!$con) {
     die('Could not connect: ' . mysql_error());
 }
