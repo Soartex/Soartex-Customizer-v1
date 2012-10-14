@@ -24,7 +24,7 @@ $result = mysql_query("SELECT * FROM Types ORDER BY modid");
         <script src="customizer/step1.js"></script>
         <script src="customizer/step2.js"></script>
         <script src="customizer/submit.js"></script>
-        <script src="customizer/texture-picker.js"></script>
+        <script src="customizer/typeSelectors.js"></script>
         <link rel="stylesheet" type="text/css" href="customizer/texturecreator.css" />
         <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery.ui.all.css" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
@@ -53,9 +53,9 @@ $result = mysql_query("SELECT * FROM Types ORDER BY modid");
                 <td class="custom-textfield">
                     <legend>4. Enter in other details.</legend>
                     <label>Description: </label>
-                    <textarea id="edit-description"></textarea>
+                    <textarea id="edit-description" class="input-xlarge"></textarea>
                     <label>Creator: </label>
-                    <input type="text" id="creator" />
+                    <input type="text" id="creator" class="input-xlarge" />
                 </td>
             </tr>
             <tr>
