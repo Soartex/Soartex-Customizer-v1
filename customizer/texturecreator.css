@@ -7,7 +7,7 @@ body {
 
 #upload-table td {
     *width: 400px;
-    /*height: 400px;*/
+    *height: 400px;
     *text-align: left;
     *font-size: 16px;
     *line-height: 20px;
