@@ -1,0 +1,1 @@
+Go to texturecreator.php to try out the texture uploader
