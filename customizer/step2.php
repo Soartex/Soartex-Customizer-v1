@@ -36,8 +36,8 @@
     <label>Texture name</label>
     <input type="text" id="texturename" placeholder="eg. Gold Armour" class="input-xlarge" />
     <label>Mod name</label>
-    <input type="text" id="image-modname" placeholder="eg. Redpower" class="input-xlarge" />
-    <span class="help-block" style="font-size: 12px">Leave blank if the texture is in Vanilla</span>
+    <input type="text" id="image-modname" placeholder="eg. Vanilla" class="input-xlarge" />
+    <span class="help-block" style="font-size: 12px">Do not enter in the version number</span>
 </div>
 
 <!--File form-->

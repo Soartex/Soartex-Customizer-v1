@@ -7,6 +7,9 @@ function load() {
     $('input').blur(function() {
         $(this).tooltip('destroy');
     });
+    $('input').keyup(function() {
+        $(this).tooltip('destroy');
+    });
     
     var image;
     $('.submit-button').click(function() {
@@ -20,10 +23,10 @@ function load() {
                 screenshots.push($(this).children('img').attr('src'));
             });
             
-            // True if the 'optional' checkbox is selected
+            // Equiv. to true if the 'optional' checkbox is selected
             var is_optional = $("#is-optional:checked").length
             
-            // True if the 'tile' checkbox is selected
+            // Equiv. to true if the 'tile' checkbox is selected
             var is_tile = $("#TilesheetCheck:checked").length
             
             // 'start x' and 'start y' data

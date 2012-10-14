@@ -1,3 +1,5 @@
+// Support for image icons will be added later
+
 $(document).ready(function() {
     function markMatch(text, term, markup) {
         var match=text.toUpperCase().indexOf(term.toUpperCase()),
