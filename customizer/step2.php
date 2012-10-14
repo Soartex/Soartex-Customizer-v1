@@ -43,7 +43,7 @@
 <!--File form-->
 <div class="file-form">
     <legend>2. Select which file it is</legend>
-    <select id="file-selector" data-placeholder="File name" style="width: 250px">
+    <select id="file-selector" data-placeholder="File name" tabindex="2" style="width: 250px">
         <option></option>
         <?php
         /* Get the list of options for the dropdown list */
