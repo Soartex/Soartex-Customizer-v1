@@ -1,9 +1,10 @@
 <!--Image form-->
 <div class="image-form">
     <legend>2. Select which image it is</legend>
-    <select id="texture-picker" data-placeholder="Texture name" tabindex="2" class="input-xlarge">
+    <select id="texture-selector" data-placeholder="Texture name" tabindex="2" class="input-xlarge">
         <option></option>
         <?php
+        /* Get the list of options for the dropdown list */
         $imageresult = mysql_query("SELECT * FROM Types
                                                 WHERE is-file = FALSE
                                                 ORDER BY modid");
@@ -41,35 +42,36 @@
 
 <!--File form-->
 <div class="file-form">
-                <legend>2. Select which file it is</legend>
-                    <select id="file-picker" data-placeholder="Texture name" style="width: 250px">
-                        <option></option>
-                        <?php
-                        $fileresult = mysql_query("SELECT * FROM Types
+    <legend>2. Select which file it is</legend>
+    <select id="file-selector" data-placeholder="File name" style="width: 250px">
+        <option></option>
+        <?php
+        /* Get the list of options for the dropdown list */
+        $fileresult = mysql_query("SELECT * FROM Types
                                            WHERE is-file = TRUE
                                            ORDER BY modid");
-                        while ($row = mysql_fetch_array($fileresult)) {
-                            $name = $row['name'];
-                            echo "<option value='$name'>$name</option>";
-                        }
-                        ?>
-                    </select>
-                <br />
-                <legend>Or create a custom file type</legend>
-                <label>File path</label>
-                <input type="text" name="file-path" />
-                <label class="checkbox">
-                    <input type="checkbox" name="file-optional" value="true" /> Optional
-                </label>
-                <form class="form-inline">
-                    <input type="checkbox" name="fileline" value="true" id="fileline-check" />
-                    <span id="fileline-form">
-                        <label>Text starts at line</label>
-                        <input type="text" name="startline" class="input-mini" id="custom-textfield" disabled="disabled" /> 
-                    </span>
-                </form>
-                    <br />
-                    File name <input name="fileName" />
-                    <br />
-                    Mod name <input name="file-modName" />
+        while ($row = mysql_fetch_array($fileresult)) {
+            $name = $row['name'];
+            echo "<option value='$name'>$name</option>";
+        }
+        ?>
+    </select>
+    <br /><br /><br />
+    <legend>Or create a custom file type</legend>
+    <label>File path</label>
+    <input type="text" name="file-path" />
+    <label class="checkbox">
+        <input type="checkbox" name="file-optional" value="true" /> Optional
+    </label>
+    <form class="form-inline">
+        <input type="checkbox" name="fileline" value="true" id="fileline-check" />
+        <span id="fileline-form">
+            <label>Text starts at line</label>
+            <input type="text" name="startline" class="input-mini" id="custom-textfield" placeholder="File line" disabled="disabled" /> 
+        </span>
+    </form>
+    <br />
+    File name <input type="text" name="fileName" />
+    <br />
+    Mod name <input type="text" name="file-modName" />
 </div>
