@@ -1,5 +1,5 @@
 /* 
- * Gets the list of types and puts them in a convenient autocomplete box
+ * Controls everything on step 2 of the upload form
  */
 
 function load() {
