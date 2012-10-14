@@ -92,13 +92,12 @@ function errorTip(element, text, dir) {
         .tooltip({
             title: '<i class="icon-warning-sign icon-white"></i> ' + text,
             trigger: 'manual',
-            placement: dir
+            placement: direction
         })
         .tooltip('show')
 }
 
 function postIt(url, data){
-
     $('body').append($('<form/>', {
         id: 'jQueryPostItForm',
         method: 'POST',
