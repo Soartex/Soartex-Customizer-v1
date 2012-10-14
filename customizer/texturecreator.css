@@ -33,7 +33,7 @@ body {
     image-rendering: optimizeSpeed;             /* Older versions of FF */
     image-rendering: -moz-crisp-edges;          /* FF 6.0+ */
     image-rendering: -webkit-optimize-contrast; /* Webkit */
-    /*  (Safari now, Chrome soon) */
+                                                /*  (Safari now, Chrome soon) */
     image-rendering: optimize-contrast;         /* Possible future browsers. */
     -ms-interpolation-mode: nearest-neighbor;   /* IE */
 }
@@ -57,6 +57,7 @@ body {
     font : 14px "Courier New";
     color : black;
     overflow : hidden;
+    white-space: nowrap;
     text-align : left;
     padding : 10px
 }

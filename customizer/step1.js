@@ -54,7 +54,7 @@ $(document).ready(function() {
                 
                 var droppedFile;
                 
-                // If the file is an image
+                // If the file is an image, show it
                 if (type == 'image') {
                     droppedFile = $('<img class="dropimage" draggable="false" src="'+data+'" alt="'+fileData.name+'">')
                     .appendTo(('#drop-files'))
@@ -73,16 +73,19 @@ $(document).ready(function() {
                     
                     switchToImageForm();
                 }
-                // If the file is text
+                // If the file is text, display it in a box
                 else {
                     droppedFile = $('<div class="dropfile">')
                     .appendTo('#drop-files');
                     
-                    var splitData = data.split("\n"),
-                        lineNumber;
-                    for (lineNumber in data.split("\n")) {
+                    var splitData = data.split("\n");
+                    var l = splitData.length;
+                    // The loop stops writing the text after 20 lines.
+                    // No point in continuing if the file is bigger than the box it's displayed in
+                    for (var i = 0; i < Math.min(l, 20); i++) {
+                        var line = document.createTextNode(splitData[i]);
                         droppedFile
-                            .append(splitData[lineNumber])
+                            .append(line)
                             .append('<br />');
                     }
                     
