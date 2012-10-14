@@ -59,7 +59,7 @@
     <br /><br /><br />
     <legend>Or create a custom file type</legend>
     <label>File path</label>
-    <input type="text" name="file-path" />
+    <input type="text" id="file-path" placeholder="eg. anim/flame.properties" />
     <label class="checkbox">
         <input type="checkbox" name="file-optional" value="true" /> Optional
     </label>
@@ -67,11 +67,11 @@
         <input type="checkbox" name="fileline" value="true" id="fileline-check" />
         <span id="fileline-form">
             <label>Text starts at line</label>
-            <input type="text" name="startline" class="input-mini" id="custom-textfield" placeholder="File line" disabled="disabled" /> 
+            <input type="text" name="startline" class="input-mini" id="custom-textfield" disabled="disabled" /> 
         </span>
     </form>
-    <br />
-    File name <input type="text" name="fileName" />
-    <br />
-    Mod name <input type="text" name="file-modName" />
+    <label>File name</label>
+    <input type="text" id="file-name" placeholder="eg. Custom Flame" />
+    <label>Mod name</label>
+    <input type="text" id="file-mod-name" placeholder="eg. Custom Animations" />
 </div>
