@@ -61,8 +61,8 @@ $(document).ready(function() {
                     
                     // Restrict either the width or height, whichever one is bigger
                     .load(function() {
-                        width = this.width;
-                        height = this.height;
+                        var width = this.width;
+                        var height = this.height;
                         if (height > width) {
                             $('.dropimage').css('height', '250')
                         }
@@ -76,9 +76,10 @@ $(document).ready(function() {
                 // If the file is text
                 else {
                     droppedFile = $('<div class="dropfile">')
-                    .appendTo('#drop-files')
+                    .appendTo('#drop-files');
                     
-                    splitData = data.split("\n")
+                    var splitData = data.split("\n"),
+                        lineNumber;
                     for (lineNumber in data.split("\n")) {
                         droppedFile
                             .append(splitData[lineNumber])

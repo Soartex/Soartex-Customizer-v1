@@ -65,7 +65,7 @@ $(function() {
                         .appendTo(that.element)
                         .addClass('ui-state-default')
                         .addClass('snapshot-list-item')
-                        .append('<img class="listimage" draggable="false" src="'+image+'" alt="'+fileData.name+'" height="86" />');
+                        .append('<img class="listimage" draggable="false" src="'+image+'" alt="'+fileData.name+'" />');
                         
                         $( '.listimage' ).click(function() {
                             if ( that.selected != this && that.selected != false ) {
@@ -81,37 +81,22 @@ $(function() {
                 fileReader.readAsDataURL(file);
             });
             
-            // Add button
-            this.add = $( "<a>", {
-                "class": "list-edit-button"
+            // The 'add' button
+            this.add = $( "<button>", {
+                "class": "list-edit-button btn"
             })
             .appendTo( wrapper )
-            .button({
-                icons: {
-                    primary: "ui-icon-plus"
-                },
-                text: false
-            })
-            .removeClass( "ui-corner-all" )
-            .addClass( "ui-corner-right" )
+            .html('<i class="icon-plus"></i>')
             .click( function() {
                 $( that.imagePicker ).click();
             })
-            .parent().append('<br />');
             
-            // Delete button
-            this.add = $( "<a>", {
-                "class": "list-edit-button"
+            // The 'delete' button
+            this.add = $( "<button>", {
+                "class": "list-edit-button btn"
             })
             .appendTo( wrapper )
-            .button({
-                icons: {
-                    primary: "ui-icon-minus"
-                },
-                text: false
-            })
-            .removeClass( "ui-corner-all" )
-            .addClass( "ui-corner-right" )
+            .html('<i class="icon-minus"></i>')
             .click( function() {
                 $( that.selected ).parent().remove();
             })
