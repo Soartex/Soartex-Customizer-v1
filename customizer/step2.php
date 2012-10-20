@@ -14,12 +14,10 @@
         }
         ?>
     </select>
-    <br />
-    <span class="help-block" style="font-size: 12px">Leave blank to choose a custom texture</span>
-    <br /><br />
+    <br /><br /><br />
     <legend>Or create a custom texture</legend>
     <label>Image path</label>
-    <input type="text" name="image-path" id="imagepath" class="input-xlarge" placeholder="eg. armor/gold.png" style="height: auto"/>
+    <input type="text" name="image-path" id="imagepath" class="input-xlarge" placeholder="eg. mob/pig.png" style="height: auto"/>
     <label class="checkbox">
         <input type="checkbox" name="image-optional" /> Optional
     </label>
@@ -36,7 +34,7 @@
         </span>
     </form>
     <label>Texture name</label>
-    <input type="text" id="texturename" placeholder="eg. Gold Armour" class="input-xlarge" />
+    <input type="text" id="texturename" placeholder="eg. Pig Texture" class="input-xlarge" />
     <label>Mod name</label>
     <input type="text" id="image-modname" placeholder="eg. Vanilla" class="input-xlarge" />
     <span class="help-block" style="font-size: 12px">Do not enter in the version number</span>
@@ -66,10 +64,10 @@
         <input type="checkbox" name="file-optional" value="true" /> Optional
     </label>
     <form class="form-inline">
-        <input type="checkbox" value="true" id="fileline-check" />
+        <input type="checkbox" name="fileline" value="true" id="fileline-check" />
         <span id="fileline-form">
             <label>Text starts at line</label>
-            <input type="text" id="startline" class="input-mini" disabled="disabled" /> 
+            <input type="text" name="startline" class="input-mini" id="custom-textfield" disabled="disabled" /> 
         </span>
     </form>
     <label>File name</label>
