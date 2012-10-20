@@ -12,16 +12,16 @@ body {
     *font-size: 16px;
     *line-height: 20px;
     vertical-align: text-top;
-    padding: 50px
+    padding: 50px;
 }
 
 #drop-files {
-    width: 300px;
-    height: 300px;
+    width: 345px;
+    height: 345px;
     background: #FFFFFF;
     border-radius: 27px;
     border: 2px solid #C8E4FF;
-    padding: 2px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
@@ -50,10 +50,10 @@ body {
     border-radius: 5px;
     border: 1px solid #CCCCCC;
     box-shadow : 1px 1px 5px rgba(0, 0, 0, 0.3);
-    max-width : 228px;
-    max-height : 228px;
-    min-width : 228px;
-    min-height : 228px;
+    max-width : 273px;
+    max-height : 273px;
+    min-width : 273px;
+    min-height : 273px;
     font : 14px "Courier New";
     color : black;
     overflow : hidden;
@@ -65,7 +65,7 @@ body {
 #image-upload-text {
     color: rgba(0, 99, 256, 0.3);
     font-size: 22px;
-    margin-top: 208px;
+    margin-top: 235px;
 }
 
 .step-header {
@@ -95,11 +95,6 @@ body {
 #custom-type input {
     padding: 0.3em;
 }
-
-.custom-textfield input {
-    padding: 0.3em;
-}
-
 
 .snapshot-list {
     list-style-type: none;
