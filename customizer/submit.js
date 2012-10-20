@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 function load() {
     
     $('input').blur(function() {
@@ -12,6 +13,15 @@ function load() {
     });
     
     $('.submit-button').click(function() {
+        
+        var accepted = true
+        
+        var validate = function(element, bool, text, dir) {
+            if (!bool) {
+                errorTip(element, text, dir)
+                accepted = false
+            }
+        }
         
         var image, file, screenshots, is_optional, is_tile, start_x, start_y,
         start_line, path, name, mod_name, description, creator, validatepath,
@@ -64,7 +74,11 @@ function load() {
         // If the file is text
         else if ($('.dropfile').length) {
             // Texture data
-            file = $('.dropfile').attr('src');
+            file = $('.dropfile').html();
+            file = file.replace(/&amp;/g, '&')
+            .replace(/&gt;/g, '>')
+            .replace(/&lt;/g, '<')
+            .replace(/<br>/g, '\n');
             
             // Array of screenshot data
             screenshots = [];
@@ -99,6 +113,9 @@ function load() {
             description = $('#edit-description').attr('value');
             creator = $('creator');
         }
+        else {
+            accepted = false;
+        }
         
         // The data that will be submitted 
         var data = {
@@ -113,17 +130,14 @@ function load() {
             start_y: start_y,
             start_line : start_line,
             name: name,
+            mod_name : mod_name,
             description: description,
             creator: creator
         };
-    //postIt('submit.php', data);
+        if (accepted) {
+            postIt('submit.php', data);
+        }
     });
-}
-
-function validate(element, bool, text, dir) {
-    if (!bool) {
-        errorTip(element, text, dir)
-    }
 }
 
 function errorTip(element, text, dir) {
