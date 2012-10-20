@@ -31,7 +31,7 @@ $result = mysql_query("SELECT * FROM Types ORDER BY modid");
         <link rel="stylesheet" type="text/css" href="select2/select2.css" />
     </head>
     <body>
-        <h1>Texture Submission Form</h1>
+        <h1>Upload a texture</h1>
         <table border="0" id="upload-table">
             <tr>
                 <td>
