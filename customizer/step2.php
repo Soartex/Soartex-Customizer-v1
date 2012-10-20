@@ -14,7 +14,9 @@
         }
         ?>
     </select>
-    <br /><br /><br />
+    <br />
+    <span class="help-block" style="font-size: 12px">Leave blank to choose a custom texture</span>
+ 	<br /><br />
     <legend>Or create a custom texture</legend>
     <label>Image path</label>
     <input type="text" name="image-path" id="imagepath" class="input-xlarge" placeholder="eg. mob/pig.png" style="height: auto"/>
@@ -64,10 +66,10 @@
         <input type="checkbox" name="file-optional" value="true" /> Optional
     </label>
     <form class="form-inline">
-        <input type="checkbox" name="fileline" value="true" id="fileline-check" />
+        <input type="checkbox" value="true" id="fileline-check" />
         <span id="fileline-form">
             <label>Text starts at line</label>
-            <input type="text" name="startline" class="input-mini" id="custom-textfield" disabled="disabled" /> 
+            <input type="text" id="startline" class="input-mini" disabled="disabled" /> 
         </span>
     </form>
     <label>File name</label>
