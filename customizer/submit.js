@@ -87,7 +87,7 @@ function load() {
             
             // Rest of the form
             path = $('#file-path').attr('value');
-            validatepath = /^\/?([\w\d]+\/.)*[\w\d]+\.[\w\d]*$/.test(path);
+            validatepath = /^\/?([\w\d]+\/.)*[\w\d]+\.[\w\d]+$/.test(path);
             validate('#file-path', validatepath, 'The file path must be a valid path');
             
             name = $('#file-name').attr('value');
@@ -108,6 +108,7 @@ function load() {
             path: path,
             is_optional: is_optional,
             is_tile: is_tile,
+            is_segment: is_segment,
             start_x: start_x,
             start_y: start_y,
             start_line : start_line,
