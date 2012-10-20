@@ -1,1 +1,5 @@
-Go to texturecreator.php to try out the texture uploader
+<?php
+
+   header( 'Location: http://customizer.soartex.net/texturecreator.php' ) ;
+
+?>
