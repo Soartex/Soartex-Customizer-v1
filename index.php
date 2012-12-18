@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-	
-		<title>Soartex Customizer</title>
-		<meta charset="utf-8"/>
-		
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-		
-		<style type="text/css">
-	      
-	    	body {
-	        	padding-top: 60px;
-	        	padding-bottom: 40px;
-	   		}
-	      
-	    </style>
-		
-	</head>
+  <head>
+  
+    <title>Soartex Customizer</title>
+    <meta charset="utf-8"/>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+    
+  </head>
 
-	<body>
-	
-		<div class="container">
-	
-			<h1>Soartex Customizer</h1>
-		
-		</div>
-	
-	</body>
+  <body>
+  
+  <div class="container-narrow">
+  
+      <div class="masthead">
+      
+            <ul class="nav nav-pills pull-right">
+            
+                <li class="active"><a href="#">Home</a></li>
+                
+            </ul>
+            
+            <h3 class="muted">Soartex Customizer</h3>
+          
+          </div>
+  
+      <hr/>
+  
+      Content goes here!
+      
+      <div class="footer">
+      
+            <p>&copy; Soartex Fanver 2012</p>
+            
+      </div>
+    
+    </div>
+  
+  </body>
 
 </html>
