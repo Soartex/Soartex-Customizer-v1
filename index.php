@@ -16,7 +16,7 @@
 
   <body>
   
-    <div class="container-narrow">
+    <div class="container">
   
       <div class="masthead">
             
