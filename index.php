@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
   <head>
@@ -15,19 +16,19 @@
 
   <body>
   
-  <div class="container-narrow">
+    <div class="container-narrow">
   
       <div class="masthead">
       
-            <ul class="nav nav-pills pull-right">
+        <ul class="nav nav-pills pull-right">
             
-                <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="#">Home</a></li>
                 
-            </ul>
+        </ul>
             
-            <h3 class="muted">Soartex Customizer</h3>
+        <h3 class="muted">Soartex Customizer</h3>
           
-          </div>
+      </div>
   
       <hr/>
   
@@ -35,7 +36,7 @@
       
       <div class="footer">
       
-            <p>&copy; Soartex Fanver 2012</p>
+        <p>&copy; Soartex Fanver 2012</p>
             
       </div>
     
