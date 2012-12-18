@@ -1,2 +1,4 @@
-/nbproject/private/
-config.php
+.idea/
+*.iml
+*.iws
+.DS_Store
