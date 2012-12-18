@@ -2,40 +2,40 @@
 
 <html>
 
-  <head>
+	<head>
   
-    <title>Soartex Customizer</title>
-    <meta charset="utf-8"/>
+		<title>Soartex Customizer</title>
+		<meta charset="utf-8"/>
     
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
     
-    <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
     
-  </head>
+    </head>
 
-  <body>
+	<body>
   
-    <div class="container">
+		<div class="container">
   
-      <div class="masthead">
+			<div class="masthead">
             
-        <h3 class="muted">Soartex Customizer</h3>
+				<h3 class="muted">Soartex Customizer</h3>
           
-      </div>
+			</div>
   
-      <hr/>
+			<hr/>
   
-      Content goes here!
+			Content goes here!
+
+			<div class="footer">
       
-      <div class="footer">
-      
-        <p>&copy; Soartex Fanver 2012</p>
+				<p>&copy; Soartex Fanver 2012</p>
             
-      </div>
+			</div>
     
-    </div>
+		</div>
   
-  </body>
+	</body>
 
 </html>
