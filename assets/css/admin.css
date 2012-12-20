@@ -1,0 +1,15 @@
+#drop-files {
+
+	width: 345px;
+	height: 345px;
+	background: #FFFFFF;
+	border-radius: 27px;
+	border: 2px solid #C8E4FF;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+	float:left;
+
+}

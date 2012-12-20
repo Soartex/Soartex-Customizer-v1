@@ -11,7 +11,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
 
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-		
+		<link rel="stylesheet" type="text/css" href="assets/css/admin.css" />
+
 	</head>
 
 	<body>
@@ -22,18 +23,23 @@
 
 				<ul class="nav nav-pills pull-right">
 
-          				<li class="active"><a href="#">Home</a></li>
-          				<li><a href="admin.php">Admin</a></li>
+          				<li><a href="index.php">Home</a></li>
+          				<li class="active"><a href="#">Admin</a></li>
 
         			</ul>
 
 				<h3 class="muted">Soartex Customizer</h3>
-
 			</div>
 
 			<hr/>
 
-			Content goes here!
+			<div id="drop-files" ondragover="return false" style="background: url('images/Up_arrow.png') no-repeat center FCFCFC">
+
+                        	<br />
+
+                        	<div id="image-upload-text">Drag a file here to upload</div>
+
+                    	</div>
 
 			<hr/>
 
