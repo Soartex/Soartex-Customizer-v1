@@ -22,10 +22,10 @@
 
 				<ul class="nav nav-pills pull-right">
 
-          				<li class="active"><a href="#">Home</a></li>
-          				<li><a href="admin.php">Admin</a></li>
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="admin.php">Admin</a></li>
 
-        			</ul>
+					</ul>
 
 				<h3 class="muted">Soartex Customizer</h3>
 

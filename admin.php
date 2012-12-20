@@ -23,31 +23,39 @@
 
 				<ul class="nav nav-pills pull-right">
 
-          				<li><a href="index.php">Home</a></li>
-          				<li class="active"><a href="#">Admin</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li class="active"><a href="#">Admin</a></li>
 
-        			</ul>
+					</ul>
 
 				<h3 class="muted">Soartex Customizer</h3>
 			</div>
 
 			<hr/>
 
-			<div id="drop-files" ondragover="return false">
+			<h4>Upload Texture</h4>
 
-                        	<br />
+			<hr>
 
-                        	<div id="image-upload-text">Drag a file here to upload</div>
+			<form>
 
-                    	</div>
+				<div id="drop-files" ondragover="return false">
 
-			<hr/>
+					<br />
 
-			<div class="footer">
+					<div id="image-upload-text">Drag a file here to upload</div>
 
-				<p>&copy; Soartex Fanver 2012</p>
+				</div>
 
-			</div>
+				<hr/>
+
+				<div class="footer">
+
+					<p>&copy; Soartex Fanver 2012</p>
+
+				</div>
+
+			</form>
 
 		</div>
 

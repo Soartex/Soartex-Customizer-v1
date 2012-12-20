@@ -1,7 +1,7 @@
 #drop-files {
 
-	width: 345px;
-	height: 345px;
+	width: 275px;
+	height: 275px;
 	background: #FFFFFF;
 	background-image: url('../img/upload-arrow.png');
 	background-repeat: no-repeat;
@@ -19,7 +19,13 @@
 #image-upload-text {
 
 	color: rgba(0, 99, 256, 0.3);
-	font-size: 22px;
-	margin-top: 250px;
+	font-size: 18px;
+	margin-top: 210px;
+
+}
+
+.active {
+
+	background: rgba(0, 0, 0, 0);
 
 }
