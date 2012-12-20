@@ -33,7 +33,7 @@
 
 			<hr/>
 
-			<div id="drop-files" ondragover="return false" style="background: url('images/Up_arrow.png') no-repeat center FCFCFC">
+			<div id="drop-files" ondragover="return false">
 
                         	<br />
 
