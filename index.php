@@ -7,11 +7,10 @@
 		<title>Soartex Customizer</title>
 		<meta charset="utf-8"/>
 
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
+        <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/bootstrap.less" />
+        <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/responsive.less" />
 
-		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-		<link rel="stylesheet/less" type="text/css" href="assets/less/test.less" />
+		<link rel="stylesheet/less" type="text/css" href="assets/less/global.less" />
 
 		<script src="assets/js/less-1.3.1.min.js" type="text/javascript"></script>
 
