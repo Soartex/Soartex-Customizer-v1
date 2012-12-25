@@ -7,8 +7,8 @@
 		<title>Soartex Customizer</title>
 		<meta charset="utf-8"/>
 
-        <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/bootstrap.less" />
-        <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/responsive.less" />
+		<link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/bootstrap.less" />
+		<link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap/responsive.less" />
 
 		<link rel="stylesheet/less" type="text/css" href="assets/less/global.less" />
 
