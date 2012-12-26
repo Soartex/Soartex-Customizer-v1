@@ -8,7 +8,7 @@
 		<meta charset="utf-8"/>
 
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 
@@ -39,7 +39,7 @@
 
 			<form>
 
-				<div id="upload-box" ondragover="return false">
+				<div id="upload-box" ondragover="return false" draggable="true">
 
 					<div id="upload-text">Drag a file here to upload</div>
 

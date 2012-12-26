@@ -8,10 +8,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   border: 5px solid #c8e4ff;
-  border-radius: 25px; }
+  border-radius: 20px; }
   #upload-box #upload-text {
     margin-top: 225px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     color: #95cbff; }

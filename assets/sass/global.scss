@@ -4,27 +4,31 @@
 	
 }
 
+$upload-box-size: 275px;
+$upload-box-color: #C8E4FF;
+$upload-arrow-url: url('../img/upload-arrow.png');
+
 #upload-box {
 
-	width: 275px;
-	height: 275px;	
+	width: $upload-box-size;
+	height: $upload-box-size;	
 
-	background-image: url('../img/upload-arrow.png');
+	background-image: $upload-arrow-url;
 	background-repeat: no-repeat;
 	background-position: center center;
 
-	border: 5px solid #C8E4FF;
-	border-radius: 25px;
+	border: 5px solid $upload-box-color;
+	border-radius: 20px;
 
 	#upload-text {
 
 		margin-top: 225px;
 
-		font-size: 18px;
+		font-size: 20px;
 		font-weight: bold;
 		text-align: center;
 
-		color: darken(#C8E4FF, 10%);
+		color: darken($upload-box-color, 10%);
 
 	}
 
