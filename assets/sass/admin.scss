@@ -1,0 +1,31 @@
+#drop-files {
+
+	width: 275px;
+	height: 275px;
+	background: white;
+	background-image: url('../img/upload-arrow.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 27px;
+	border: 2px solid #C8E4FF;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+
+}
+
+#image-upload-text {
+
+	color: rgba(0, 99, 255, 0.3);
+	font-size: 18px;
+	margin-top: 210px;
+
+}
+
+.active {
+
+	background: white;
+
+}
