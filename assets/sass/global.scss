@@ -1,6 +1,31 @@
-body {
+.container {
 	
 	padding-top: 20px;
-	padding-bottom: 40px;
 	
+}
+
+#upload-box {
+
+	width: 275px;
+	height: 275px;	
+
+	background-image: url('../img/upload-arrow.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	border: 5px solid #C8E4FF;
+	border-radius: 25px;
+
+	#upload-text {
+
+		margin-top: 225px;
+
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+
+		color: darken(#C8E4FF, 10%);
+
+	}
+
 }

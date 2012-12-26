@@ -33,7 +33,7 @@
 
 			<hr/>
 
-			Content goes here!<br />
+			Content goes here!
 
 			<hr/>
 

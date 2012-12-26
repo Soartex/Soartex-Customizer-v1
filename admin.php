@@ -11,7 +11,6 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css">
 
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/admin.css" />
 
 	</head>
 
@@ -23,12 +22,13 @@
 
 				<ul class="nav nav-pills pull-right">
 
-						<li><a href="index.php">Home</a></li>
-						<li class="active"><a href="#">Admin</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li class="active"><a href="#">Admin</a></li>
 
-					</ul>
+				</ul>
 
 				<h3 class="muted">Soartex Customizer</h3>
+				
 			</div>
 
 			<hr/>
@@ -40,8 +40,6 @@
 			<form>
 
 				<div id="upload-box" ondragover="return false">
-
-					<br />
 
 					<div id="upload-text">Drag a file here to upload</div>
 
