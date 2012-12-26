@@ -37,11 +37,12 @@
 
 			<hr/>
 
-			<div class="footer">
+			<footer>
 
-				<p>&copy; Soartex Fanver 2012</p>
+				<h4 style="float: left" class="muted">&copy; Soartex 2012</h4>
+				<h4 style="float: right"><a href="http://www.soartex.net/" title="Soartex Site">Go to the Soartex Site!</a></h4>
 
-			</div>
+			</footer>
 
 		</div>
 

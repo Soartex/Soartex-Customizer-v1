@@ -1,4 +1,4 @@
-#drop-files {
+#upload-box {
 
 	width: 275px;
 	height: 275px;
@@ -14,18 +14,12 @@
 	font-weight: bold;
 	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
 
-}
+	#upload-text {
 
-#image-upload-text {
+		color: rgba(0, 99, 255, 0.3);
+		font-size: 18px;
+		margin-top: 210px;
 
-	color: rgba(0, 99, 255, 0.3);
-	font-size: 18px;
-	margin-top: 210px;
-
-}
-
-.active {
-
-	background: white;
+	}
 
 }
