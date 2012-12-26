@@ -1,6 +1,7 @@
 <?php
 /**
- * Receives the [id], [title], [content] and [parentID] from $_GET and returns the HTML data of the accordion item
+ * Receives the [id], [title], [content] and [parentID] from $_GET and returns the HTML data of the accordion item.
+ * The resulting HTML must be put inside the parent accordion to function.
  */
 
 $id       = (string) $_GET['id'];
