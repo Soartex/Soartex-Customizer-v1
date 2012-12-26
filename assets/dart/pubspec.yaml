@@ -1,0 +1,4 @@
+name: customizer
+dependencies:
+  js:
+    hosted: js
