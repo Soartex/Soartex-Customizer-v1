@@ -1,0 +1,35 @@
+.container {
+	
+	padding-top: 20px;
+	
+}
+
+$upload-box-size: 275px;
+$upload-box-color: #C8E4FF;
+$upload-arrow-url: url('../img/upload-arrow.png');
+
+#upload-box {
+
+	width: $upload-box-size;
+	height: $upload-box-size;	
+
+	background-image: $upload-arrow-url;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	border: 5px solid $upload-box-color;
+	border-radius: 20px;
+
+	#upload-text {
+
+		margin-top: 225px;
+
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+
+		color: darken($upload-box-color, 10%);
+
+	}
+
+}
