@@ -7,8 +7,7 @@
 		<title>Soartex Customizer</title>
 		<meta charset="utf-8"/>
 
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 
