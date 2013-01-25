@@ -1,3 +1,3 @@
 # Soartex Fanver Texture Pack Customizer
 ### Created by Floppygunk
-#### (And REDX36 and Rashed97)
+#### (And GoldBattle and REDX36)

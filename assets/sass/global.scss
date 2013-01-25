@@ -1,23 +1,35 @@
+// Global
+
 .container {
 	
 	padding-top: 20px;
 	
 }
 
-$upload-box-size: 275px;
-$upload-box-color: #C8E4FF;
-$upload-arrow-url: url('../img/upload-arrow.png');
+// Main
+
+#main {
+	
+	margin-top: 30px;
+	
+}
+
+// Admin
 
 #upload-box {
 
-	width: $upload-box-size;
-	height: $upload-box-size;	
+	$size: 275px;
+	$color: #C8E4FF;
+	$image-url: url('../img/upload-arrow.png');
 
-	background-image: $upload-arrow-url;
+	width: $size;
+	height: $size;	
+
+	background-image: $image-url;
 	background-repeat: no-repeat;
 	background-position: center center;
 
-	border: 5px solid $upload-box-color;
+	border: 5px solid $color;
 	border-radius: 20px;
 
 	#upload-text {
@@ -28,7 +40,7 @@ $upload-arrow-url: url('../img/upload-arrow.png');
 		font-weight: bold;
 		text-align: center;
 
-		color: darken($upload-box-color, 10%);
+		color: darken($color, 10%);
 
 	}
 
