@@ -40,8 +40,9 @@
 						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
 							<!--side bar tabs-->
 							<div class="tabbable tabs-left">
+								<!--load list form database-->
 								<ul class="nav nav-tabs">
-									<li class="active">
+									<li>
 										<a data-toggle="stab" href="#stab1">Armor</a>
 									</li>
 									<li>
@@ -56,7 +57,7 @@
 									<li>
 										<a data-toggle="stab" href="#stab5">Icons</a>
 									</li>
-									<li>
+									<li class="active">
 										<a data-toggle="stab" href="#stab6">Items</a>
 									</li>
 									<li>
@@ -69,8 +70,9 @@
 										<a data-toggle="stab" href="#stab9">Plants and Shrubbery</a>
 									</li>
 								</ul>
+								<!--load pictures here based off of data base-->
 								<div class="tab-content">
-									<div class="tab-pane active" id="stab1">
+									<div class="tab-pane" id="stab1">
 										Yo! Picture of Armor here. Select your favorite
 									</div>
 									<div class="tab-pane" id="stab2">
@@ -81,7 +83,32 @@
 									</div>
 									<div class="tab-pane" id="stab4">
 										More pictures of Guis
-
+									</div>
+									<div class="tab-pane active" id="stab6">
+										<ul class="thumbnails">
+											<li>
+												<div class="thumbnail">
+													<img src="assets/img/brewingitem.png">
+													<div class="caption">
+														<h5>Brewing Item</h5>
+														<p>
+															- GoldBattle
+														</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="thumbnail">
+													<img src="assets/img/cauldronitem.png">
+													<div class="caption">
+														<h5>Cauldron Item</h5>
+														<p>
+															- GoldBattle
+														</p>
+													</div>
+												</div>
+											</li>
+										</ul>
 									</div>
 								</div>
 							</div>

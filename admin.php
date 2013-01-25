@@ -6,7 +6,6 @@
 		<title>Soartex Admin</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
-		<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 	</head>
 
@@ -15,7 +14,6 @@
 			<div class="page-header">
 				<h1>Soartex Customizer <small>Admin</small></h1>
 			</div>
-
 
 			<form>
 				<div id="upload-box" ondragover="return false">
