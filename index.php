@@ -192,7 +192,7 @@
 				<hr/>
 				<ul class="nav nav-pills">
 					<li class="pull-left">
-						<a href="http://soartex.net/">© Soartex 2012-2013</a>
+						<a href="http://soartex.net/">&copy; Soartex 2012-2013</a>
 					</li>
 					<li class="pull-right">
 						<a href="admin.php">Admin</a>
