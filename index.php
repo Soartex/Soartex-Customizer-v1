@@ -37,29 +37,60 @@
 					</ul>
 					<!--tab content-->
 					<div class="tab-content" style="overflow: visible;">
-						<div class="tab-pane active" id="tab1">
-							<div class="row"></div>
-							<div class="row active">
-								<div class="span6">
-									Vanilla Content
+						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
+							<!--side bar tabs-->
+							<div class="tabbable tabs-left">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a data-toggle="stab" href="#stab1">Armor</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab2">Art</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab3">Food</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab4">Guis</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab5">Icons</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab6">Items</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab7">Misc</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab8">Particals</a>
+									</li>
+									<li>
+										<a data-toggle="stab" href="#stab9">Plants and Shrubbery</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="stab1">
+										Yo! Picture of Armor here. Select your favorite
+									</div>
+									<div class="tab-pane" id="stab2">
+										More pictures of Art
+									</div>
+									<div class="tab-pane" id="stab3">
+										More pictures of Food
+									</div>
+									<div class="tab-pane" id="stab4">
+										More pictures of Guis
+
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="tab-pane" id="tab2">
-							<div class="row"></div>
-							<div class="row">
-								<div class="span6">
-									Modded Content
-								</div>
-							</div>
+							Modded Content
 						</div>
 						<div class="tab-pane" id="tab3">
-							<div class="row"></div>
-							<div class="row">
-								<div class="span6">
-									Seasonal Content
-								</div>
-							</div>
+							Seasonal Content
 						</div>
 					</div>
 					<!--end of tab content-->
