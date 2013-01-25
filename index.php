@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
@@ -62,13 +62,12 @@
 						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
 							
 							<div class="tabbable tabs-left">
-								
+
 								<ul class="nav nav-tabs">
-									
+
 									<li class="active">
-										
 										<a data-toggle="tab" href="#stab1">Armor</a>
-										
+
 									</li>
 									
 									<li>
@@ -94,11 +93,11 @@
 										<a data-toggle="tab" href="#stab5">Icons</a>
 										
 									</li>
-									
+
 									<li>
-										
+
 										<a data-toggle="tab" href="#stab6">Items</a>
-										
+
 									</li>
 									
 									<li>
@@ -120,11 +119,11 @@
 									</li>
 									
 								</ul>
-								
+
 								<div class="tab-content">
-									
+
 									<div class="tab-pane active" id="stab1">
-										
+
 										Yo! Picture of Armor here. Select your favorite
 										
 									</div>
@@ -142,7 +141,60 @@
 									</div>
 									
 									<div class="tab-pane" id="stab4">
+
 										More pictures of Guis
+
+									</div>
+
+									<div class="tab-pane" id="stab6">
+
+										<ul class="thumbnails">
+
+											<li>
+
+												<div class="thumbnail">
+
+													<img src="assets/img/brewingitem.png">
+
+													<div class="caption">
+
+														<h5>Brewing Item</h5>
+
+														<p>
+
+															- GoldBattle
+
+														</p>
+
+													</div>
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="thumbnail">
+
+													<img src="assets/img/cauldronitem.png">
+
+													<div class="caption">
+
+														<h5>Cauldron Item</h5>
+
+														<p>
+
+															- GoldBattle
+
+														</p>
+
+													</div>
+
+												</div>
+
+											</li>
+
+										</ul>
 
 									</div>
 									
