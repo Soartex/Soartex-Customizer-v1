@@ -3,60 +3,44 @@
 <html>
 
 	<head>
-
-		<title>Soartex Customizer</title>
+		<title>Soartex Admin</title>
 		<meta charset="utf-8"/>
-
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+		<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-
 	</head>
 
 	<body>
-
 		<div class="container">
-
-			<div class="masthead">
-
-				<ul class="nav nav-pills pull-right">
-
-					<li><a href="index.php">Home</a></li>
-					<li class="active"><a href="#">Admin</a></li>
-
-				</ul>
-
-				<h3 class="muted">Soartex Customizer</h3>
-				
+			<div class="page-header">
+				<h1>Soartex Customizer <small>Admin</small></h1>
 			</div>
 
-			<hr/>
-
-			<h4>Upload Texture</h4>
-
-			<hr>
 
 			<form>
-
 				<div id="upload-box" ondragover="return false">
-
-					<div id="upload-text">Drag a file here to upload</div>
-
+					<div id="upload-text">
+						Drag a file here to upload
+					</div>
 				</div>
-
-				<hr/>
-
-				<footer>
-
-					<h4 style="float: left" class="muted">&copy; Soartex Fanver 2012</h4>
-					<h4 style="float: right"><a href="http://www.soartex.net/" title="Soartex Site">Go to the Soartex Site!</a></h4>
-
-				</footer>
-
 			</form>
 
+			<!--footer-->
+			<footer>
+				<hr>
+				<ul class="nav nav-pills">
+					<li class="pull-left">
+						<a href="http://soartex.net/">© Soartex 2012-2013</a>
+					</li>
+					<li class="pull-right active">
+						<a href="#">Admin</a>
+					</li>
+					<li class="pull-right">
+						<a href="index.php">User</a>
+					</li>
+				</ul>
+			</footer>
+			<!--end of footer-->
 		</div>
-
 	</body>
-
 </html>
