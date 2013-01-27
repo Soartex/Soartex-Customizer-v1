@@ -57,14 +57,3 @@ TextureOption.prototype.getFullScreenshotPath = function () {
 TextureOption.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
 }
-
-function PlaceHolderOption(parameters) { // A test
-	TextureOption.call(this, parameters);
-	this.imageUrl = 'http://placehold.it/64x64';
-}
-
-extend(PlaceHolderOption, TextureOption);
-
-PlaceHolderOption.prototype.getFullImagePath = function () {
-	return this.imageUrl;
-}
