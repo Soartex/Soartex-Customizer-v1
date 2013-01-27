@@ -1,24 +1,26 @@
 $(document).ready(function() {
-	//var texture2 = new PlaceHolderOption(data);
-	var temp = new Array();
-	
+
+	var temp = new Category({
+		id : 0,
+		categoryName : 'Test category',
+		textures : [],
+		exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
+	});
+
 	for (var i = 0; i < 50; i++) {
 		var data = {
 			id : i+1,
+			category : this,
 			presets : [],
-			creator : 'Nobody',
+			creator : "Texture " + i,
 			dateAdded : new Date(),
 			screenshots : [],
-			extraData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}',
+			exportData : '{}',
 			path : "temp"
 		};
-		temp[i] = new TextureOption(data);
+		temp.textures[i] = new TextureOption(data);
 	}
-	
-	$('.thumbnails').each(function(index, element) {
-		//add the textures
-		for (var i = 0; i < temp.length; i++) {
-			$(element).append(temp[i].getHtml());
-		}
-	});
+	temp.calculateHtmlData();
+
+	$('#stab3').append(temp.getHtml());
 });

@@ -6,18 +6,19 @@ function TextureOption(parameters) {
 	this.dateAdded = parameters.dateAdded; // Type Date
 	this.screenshots = parameters.screenshots; // Type list (containing strings)
 
-	this.setDataFromJSON(parameters.extraData);
+	this.setDataFromJSON(parameters.exportData);
 
 	//this.imagePath = "assets/img";
 	this.imagePath = parameters.path;
 	this.screnshotPath = "data/screenshots";
 
-	this.setHtmlData();
+	this.calculateHtmlData();
 }
 
-TextureOption.prototype.calculateHtmlData = function() {
-	this.container = $('<li class="">')
-	this.thumbnail = $('<div class="thumbnail texture">')
+TextureOption.prototype.calculateHtmlData = function () {
+	this.elements = elements = {};
+	elements.container = $('<li class="">');
+	elements.thumbnail = $('<div class="thumbnail texture">')
 		.mousedown(function () {
 			$(this).toggleClass("texture-selected");
 		})
@@ -27,22 +28,22 @@ TextureOption.prototype.calculateHtmlData = function() {
 			$(this).removeClass("texture-hovered");
 		})
 		.append($('<img src="' + this.getFullImagePath() + '">'))
-		.appendTo(container);
-	this.caption = $('<div>')
+		.appendTo(elements.container);
+	elements.caption = $('<div>')
 		.addClass("caption")
-		.appendTo(thumbnail);
-	this.creatorParagraph = $('<p>')
+		.appendTo(elements.thumbnail);
+	elements.paragraph = $('<p>')
 		.text('- ' + this.creator)
-		.appendTo(caption);
+		.appendTo(elements.caption);
 }
 
-TextureOption.prototype.setCreator = function(val) {
+TextureOption.prototype.setCreator = function (val) {
 	this.creator = val;
-	$(this.creatorParagraph).text('- ' + val);
+	$(this.elements.creatorParagraph).text('- ' + val);
 }
 
 TextureOption.prototype.getHtml = function () {
-	return this.container;
+	return this.elements.container;
 }
 
 TextureOption.prototype.getFullImagePath = function () {
@@ -55,11 +56,7 @@ TextureOption.prototype.getFullScreenshotPath = function () {
 
 TextureOption.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
-	this.exportPath = data.exportPath; // The image that the texture goes to, eg. 'gui/items.png'
-	this.exportX = data.exportX; // The x position of the texture in the texture sheet
-	this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
-
 
 function PlaceHolderOption(parameters) { // A test
 	TextureOption.call(this, parameters);
@@ -70,8 +67,4 @@ extend(PlaceHolderOption, TextureOption);
 
 PlaceHolderOption.prototype.getFullImagePath = function () {
 	return this.imageUrl;
-}
-
-PlaceHolderOption.prototype.setDataFromJSON = function (JsonData) {
-
 }
