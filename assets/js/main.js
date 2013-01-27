@@ -7,6 +7,7 @@ $(document).ready(function() {
 		exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
 	});
 
+	tempArray = []
 	for (var i = 0; i < 50; i++) {
 		var data = {
 			id : i+1,
@@ -18,9 +19,9 @@ $(document).ready(function() {
 			exportData : '{}',
 			path : "temp"
 		};
-		temp.textures[i] = new TextureOption(data);
+		tempArray[i] = new TextureOption(data);
 	}
-	temp.calculateHtmlData();
+	temp.setTextures(tempArray);
 
 	$('#stab3').append(temp.getHtml());
 });

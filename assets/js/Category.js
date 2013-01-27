@@ -5,6 +5,28 @@ function Category(parameters) {
 
 	this.setDataFromJSON(parameters.exportData); // Type string (encoded in JSON)
 	this.calculateHtmlData();
+
+	this.selectedTexture = null;
+}
+
+Category.prototype.select = function(texture) {
+	if (this.selectedTexture !== null) {
+		this.selectedTexture.setDeselected();
+	}
+	if (texture !== null) {
+		texture.setSelected();
+	}
+	this.selectedTexture = texture;
+}
+
+Category.prototype.setTextures = function(textures) {
+	this.textures = textures;
+
+	// Select the first texture
+	if (!(this.selectedTexture in textures)) {
+		this.select(textures[0]);
+	}
+	this.resetTextureElements();
 }
 
 Category.prototype.calculateHtmlData = function () {
@@ -15,8 +37,15 @@ Category.prototype.calculateHtmlData = function () {
 		.appendTo(elements.container);
 	elements.textures = $('<ul class="thumbnails">')
 		.appendTo(elements.container);
-	for (var i in this.textures) {;
-		$(elements.textures).append(this.textures[i].getHtml());
+	for (var i in this.textures) {
+		elements.textures.append(this.textures[i].getHtml());
+	}
+}
+
+Category.prototype.resetTextureElements = function() {
+	this.elements.textures.empty();
+	for (var i in this.textures) {
+		this.elements.textures.append(this.textures[i].getHtml());
 	}
 }
 
