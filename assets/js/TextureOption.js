@@ -1,5 +1,6 @@
 function TextureOption(parameters) {
 	this.id = parameters.id; // Type number
+	this.category = parameters.category; // Type Category
 	this.presets = parameters.presets; // Type list (containing strings)
 	this.creator = parameters.creator; // Type string
 	this.dateAdded = parameters.dateAdded; // Type Date
@@ -11,10 +12,12 @@ function TextureOption(parameters) {
 	this.imagePath = parameters.path;
 	this.screnshotPath = "data/screenshots";
 
+	this.setHtmlData();
 }
-TextureOption.prototype.getHtml = function () {
-	var container = $('<li class="">')
-	var thumbnail = $('<div class="thumbnail texture">')
+
+TextureOption.prototype.calculateHtmlData = function() {
+	this.container = $('<li class="">')
+	this.thumbnail = $('<div class="thumbnail texture">')
 		.mousedown(function () {
 			$(this).toggleClass("texture-selected");
 		})
@@ -25,14 +28,23 @@ TextureOption.prototype.getHtml = function () {
 		})
 		.append($('<img src="' + this.getFullImagePath() + '">'))
 		.appendTo(container);
-	var caption = $('<div>')
+	this.caption = $('<div>')
 		.addClass("caption")
 		.appendTo(thumbnail);
-	$('<p>')
+	this.creatorParagraph = $('<p>')
 		.text('- ' + this.creator)
 		.appendTo(caption);
-	return container;
 }
+
+TextureOption.prototype.setCreator = function(val) {
+	this.creator = val;
+	$(this.creatorParagraph).text('- ' + val);
+}
+
+TextureOption.prototype.getHtml = function () {
+	return this.container;
+}
+
 TextureOption.prototype.getFullImagePath = function () {
 	return this.imagePath + '/' + this.id + '.png';
 }
@@ -40,7 +52,6 @@ TextureOption.prototype.getFullImagePath = function () {
 TextureOption.prototype.getFullScreenshotPath = function () {
 	return this.screenshotPath + this.this.screenshotName + 'png';
 }
-
 
 TextureOption.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
