@@ -7,7 +7,8 @@ function TextureOption(parameters) {
 
 	this.setDataFromJSON(parameters.extraData);
 
-	this.imagePath = "assets/img";
+	//this.imagePath = "assets/img";
+	this.imagePath = parameters.path;
 	this.screnshotPath = "data/screenshots";
 
 }
