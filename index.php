@@ -1,9 +1,7 @@
 ﻿<!DOCTYPE html>
-
 <html>
 
 	<head>
-
 		<!-- Page information -->
 
 		<title>Soartex Customizer</title>
@@ -134,7 +132,7 @@
 										<ul class="thumbnails">
 
 										</ul>
-										
+
 										<legend>
 											Sandstone
 										</legend>

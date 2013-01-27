@@ -16,7 +16,7 @@ TextureOption.prototype.getHtml = function () {
 	var container = $('<li class="">')
 	var thumbnail = $('<div class="thumbnail texture">')
 		.mousedown(function () {
-			$(this).addClass("texture-selected");
+			$(this).toggleClass("texture-selected");
 		})
 		.hover(function () {
 			$(this).addClass("texture-hovered");
