@@ -98,7 +98,87 @@
 									</div>
 
 									<div class="tab-pane" id="stab2">
-										More pictures of Art
+										<!--temp code -->
+										<div class="container-fluid">
+											<div class="accordion" id="accordion2">
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+														<legend>
+															Wool
+														</legend> </a>
+													</div>
+													<div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
+														<div class="accordion-inner">
+															<ul class="thumbnails">
+
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+														<legend>
+															Leaves
+														</legend></a>
+													</div>
+													<div id="collapseTwo" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<ul class="thumbnails">
+
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+														<legend>
+															Sand
+														</legend> </a>
+													</div>
+													<div id="collapseThree" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<ul class="thumbnails">
+
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+														<legend>
+															Sapplings
+														</legend> </a>
+													</div>
+													<div id="collapseFour" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<ul class="thumbnails">
+
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-group">
+													<div class="accordion-heading">
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+														<legend>
+															Stone
+														</legend> </a>
+													</div>
+													<div id="collapseFive" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<ul class="thumbnails">
+
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--End of Temp Code-->
 									</div>
 									<!--items-->
 									<div class="tab-pane" id="stab3">
