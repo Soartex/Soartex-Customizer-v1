@@ -10,7 +10,7 @@ $(document).ready(function() {
 	for (var i = 0; i < 50; i++) {
 		var data = {
 			id : i+1,
-			category : this,
+			category : temp,
 			presets : [],
 			creator : "Texture " + i,
 			dateAdded : new Date(),
