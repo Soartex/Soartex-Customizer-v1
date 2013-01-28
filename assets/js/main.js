@@ -24,4 +24,15 @@ $(document).ready(function() {
 	temp.setTextures(tempArray);
 
 	$('#stab3').append(temp.getHtml());
+
+	$.post("assets/php/insertTexture.php", {
+		name : "test",
+		creator : "testy2",
+		info : "",
+		preset : 1,
+		group : 1,
+		export_data: "{}"
+	}, function(result) {
+		$('body').append(result);
+	});
 });
