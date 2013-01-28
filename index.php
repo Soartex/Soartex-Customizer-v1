@@ -20,6 +20,7 @@
 
 		<script type="text/javascript" src="assets/js/utils.js"></script>
 		<script type="text/javascript" src="assets/js/TextureOption.js"></script>
+		<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
 		<script type="text/javascript" src="assets/js/Category.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
 

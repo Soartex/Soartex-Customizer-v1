@@ -2,9 +2,9 @@ $(document).ready(function() {
 	picGroups = [0,16,22,28,32,41,46,50];
 	groupArray = [];
 	for (var z = 0; z < picGroups.length-1; z++){
-		groupArray[z] = new Category({
+		groupArray[z] = new TextureGroup({
 			id : z+1,
-			categoryName : 'Test category ' +(z+1),
+			textureGroupName : 'Test Texture Group ' +(z+1),
 			textures : [],
 			exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
 		});
