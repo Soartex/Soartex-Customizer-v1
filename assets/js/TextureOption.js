@@ -1,6 +1,6 @@
 function TextureOption(parameters) {
 	this.id = parameters.id; // Type number
-	this.category = parameters.category; // Type Category
+	this.group = parameters.group; // Type TextureGroup
 	this.presets = parameters.presets; // Type list (containing strings)
 	this.creator = parameters.creator; // Type string
 	this.dateAdded = parameters.dateAdded; // Type Date
@@ -42,7 +42,7 @@ TextureOption.prototype.calculateHtmlData = function () {
 }
 
 TextureOption.prototype.select = function () {
-	this.category.select(this);
+	this.group.select(this);
 }
 
 TextureOption.prototype.setSelected = function () {

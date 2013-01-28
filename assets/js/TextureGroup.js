@@ -1,6 +1,6 @@
-function Category(parameters) {
+function TextureGroup(parameters) {
 	this.id = parameters.id; // Type int
-	this.categoryName = parameters.categoryName; // Type string
+	this.groupName = parameters.groupName; // Type string
 	this.textures = parameters.textures; // Type array (containing textureOptions)
 
 	this.setDataFromJSON(parameters.exportData); // Type string (encoded in JSON)
@@ -9,7 +9,7 @@ function Category(parameters) {
 	this.selectedTexture = null;
 }
 
-Category.prototype.select = function(texture) {
+TextureGroup.prototype.select = function(texture) {
 	if (this.selectedTexture !== null) {
 		this.selectedTexture.setDeselected();
 	}
@@ -19,7 +19,7 @@ Category.prototype.select = function(texture) {
 	this.selectedTexture = texture;
 }
 
-Category.prototype.setTextures = function(textures) {
+TextureGroup.prototype.setTextures = function(textures) {
 	this.textures = textures;
 
 	// Select the first texture
@@ -29,11 +29,11 @@ Category.prototype.setTextures = function(textures) {
 	this.resetTextureElements();
 }
 
-Category.prototype.calculateHtmlData = function () {
+TextureGroup.prototype.calculateHtmlData = function () {
 	this.elements = elements = {};
 	elements.container = $('<div>');
 	elements.title = $('<legend>')
-		.text(this.categoryName)
+		.text(this.TextureGroupName)
 		.appendTo(elements.container);
 	elements.textures = $('<ul class="thumbnails">')
 		.appendTo(elements.container);
@@ -42,18 +42,18 @@ Category.prototype.calculateHtmlData = function () {
 	}
 }
 
-Category.prototype.resetTextureElements = function() {
+TextureGroup.prototype.resetTextureElements = function() {
 	this.elements.textures.empty();
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
 }
 
-Category.prototype.getHtml = function () {
+TextureGroup.prototype.getHtml = function () {
 	return this.elements.container.children();
 }
 
-Category.prototype.setDataFromJSON = function (JsonData) {
+TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
 	this.exportPath = data.exportPath; // The image that the texture goes to, eg. 'gui/items.png'
 	this.exportX = data.exportX; // The x position of the texture in the texture sheet

@@ -1,17 +1,17 @@
 $(document).ready(function() {
 
-	var temp = new Category({
+	var temp = new TextureGroup({
 		id : 0,
-		categoryName : 'Test category',
+		groupName : 'Test group',
 		textures : [],
 		exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
 	});
 
-	tempArray = []
+	tempArray = [];
 	for (var i = 0; i < 50; i++) {
 		var data = {
 			id : i+1,
-			category : temp,
+			group : temp,
 			presets : [],
 			creator : "Texture " + i,
 			dateAdded : new Date(),
