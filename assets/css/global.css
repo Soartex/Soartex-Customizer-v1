@@ -19,19 +19,19 @@
 
 .texture.texture-hovered {
 
-	background-color: rgba(0, 0, 0, .08);
+	background-color: rgba(0, 0, 0, .18);
 }
 
 .texture.texture-selected {
 
-	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .05);
-	-moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.05);
-	background-color: rgba(0, 0, 0, .042);
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .10);
+	-moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.10);
+	background-color: rgba(0, 0, 0, .20);
 }
 
 .texture.texture-selected.texture-hovered {
 
-	background-color: rgba(0, 0, 0, .08);
+	background-color: rgba(0, 0, 0, .20);
 
 }
 

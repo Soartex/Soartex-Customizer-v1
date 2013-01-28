@@ -74,7 +74,7 @@
 								<ul class="nav nav-tabs">
 
 									<li class="active">
-										<a data-toggle="tab" href="#stab1">Armor</a>
+										<a data-toggle="tab" href="#stab1">Blocks</a>
 									</li>
 
 									<li>
@@ -86,7 +86,7 @@
 									</li>
 
 									<li>
-										<a data-toggle="tab" href="#stab4">Blocks</a>
+										<a data-toggle="tab" href="#stab4">Armor</a>
 									</li>
 
 								</ul>
@@ -94,132 +94,19 @@
 								<div class="tab-content">
 
 									<div class="tab-pane active" id="stab1">
-										Yo! Picture of Armor here. Select your favorite
+
 									</div>
 
 									<div class="tab-pane" id="stab2">
-										<!--temp code -->
-										<div class="container-fluid">
-											<div class="accordion" id="accordion2">
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-														<legend>
-															Wool
-														</legend> </a>
-													</div>
-													<div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-														<legend>
-															Leaves
-														</legend></a>
-													</div>
-													<div id="collapseTwo" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-														<legend>
-															Sand
-														</legend> </a>
-													</div>
-													<div id="collapseThree" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-														<legend>
-															Sapplings
-														</legend> </a>
-													</div>
-													<div id="collapseFour" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-														<legend>
-															Stone
-														</legend> </a>
-													</div>
-													<div id="collapseFive" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--End of Temp Code-->
+										Art Pics Here
 									</div>
 									<!--items-->
 									<div class="tab-pane" id="stab3">
-
-										<legend>
-											Brewing Item
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Cauldron Item
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
+										Yo! Picture of Items here. Select your favorite
 									</div>
 									<!--blocks-->
 									<div class="tab-pane" id="stab4">
-										<legend>
-											Wool
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Leaves
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Sandstone
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
+										Yo! Picture of Armor here. Select your favorite
 									</div>
 								</div>
 							</div>
