@@ -33,7 +33,7 @@ TextureGroup.prototype.calculateHtmlData = function () {
 	this.elements = elements = {};
 	elements.container = $('<div>');
 	elements.title = $('<legend>')
-		.text(this.TextureGroupName)
+		.text(this.groupName)
 		.appendTo(elements.container);
 	elements.textures = $('<ul class="thumbnails">')
 		.appendTo(elements.container);
