@@ -1,17 +1,43 @@
 $(document).ready(function() {
+	picGroups = [0,16,22,28,32,41,46,50];
+	groupArray = [];
+	for (var z = 0; z < picGroups.length-1; z++){
+		groupArray[z] = new TextureGroup({
+			id : z+1,
+			groupName : 'Test Texture Group ' +(z+1),
+			textures : [],
+			exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
+		});
+		//loop and get textures
+		tempArray = [];
+		for (var i = picGroups[z]; i < picGroups[z+1]; i++) {
+			var data = {
+				id : i+1,
+				category : groupArray[z],
+				presets : [],
+				creator : "Texture " + (i-picGroups[z]+1),
+				dateAdded : new Date(),
+				screenshots : [],
+				exportData : '{}',
+				path : "temp"
+			};
+			tempArray.push(new TextureOption(data));
+		}
+		groupArray[z].setTextures(tempArray);
+	 }
 
-	var temp = new TextureGroup({
+	var temp = new TextureOption({
 		id : 0,
-		groupName : 'Test group',
+		categoryName : 'Test category',
 		textures : [],
 		exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
 	});
 
-	tempArray = [];
+	tempArray = []
 	for (var i = 0; i < 50; i++) {
 		var data = {
 			id : i+1,
-			group : temp,
+			category : temp,
 			presets : [],
 			creator : "Texture " + i,
 			dateAdded : new Date(),
@@ -24,15 +50,4 @@ $(document).ready(function() {
 	temp.setTextures(tempArray);
 
 	$('#stab3').append(temp.getHtml());
-
-	$.post("assets/php/insertTexture.php", {
-		name : "test",
-		creator : "testy2",
-		info : "",
-		preset : 1,
-		group : 1,
-		export_data: "{}"
-	}, function(result) {
-		$('body').append(result);
-	});
 });
