@@ -6,13 +6,10 @@
     
     // Database connection.
     
-    $host = "[host]";
-    $username = "[user]";
-    $password = "[password]";
-    $database = "[database]";
-    
-    mysql_connect($host, $username, $password);
-    mysql_select_db($name);
+    $db_host = "[host]";
+    $db_username = "[user]";
+    $db_password = "[password]";
+    $db_database = "[database]";
     
     // Branding
     
