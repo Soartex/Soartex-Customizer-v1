@@ -1,3 +1,5 @@
+var wizard;
+
 $(document).ready(function() {
 	picGroups = [0,16,22,28,32,41,46,50];
 	groupArray = [];
@@ -43,5 +45,14 @@ $(document).ready(function() {
 		$('body').append(result);
 	})
 	*/
+	
+	var options = {};
+    wizard = $("#texture-upload-wizard").wizard(options);
 
 });
+
+function showWizard () {
+    
+    wizard.show();
+    
+}

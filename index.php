@@ -17,6 +17,7 @@
 
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+		
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 
 	</head>
@@ -235,23 +236,10 @@
 
 				<ul class="nav nav-pills">
 
-					<li class="pull-left">
+					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2012-2013</a></li>
 
-						<a href="http://soartex.net/">&copy; Soartex 2012-2013</a>
-
-					</li>
-
-					<li class="pull-right">
-
-						<a href="admin.php">Admin</a>
-
-					</li>
-
-					<li class="pull-right active">
-
-						<a href="#">User</a>
-
-					</li>
+					<li class="pull-right"><a href="admin.php">Admin</a></li>
+					<li class="pull-right active"><a href="#">Home</a></li>
 
 				</ul>
 

@@ -6,23 +6,21 @@
 
 		<!-- Page information -->
 
-		<title>Soartex Customizer</title>
+		<title><?php echo($name) ?> Customizer</title>
 		<meta charset="UTF-8"/>
+		
+		<!-- PHP -->
+
+		<?php include("assets/php/config.php") ?>
 
 		<!-- Stylesheets -->
 
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-wizard.css"/>
+		
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-
-		<!-- Javascripts -->
-
-		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-
-		<script type="text/javascript" src="assets/js/utils.js"></script>
-		<script type="text/javascript" src="assets/js/TextureOption.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
 
 	</head>
 
@@ -31,14 +29,31 @@
 		<div class="container">
 
 			<div class="page-header">
-				<h1>Soartex Customizer <small>Admin</small></h1>
+			    
+				<h1><?php echo($name) ?> <small>Admin </small></h1>
+				
 			</div>
-
+			
+			<button class="btn" onclick="showWizard()">SHOW</button>
+			
+			<div class="wizard" id="texture-upload-wizard">
+				
+				<h1>Upload Texture</h1>
+				
+				<div class="wizard-card" data-cardname="card1">
+					
+        			<h3>Card 1</h3>
+        			Some content
+        		
+    			</div>
+				
+			</div>
+			
 			<form action="assets/php/insert.php" method="post">
+				
 				<fieldset>
-					<legend>
-						File Upload
-					</legend>
+					
+					<legend>File Upload</legend>
 
 					<label>Pack</label>
 					<input type="text" name="pack" placeholder="Ex: Vanilla; Modded; Halloween">
@@ -59,27 +74,38 @@
 
 					<br/>
 					<br/>
-					<button type="submit" class="btn">
-						Submit
-					</button>
+					
+					<button type="submit" class="btn">Submit</button>
 
 				</fieldset>
+				
 			</form>
 
 			<hr/>
+			
 			<footer>
+				
 				<ul class="nav nav-pills">
-					<li class="pull-left">
-						<a href="http://soartex.net/">&copy; Soartex 2012-2013</a>
-					</li>
-					<li class="pull-right active">
-						<a href="#">Admin</a>
-					</li>
-					<li class="pull-right">
-						<a href="index.php">User</a>
-					</li>
+
+					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2012-2013</a></li>
+
+					<li class="pull-right active"><a href="#">Admin</a></li>
+					<li class="pull-right"><a href="index.php">Home</a></li>
+
 				</ul>
+				
 			</footer>
+			
+			<!-- Javascripts -->
+
+			<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+			<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+			
+			<script type="text/javascript" src="assets/js/bootstrap-wizard.js"></script>
+	
+			<script type="text/javascript" src="assets/js/utils.js"></script>
+			<script type="text/javascript" src="assets/js/TextureOption.js"></script>
+			<script type="text/javascript" src="assets/js/main.js"></script>
 
 		</div>
 
