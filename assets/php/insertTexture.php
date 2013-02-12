@@ -3,7 +3,7 @@ require_once("config.php");
 include_once("validation.php");
 
 // Connects to database
-$mysqli= new mysqli(DBHOST,DBUSERNAME,DBPASSWORD, DBDATABASE);
+$mysqli = new mysqli(DBHOST,DBUSERNAME,DBPASSWORD,DBDATABASE);
 if(mysqli_connect_errno()) {
 	die('Could not connect: '.mysqli_connect_error());
 }
@@ -26,10 +26,10 @@ assert(is_valid_int($group));
 $export_data = $mysqli->real_escape_string($_POST["export_data"]);
 assert(is_valid_string($export_data));
 
-$mysqli->query("INSERT INTO Texture (name, creator, info, preset, group, export_data)
-				VALUES ($name, $creator, $info, $preset, $group, $export_data)");
+$mysqli->query("INSERT INTO Textures (name, creator, info, preset, group_id, export_data)
+				VALUES ('$name', '$creator', '$info', $preset, $group, '$export_data')");
 
-$lastID = $mysqli->insert_id();
+$lastID = $mysqli->insert_id;
 
 // Set the order to the ID
-$mysqli->query("UPDATE Texture SET order=$lastID WHERE texture_id=$lastID");
+$mysqli->query("UPDATE Textures SET sort_order=$lastID WHERE texture_id=$lastID");

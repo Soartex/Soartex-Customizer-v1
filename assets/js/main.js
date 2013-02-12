@@ -30,4 +30,18 @@ $(document).ready(function() {
 		$('#stab1').append(groupArray[j].getHtml());
 	}
 
+	/*
+	// Adds a new texture to the database
+	$.post('assets/php/insertTexture.php', {
+		name: 	 "Test",
+		creator: "Nobody",
+		info:	 "",
+		preset:	 1,
+		group:	 1,
+		export_data: "{}"
+	}, function(result) {
+		$('body').append(result);
+	})
+	*/
+
 });
