@@ -1,13 +1,16 @@
 <?php
 
-	include("config.php");
+	// Require the configruration information.
+
+	require_once("config.php");
 	
-	$db_connection = mysql_connect($db_host, $db_username, $db_password);
-	mysql_select_db($db_database, $db_connection);
+	// Connect to the database; die() on failure.
 	
-	if(!$db_connection) die("MySQL Error: ".mysql_error());
+	$mysqli = new mysqli($db_host, $db_username, $db_password, $db_database);
 	
-	$results = mysql_query("SELECT * FROM Category");
+	if(mysqli_connect_errno()) die("MySQL Error:".mysqli_connect_error());
+	
+	/**$results = mysql_query("SELECT * FROM Category");
 	
 	if (!$results) die("MySQL Error: ".mysql_error());
 	
@@ -19,6 +22,6 @@
 		
 	}
 	
-	echo json_encode($data);
+	echo json_encode($data);**/
 	
 ?>

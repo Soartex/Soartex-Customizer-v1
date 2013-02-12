@@ -1,8 +1,6 @@
 <?php
 
-    /**
-     * Copy this file to config.php, and enter in the details.
-     */
+    // Rename this file to config.php, and enter in the details.
     
     // Database connection.
     
