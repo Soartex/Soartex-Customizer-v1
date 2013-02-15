@@ -1,13 +1,3 @@
-/*Global*/
-
-.container {
-
-	padding-top: 20px; /*Adds padding to the top of the page.*/
-	
-}
-
-/* Main*/
-
 #intro {
 
 	margin-bottom: 30px;
@@ -44,6 +34,6 @@
 
 .texture .caption {
 
-	padding: 9px 9px 0; /* Shortens the bottom padding. */
+	padding: 9px 9px 0;
 	
 }

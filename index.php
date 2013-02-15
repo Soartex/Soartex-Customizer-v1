@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<!-- PHP -->
+
+<?php include("assets/php/config.php") ?>
+
+<!DOCTYPE html>
 
 <html>
 
@@ -9,15 +13,12 @@
 		<title><?php echo($name) ?> Customizer</title>
 		<meta charset="UTF-8"/>
 		
-		<!-- PHP -->
-
-		<?php include("assets/php/config.php") ?>
-
 		<!-- Stylesheets -->
 
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-responsive.min.css" />
 		
+		<link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 
 	</head>
@@ -27,9 +28,27 @@
 		<div class="container">
 
 			<div class="page-header">
-			    
-				<h1><?php echo($name) ?> <small>Customizer </small></h1>
-				
+
+				<h1><img src="../assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer </small></h1>
+
+				<div class="navbar">
+					
+					<div class="navbar-inner">
+
+						<ul class="nav">
+
+							<li><a href="../index.php">Home</a></li>
+							<li><a href="../forum">Forums</a></li>
+							<li><a href="../downloads.php">Downloads</a></li>
+							<li><a href="../texture-patcher/index.php">Texture-Patcher</a></li>
+							<li class="active"><a href="#">Customizer</a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+        
 			</div>
 
 			<section id="intro">
@@ -249,8 +268,8 @@
 		
 		<!-- Javascripts -->
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 
         <script type="text/javascript" src="assets/js/utils.js"></script>
         <script type="text/javascript" src="assets/js/TextureOption.js"></script>
