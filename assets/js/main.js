@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 	/*
 	// Adds a new texture to the database
-	$.post('assets/php/insertTexture.php', {
+	$.post('assets/php/insert/texture.php', {
 		name: 	 "Test",
 		creator: "Nobody",
 		info:	 "",
