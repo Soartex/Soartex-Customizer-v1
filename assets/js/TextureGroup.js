@@ -59,3 +59,9 @@ TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	this.exportX = data.exportX; // The x position of the texture in the texture sheet
 	this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
+
+/* Static methods/variables */
+
+TextureGroup.createForm = function () {
+
+}
