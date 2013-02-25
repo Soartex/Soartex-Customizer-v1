@@ -15,12 +15,11 @@
 		
 		<!-- Stylesheets -->
 
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 		
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-wizard.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-wizard.css"/>
 		
-		<link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
 
 	</head>
@@ -33,7 +32,7 @@
 
 			<div class="page-header">
 
-				<h1><img src="../assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer Admin </small></h1>
+				<h1><img src="assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer Admin </small></h1>
 
 				<div class="navbar">
 					

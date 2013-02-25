@@ -29,7 +29,7 @@
 
 			<div class="page-header">
 
-				<h1><img src="../assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer </small></h1>
+				<h1><img src="assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer </small></h1>
 
 				<div class="navbar">
 					
