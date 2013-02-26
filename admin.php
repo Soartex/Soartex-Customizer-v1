@@ -45,8 +45,18 @@
 							<li><a href="../forum">Forums</a></li>
 							<li><a href="../downloads.php">Downloads</a></li>
 							<li><a href="http://files.soartex.net/">Files</a></li>
-							<li><a href="../texture-patcher">Texture-Patcher</a></li>
 							<li class="active"><a href="#">Customizer</a></li>
+							<li class="dropdown">
+								
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+								
+								<ul class="dropdown-menu">
+									
+                  					<li><a href="../texture-patcher">Texture-Patcher</a></li>
+                  
+                				</ul>
+                				
+							</li>
 
 						</ul>
 
@@ -110,7 +120,7 @@
 				
 				<ul class="nav nav-pills">
 
-					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2012-2013</a></li>
+					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013-</a></li>
 
 					<li class="pull-right active"><a href="#">Admin</a></li>
 					<li class="pull-right"><a href="index.php">Home</a></li>
