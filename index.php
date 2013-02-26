@@ -18,8 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 		
-		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
 
 	</head>
 
@@ -37,10 +37,10 @@
 
 						<ul class="nav">
 
-							<li><a href="../index.php">Home</a></li>
+							<li><a href="..">Home</a></li>
 							<li><a href="../forum">Forums</a></li>
 							<li><a href="../downloads.php">Downloads</a></li>
-							<li><a href="../texture-patcher/index.php">Texture-Patcher</a></li>
+							<li><a href="../texture-patcher">Texture-Patcher</a></li>
 							<li class="active"><a href="#">Customizer</a></li>
 
 						</ul>
