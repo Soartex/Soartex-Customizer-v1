@@ -40,6 +40,7 @@
 							<li><a href="..">Home</a></li>
 							<li><a href="../forum">Forums</a></li>
 							<li><a href="../downloads.php">Downloads</a></li>
+							<li><a href="http://files.soartex.net/">Files</a></li>
 							<li><a href="../texture-patcher">Texture-Patcher</a></li>
 							<li class="active"><a href="#">Customizer</a></li>
 
