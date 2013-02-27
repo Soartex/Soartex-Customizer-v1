@@ -13,6 +13,12 @@
 		<title><?php echo($name) ?> Customizer</title>
 		<meta charset="UTF-8"/>
 		
+		<link rel="shortcut icon" href="../assets/img/favicon.ico" />
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/img/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/img/apple-touch-icon-144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/img/apple-touch-icon-114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/img/apple-touch-icon-144.png" />
+		
 		<!-- Stylesheets -->
 
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
@@ -40,15 +46,16 @@
 							<li><a href="..">Home</a></li>
 							<li><a href="../forum">Forums</a></li>
 							<li><a href="../downloads.php">Downloads</a></li>
-							<li><a href="http://files.soartex.net/">Files</a></li>
-							<li class="active"><a href="#">Customizer</a></li>
-							<li class="dropdown">
+							<li><a href="http://files.soartex.net/">File Server</a></li>
+							<li><a href="../links.html">Links</a></li>
+							<li class="dropdown active">
 								
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
 								
 								<ul class="dropdown-menu">
 									
                   					<li><a href="../texture-patcher">Texture-Patcher</a></li>
+                  					<li class="active"><a href="#">Customizer</a></li>
                   
                 				</ul>
                 				
