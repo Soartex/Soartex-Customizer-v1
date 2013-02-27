@@ -49,7 +49,7 @@
 
 							<li><a href="..">Home</a></li>
 							<li><a href="../forum">Forums</a></li>
-							<li><a href="../downloads.php">Downloads</a></li>
+							<li><a href="../downloads.html">Downloads</a></li>
 							<li><a href="http://files.soartex.net/">File Server</a></li>
 							<li><a href="../links.html">Links</a></li>
 							<li class="dropdown active">
