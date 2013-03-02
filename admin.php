@@ -25,9 +25,11 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 		
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-wizard.css"/>
-
 		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
-
+		
+		<!-- Add menu bar -->
+		
+		<?php $page="CUSTOMIZER"; include 'assets/php/menubar.php'; ?>
 	</head>
 
 	<body>
@@ -35,43 +37,6 @@
 		<div class="container">
 
 		<div class="container">
-
-			<div class="page-header">
-
-				<h1><img src="assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer Admin </small></h1>
-
-				<div class="navbar">
-					
-					<div class="navbar-inner">
-
-						<ul class="nav">
-
-							<li><a href="..">Home</a></li>
-							<li><a href="../forum">Forums</a></li>
-							<li><a href="../downloads.html">Downloads</a></li>
-							<li><a href="http://files.soartex.net/">File Server</a></li>
-							<li><a href="../links.html">Links</a></li>
-							<li class="dropdown active">
-								
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
-								
-								<ul class="dropdown-menu">
-									
-                  					<li><a href="../texture-patcher">Texture-Patcher</a></li>
-                  					<li class="active"><a href="#">Customizer</a></li>
-                  
-                				</ul>
-                				
-							</li>
-
-						</ul>
-
-					</div>
-
-				</div>
-        
-			</div>
-
 			
 			<button class="btn" onclick="showWizard()">SHOW</button>
 			
