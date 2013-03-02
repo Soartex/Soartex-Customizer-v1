@@ -962,6 +962,10 @@
 		_onNextClick: function() {
 			this.log("handling 'next' button click");
 
+			if (!this.getActiveCard().validate()) {
+				return;
+			}
+
 			if (this._readyToSubmit) {
 				this._submit();
 			}
