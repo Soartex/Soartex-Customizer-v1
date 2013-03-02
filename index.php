@@ -115,15 +115,9 @@
 
 			<footer>
 				<ul class="nav nav-pills">
-					<li class="pull-left">
-						<a href="http://soartex.net/">&copy; Soartex 2013 - </a>
-					</li>
-					<li class="pull-right">
-						<a href="admin.php">Admin</a>
-					</li>
-					<li class="pull-right active">
-						<a href="#">Home</a>
-					</li>
+					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013 - </a></li>
+					<li class="pull-right"><a href="admin.php">Admin</a></li>
+					<li class="pull-right active"><a href="#">Home</a></li>
 				</ul>
 			</footer>
 
@@ -139,6 +133,8 @@
 		<script type="text/javascript" src="assets/js/TextureOption.js"></script>
 		<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
+		<!-- Remove the below when texture rendering is done -->
+		<script type="text/javascript" src="assets/js/temp-renders.js"></script>
 
 	</body>
 
