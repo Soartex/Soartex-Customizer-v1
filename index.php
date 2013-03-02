@@ -7,72 +7,36 @@
 <html>
 
 	<head>
-	    
 		<!-- Page information -->
-
 		<title><?php echo($name) ?> Customizer</title>
 		<meta charset="UTF-8"/>
-		
+
 		<link rel="shortcut icon" href="../assets/img/favicon.ico" />
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/img/apple-touch-icon-114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/img/apple-touch-icon-144.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/img/apple-touch-icon-114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/img/apple-touch-icon-144.png" />
-		
+
 		<!-- Stylesheets -->
 
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
-		
-		<link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
 
+		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
+		
+		<!-- Add menu bar -->
+		<?php include 'assets/php/menubar.php'; ?>
 	</head>
 
 	<body>
-
+		
 		<div class="container">
-
-			<div class="page-header">
-
-				<h1><img src="assets/img/soar.png"/> <?php echo($name) ?> <small>Customizer </small></h1>
-
-				<div class="navbar">
-					
-					<div class="navbar-inner">
-
-						<ul class="nav">
-
-							<li><a href="..">Home</a></li>
-							<li><a href="../forum">Forums</a></li>
-							<li><a href="../downloads.html">Downloads</a></li>
-							<li><a href="http://files.soartex.net/">File Server</a></li>
-							<li><a href="../links.html">Links</a></li>
-							<li class="dropdown active">
-								
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
-								
-								<ul class="dropdown-menu">
-									
-                  					<li><a href="../texture-patcher">Texture-Patcher</a></li>
-                  					<li class="active"><a href="#">Customizer</a></li>
-                  
-                				</ul>
-                				
-							</li>
-
-						</ul>
-
-					</div>
-
-				</div>
-        
-			</div>
-
 			<section id="intro">
 
-				<?php echo($intro) ?>
-
+				<!--<?php echo($intro) ?>-->
+				Soartex Fanver is a smooth, detailed and clean texture pack (64x). In it's time it has come from a simple terrain-only texture pack to a fan-driven mass of mod support, customization, animation and originality. Fanver has become a very memorable and iconic suit for a lot of Miners out there, and to many, a personal favorite!
+				
 			</section>
 
 			<section id="main">
@@ -83,33 +47,40 @@
 
 						<li class="active">
 
-							<a data-toggle="tab" href="#tab1"><?php echo($name) ?> Vanilla</a>
+							<a data-toggle="tab" href="#tab1"><?php echo($name) ?>
+							Vanilla</a>
 
 						</li>
 
 						<li>
 
-							<a data-toggle="tab" href="#tab2"><?php echo($name) ?> Modded</a>
+							<a data-toggle="tab" href="#tab2"><?php echo($name) ?>
+							Modded</a>
 
 						</li>
 
 					</ul>
 
 					<div class="tab-content" style="overflow: visible;">
-
 						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
-
 							<div class="tabbable tabs-left">
-
 								<ul class="nav nav-tabs">
 
-									<li class="active"><a data-toggle="tab" href="#stab1">Armor</a></li>
+									<li class="active">
+										<a data-toggle="tab" href="#stab1">Armor</a>
+									</li>
 
-									<li><a data-toggle="tab" href="#stab2">Art</a></li>
+									<li>
+										<a data-toggle="tab" href="#stab2">Art</a>
+									</li>
 
-									<li><a data-toggle="tab" href="#stab3">Items</a></li>
+									<li>
+										<a data-toggle="tab" href="#stab3">Items</a>
+									</li>
 
-									<li><a data-toggle="tab" href="#stab4">Blocks</a></li>
+									<li>
+										<a data-toggle="tab" href="#stab4">Blocks</a>
+									</li>
 
 								</ul>
 
@@ -118,128 +89,15 @@
 									<div class="tab-pane active" id="stab1"></div>
 
 									<div class="tab-pane" id="stab2">
-										<!--temp code -->
-										<div class="container-fluid">
-											<div class="accordion" id="accordion2">
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-														<legend>
-															Wool
-														</legend> </a>
-													</div>
-													<div id="collapseOne" class="accordion-body collapse" style="height: 0px; ">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
 
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-														<legend>
-															Leaves
-														</legend></a>
-													</div>
-													<div id="collapseTwo" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-														<legend>
-															Sand
-														</legend> </a>
-													</div>
-													<div id="collapseThree" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-														<legend>
-															Sapplings
-														</legend> </a>
-													</div>
-													<div id="collapseFour" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="accordion-group">
-													<div class="accordion-heading">
-														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-														<legend>
-															Stone
-														</legend> </a>
-													</div>
-													<div id="collapseFive" class="accordion-body collapse">
-														<div class="accordion-inner">
-															<ul class="thumbnails">
-
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--End of Temp Code-->
 									</div>
 									<!--items-->
 									<div class="tab-pane" id="stab3">
 
-										<legend>
-											Brewing Item
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Cauldron Item
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
 									</div>
 									<!--blocks-->
 									<div class="tab-pane" id="stab4">
-										<legend>
-											Wool
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Leaves
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
-
-										<legend>
-											Sandstone
-										</legend>
-										<ul class="thumbnails">
-
-										</ul>
+									
 									</div>
 								</div>
 							</div>
@@ -252,48 +110,38 @@
 							Modded Content
 
 						</div>
-
-						<!-- Seasonal Content -->
-
-						<div class="tab-pane" id="tab3">
-
-							Seasonal Content
-
-						</div>
-
 					</div>
-
 				</div>
-
 			</section>
 
 			<hr/>
 
 			<footer>
-
 				<ul class="nav nav-pills">
-
-					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013-</a></li>
-
-					<li class="pull-right"><a href="admin.php">Admin</a></li>
-					<li class="pull-right active"><a href="#">Home</a></li>
-
+					<li class="pull-left">
+						<a href="http://soartex.net/">&copy; Soartex 2013 - </a>
+					</li>
+					<li class="pull-right">
+						<a href="admin.php">Admin</a>
+					</li>
+					<li class="pull-right active">
+						<a href="#">Home</a>
+					</li>
 				</ul>
-
 			</footer>
 
 		</div>
-		
+
 		<!-- Javascripts -->
 
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="assets/js/bootstrap-wizard.js"></script>
 
-        <script type="text/javascript" src="assets/js/utils.js"></script>
-        <script type="text/javascript" src="assets/js/TextureOption.js"></script>
-        <script type="text/javascript" src="assets/js/TextureGroup.js"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/utils.js"></script>
+		<script type="text/javascript" src="assets/js/TextureOption.js"></script>
+		<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
 
 	</body>
 
