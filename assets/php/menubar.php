@@ -13,11 +13,11 @@
 		Customizer</a>
 		<div class="nav-collapse" style="height: auto;">
 			<ul class="nav">
-				<li<?php if($page=="HOME"){echo ' class="active"';}?>>
-					<a href=""><i class="icon-home"></i> Home </a>
-				</li>
 				<li<?php if($page=="FORUMS"){echo ' class="active"';}?>>
-					<a href=""> <i class="icon-pencil"></i> Forums </a>
+					<a href=""><i class="icon-pencil"></i> Forums </a>
+				</li>
+				<li<?php if($page=="CUSTOMIZER"){echo ' class="active"';}?>>
+					<a href=""> <i class="icon-th-list"></i> Customizer </a>
 				</li>
 				<li<?php if($page=="DOWNLOADS"){echo ' class="active"';}?>>
 					<a href=""> <i class="icon-download"></i> Downloads </a>

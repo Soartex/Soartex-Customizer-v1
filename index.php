@@ -29,7 +29,7 @@
 		
 		<!-- Add menu bar -->
 		
-		<?php $page="HOME"; include 'assets/php/menubar.php'; ?>
+		<?php $page="CUSTOMIZER"; include 'assets/php/menubar.php'; ?>
 	</head>
 
 	<body>
