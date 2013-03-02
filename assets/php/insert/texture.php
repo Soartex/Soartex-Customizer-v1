@@ -7,9 +7,6 @@
 	
 	// Compile the texture record information.
 	
-	$name = $mysqli->real_escape_string($_POST["name"]);
-	assert(is_valid_string($name, 25));
-	
 	$creator = $mysqli->real_escape_string($_POST["creator"]);
 	assert(is_valid_string($creator, 25));
 	
@@ -25,9 +22,9 @@
 	$export_data = $mysqli->real_escape_string($_POST["export_data"]);
 	assert(is_valid_string($export_data));
 	
-	$mysqli->query("INSERT INTO Textures (name, creator, info, preset, group_id, export_data)
+	$mysqli->query("INSERT INTO Textures (name, creator, info, preset, group_id, date_added, export_data)
 					VALUES ('$name', '$creator', '$info', $preset, $group, '$export_data')");
-	
+
 	$lastID = $mysqli->insert_id;
 	
 	// Set the order to the ID
