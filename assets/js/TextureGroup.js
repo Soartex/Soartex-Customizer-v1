@@ -34,23 +34,33 @@ TextureGroup.prototype.setTextures = function(textures) {
 }
 
 TextureGroup.prototype.calculateHtmlData = function () {
-	this.elements = elements = {};
+	this.elements = {};
+	var elements = this.elements;
+
 	elements.container = $('<div>');
 	elements.title = $('<legend>')
 		.text(this.groupName)
 		.appendTo(elements.container);
-	elements.textures = $('<ul class="thumbnails">')
+	elements.textures = $('<ul class="thumbnails texture-group">')
 		.appendTo(elements.container);
-	for (var i in this.textures) {
-		elements.textures.append(this.textures[i].getHtml());
-	}
+	this.resetTextureElements();
 }
 
 TextureGroup.prototype.resetTextureElements = function() {
+	var that = this;
+
 	this.elements.textures.empty();
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
+	this.elements.addButton = $('<img src="assets/img/addtexture.png" class="add-texture-button">')
+		.click(function() {
+			console.log(3);
+			that.createOptionForm().show();
+		});
+	$('<li>')
+		.append(this.elements.addButton)
+		.appendTo(this.elements.textures);
 }
 
 TextureGroup.prototype.getHtml = function () {

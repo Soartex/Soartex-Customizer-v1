@@ -30,3 +30,18 @@
 
 	padding: 9px 9px 0;
 }
+
+.texture-group {
+}
+
+.add-texture-button {
+	margin-top: 32px;
+	opacity: 0.5;
+	transition: opacity 0.4s;
+	-webkit-transition: opacity 0.4s;
+}
+
+.add-texture-button:hover {
+	cursor: pointer;
+	opacity: 1;
+}
