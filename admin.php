@@ -24,6 +24,9 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 		
+		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
+		
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-wizard.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
 		
