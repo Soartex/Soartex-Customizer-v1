@@ -7,6 +7,10 @@ function TextureGroup(parameters) {
 	this.calculateHtmlData();
 
 	this.selectedTexture = null;
+
+	this.wizardName = "standard";
+
+	//this.createOptionForm().show();
 }
 
 TextureGroup.prototype.select = function(texture) {
@@ -56,12 +60,31 @@ TextureGroup.prototype.getHtml = function () {
 TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
 	this.exportPath = data.exportPath; // The image that the texture goes to, eg. 'gui/items.png'
-	this.exportX = data.exportX; // The x position of the texture in the texture sheet
-	this.exportY = data.exportY; // The y position of the texture in the texture sheet
+	//this.exportX = data.exportX; // The x position of the texture in the texture sheet
+	//this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
 
-/* Static methods/variables */
+TextureGroup.prototype.createOptionForm = function () {
+	var that = this;
 
-TextureGroup.createForm = function () {
+	var wizard = null;
+	$.ajax({
+		async: false,
+		type: "GET",
+		url: "assets/wizards/"+this.wizardName+".html",
+		success: function(data) {
+			wizard = $(data);
 
+			wizard = wizard.wizard();
+			wizard.setSubtitle("to " + that.elements.title.html());
+
+			wizard.cards["details"].on("validate", function(card) {
+				var input = card.el.find("#image");
+				card.wizard.errorPopover(input, "Test");
+				return false;
+			});
+		}
+	});
+
+	return wizard;
 }
