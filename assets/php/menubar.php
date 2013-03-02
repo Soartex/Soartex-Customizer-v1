@@ -9,19 +9,20 @@
 		</button>
 
 		<!--Main Code for menu-->
-		<a class="brand" href="index.php" style="padding-top: 5px; padding-bottom: 7px;"> <img src="assets/img/soar-mainbar.png">  <?php echo($name)?> Customizer</a>
+		<a class="brand" href="index.php" style="padding-top: 5px; padding-bottom: 7px;"> <img src="assets/img/soar-mainbar.png"> <?php echo($name)?>
+		Customizer</a>
 		<div class="nav-collapse" style="height: auto;">
 			<ul class="nav">
-				<li>
-					<a href=""> <i class="icon-home"></i> Home </a>
+				<li<?php if($page=="HOME"){echo ' class="active"';}?>>
+					<a href=""><i class="icon-home"></i> Home </a>
 				</li>
-				<li>
+				<li<?php if($page=="FORUMS"){echo ' class="active"';}?>>
 					<a href=""> <i class="icon-pencil"></i> Forums </a>
 				</li>
-				<li>
+				<li<?php if($page=="DOWNLOADS"){echo ' class="active"';}?>>
 					<a href=""> <i class="icon-download"></i> Downloads </a>
 				</li>
-				<li>
+				<li<?php if($page=="FILE_SERVER"){echo ' class="active"';}?>>
 					<a href=""> <i class="icon-file"></i> File Server </a>
 				</li>
 				<li class="dropdown closed">

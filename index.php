@@ -26,7 +26,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
 		
 		<!-- Add menu bar -->
-		<?php include 'assets/php/menubar.php'; ?>
+		
+		<?php $page="HOME"; include 'assets/php/menubar.php'; ?>
 	</head>
 
 	<body>
@@ -40,23 +41,17 @@
 			</section>
 
 			<section id="main">
-
 				<div class="tabbable">
-
 					<ul id="tab" class="nav nav-tabs">
 
 						<li class="active">
-
 							<a data-toggle="tab" href="#tab1"><?php echo($name) ?>
 							Vanilla</a>
-
 						</li>
 
 						<li>
-
 							<a data-toggle="tab" href="#tab2"><?php echo($name) ?>
 							Modded</a>
-
 						</li>
 
 					</ul>
