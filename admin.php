@@ -91,16 +91,11 @@
 			<hr/>
 			
 			<footer>
-				
 				<ul class="nav nav-pills">
-
-					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013-</a></li>
-
+					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013 - </a></li>
 					<li class="pull-right active"><a href="#">Admin</a></li>
 					<li class="pull-right"><a href="index.php">Home</a></li>
-
 				</ul>
-				
 			</footer>
 			
 			<!-- Javascripts -->
