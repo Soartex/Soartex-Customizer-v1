@@ -6,7 +6,7 @@
 	
 	// Connect to the database; die() on failure.
 	
-	$mysqli = new mysqli($db_host, $db_username, $db_password, $db_database);
+	$mysqli = new mysqli(DBHOST, DBUSERNAME, DBPASSWORD, DBDATABASE);
 	
 	if(mysqli_connect_errno()) die("MySQL Error:".mysqli_connect_error());
 	
