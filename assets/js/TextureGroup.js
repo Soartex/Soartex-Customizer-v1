@@ -8,7 +8,7 @@ function TextureGroup(parameters) {
 
 	this.selectedTexture = null;
 
-	this.wizardName = "standard";
+	this.wizardName = "standard.html";
 
 	//this.createOptionForm().show();
 }
@@ -71,7 +71,7 @@ TextureGroup.prototype.createOptionForm = function () {
 	$.ajax({
 		async: false,
 		type: "GET",
-		url: "assets/wizards/"+this.wizardName+".html",
+		url: WIZARD_PATH+this.wizardName,
 		success: function(data) {
 			wizard = $(data);
 

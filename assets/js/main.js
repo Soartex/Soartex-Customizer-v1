@@ -1,3 +1,5 @@
+var WIZARD_PATH = "assets/wizards/"
+
 $(document).ready(function() {
 	picGroups = [0,16,22,28,32,41,46,50];
 	groupArray = [];
