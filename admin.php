@@ -25,8 +25,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 		
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-wizard.css"/>
-		
-		<link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+
 		<link rel="stylesheet" type="text/css" href="assets/css/customizer.css" />
 
 	</head>
@@ -145,6 +144,7 @@
 	
 			<script type="text/javascript" src="assets/js/utils.js"></script>
 			<script type="text/javascript" src="assets/js/TextureOption.js"></script>
+			<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
 			<script type="text/javascript" src="assets/js/main.js"></script>
 
 		</div>
