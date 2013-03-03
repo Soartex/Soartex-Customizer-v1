@@ -35,7 +35,6 @@
 }
 
 .add-texture-button {
-	margin-top: 32px;
 	opacity: 0.5;
 	transition: opacity 0.4s;
 	-webkit-transition: opacity 0.4s;

@@ -53,7 +53,7 @@ TextureGroup.prototype.resetTextureElements = function() {
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
-	this.elements.addButton = $('<img src="assets/img/addtexture.png" class="add-texture-button">')
+	this.elements.addButton = $('<div class="thumbnail texture"><img src="assets/img/addtexture.png" class="add-texture-button"><div class="caption"><p>Add A Texture</p></div><div>')
 		.click(function() {
 			console.log(3);
 			that.createOptionForm().show();
