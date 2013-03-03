@@ -1,6 +1,20 @@
 var WIZARD_PATH = "assets/wizards/"
 
 $(document).ready(function() {
+	$('#btn-edit').click(function() {
+		if ($(this).hasClass("edit-active")) {
+			$(this)
+				.text('Edit')
+				.removeClass("btn-primary edit-active");
+			$('.add-texture-button').hide("fast");
+		} else {
+			$(this)
+				.text('Done')
+				.addClass("btn-primary edit-active")
+			$('.add-texture-button').show("fast");
+		}
+	});
+
 	/*
 	 // Adds a new texture to the database
 	 $.post('assets/php/insert/texture.php', {

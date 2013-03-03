@@ -56,7 +56,8 @@ TextureGroup.prototype.resetTextureElements = function() {
 	this.elements.addButton = $('<img src="assets/img/addtexture.png" class="add-texture-button">')
 		.click(function() {
 			that.createOptionForm().show();
-		});
+		})
+		.hide();
 	$('<li>')
 		.append(this.elements.addButton)
 		.appendTo(this.elements.textures);
