@@ -15,15 +15,15 @@
 	margin: -6px 1px 0px;
 }
 
-.texture-group .btn, .add-texture-button {
+.texture-group .btn {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;
-	padding: 8px;
+	margin: 1px !important;
 }
 
-.texture-group .btn {
-	margin: 1px !important;
+.texture-group .btn, .add-texture-button {
+	padding: 8px;
 }
 
 .texture-group .btn p, .add-texture-button p {

@@ -10,7 +10,7 @@ $(document).ready(function() {
 		} else {
 			$(this)
 				.text('Done')
-				.addClass("btn-primary edit-active")
+				.addClass("btn-primary edit-active");
 			$('.add-texture-button').fadeIn("fast");
 		}
 	});
