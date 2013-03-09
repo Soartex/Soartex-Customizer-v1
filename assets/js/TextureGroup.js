@@ -46,6 +46,7 @@ TextureGroup.prototype.calculateHtmlData = function () {
 	this.resetTextureElements();
 }
 
+// Called when a texture is added/deleted/modified
 TextureGroup.prototype.resetTextureElements = function() {
 	var that = this;
 
@@ -53,7 +54,7 @@ TextureGroup.prototype.resetTextureElements = function() {
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
-	this.elements.addButton = $('<div class="thumbnail texture"><img src="assets/img/addtexture.png" class="add-texture-button"><div class="caption"><p>Add A Texture</p></div><div>')
+	this.elements.addButton = $('<div class="thumbnail texture add-texture-button"><img src="assets/img/addtexture.png"/><div class="caption"><p>Add a Texture</p></div><div>')
 		.click(function() {
 			that.createOptionForm().show();
 		})
