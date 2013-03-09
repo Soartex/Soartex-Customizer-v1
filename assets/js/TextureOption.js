@@ -21,44 +21,14 @@ TextureOption.prototype.calculateHtmlData = function () {
 	var that = this;
 
 	this.elements = elements = {};
-	elements.container = $('<li class="">');
-	elements.thumbnail = $('<div class="thumbnail texture">')
-		.mousedown(function (e) {
-			e.preventDefault();
-			that.select();
-		})
-		.hover(function () {
-			$(this).addClass("texture-hovered");
-		}, function () {
-			$(this).removeClass("texture-hovered");
-		})
+	elements.container = $('<button type="button" class="btn">')
 		.append($('<img src="' + this.getFullImagePath() + '">'))
-		.appendTo(elements.container);
-	elements.caption = $('<div>')
-		.addClass("caption")
-		.appendTo(elements.thumbnail);
-	elements.paragraph = $('<p>')
-		.text('- ' + this.creator)
-		.appendTo(elements.caption);
-}
-
-TextureOption.prototype.select = function () {
-	this.group.select(this);
-}
-
-TextureOption.prototype.setSelected = function () {
-	$(this.elements.thumbnail).addClass("texture-selected");
-	this.isSelected = true;
-}
-
-TextureOption.prototype.setDeselected = function () {
-	$(this.elements.thumbnail).removeClass("texture-selected");
-	this.isSelected = false;
+		.append($('<p>- '+this.creator+'</p>'))
 }
 
 TextureOption.prototype.setCreator = function (val) {
 	this.creator = val;
-	$(this.elements.creatorParagraph).text('- ' + val);
+	this.elements.thumbnail.children('p').text('- ' + val);
 }
 
 TextureOption.prototype.getHtml = function () {

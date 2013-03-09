@@ -26,14 +26,12 @@ TextureGroup.prototype.select = function(texture) {
 TextureGroup.prototype.setTextures = function(textures) {
 	this.textures = textures;
 
-	// Select the first texture
-	if (!(this.selectedTexture in textures)) {
-		this.select(textures[0]);
-	}
 	this.resetTextureElements();
 }
 
 TextureGroup.prototype.calculateHtmlData = function () {
+	var that = this;
+
 	this.elements = {};
 	var elements = this.elements;
 
@@ -41,32 +39,26 @@ TextureGroup.prototype.calculateHtmlData = function () {
 	elements.title = $('<legend>')
 		.text(this.groupName)
 		.appendTo(elements.container);
-	elements.textures = $('<ul class="thumbnails texture-group">')
+	elements.textures = $('<div class="btn-group texture-group" data-toggle="buttons-radio">')
 		.appendTo(elements.container);
-	this.resetTextureElements();
-}
-
-// Called when a texture is added/deleted/modified
-TextureGroup.prototype.resetTextureElements = function() {
-	var that = this;
-
-	this.elements.textures.empty();
-	for (var i in this.textures) {
-		this.elements.textures.append(this.textures[i].getHtml());
-	}
-
-	this.elements.addButton = $('<div class="thumbnail texture btn add-texture-button"><img src="assets/img/addtexture.png"/><div class="caption"><p>Add a Texture</p></div><div>')
+	this.elements.addButton = $('<button class="btn add-texture-button"><img src="assets/img/addtexture.png"/><p>Add a Texture</p><div>')
 		.click(function() {
 			that.showOptionForm();
 		})
 		.mousedown(function(e) {
 			e.preventDefault();
 		})
-		.prepend(this.elements.addButtonImage)
-		.hide();
-	$('<li>')
-		.append(this.elements.addButton)
-		.appendTo(this.elements.textures);
+		.hide()
+		.appendTo(this.elements.container)
+	this.resetTextureElements();
+}
+
+// Called when a texture is added/deleted/modified
+TextureGroup.prototype.resetTextureElements = function() {
+	this.elements.textures.empty();
+	for (var i in this.textures) {
+		this.elements.textures.append(this.textures[i].getHtml());
+	}
 }
 
 TextureGroup.prototype.getHtml = function () {

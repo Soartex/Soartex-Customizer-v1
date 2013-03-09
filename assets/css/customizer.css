@@ -3,45 +3,35 @@
 }
 
 #main {
-
 	margin-top: 30px;
 }
 
-.texture.texture-hovered {
-
-	box-shadow: inset 0 2px 2px rgba(0, 0, 255, .10);
-	-moz-box-shadow: inset 0 0 2px rgba(0, 0, 255, 0.10);
-	background-color: #F3F3F3;
-}
-
-.texture.texture-selected {
-
-	box-shadow: inset 0 2px 2px rgba(0, 0, 255, .10), inset 0 0 5px rgba(0, 100, 255, 0.8);
-	-moz-box-shadow: inset 0 0 2px rgba(0, 0, 255, 0.10), inset 0 0 5px rgba(0, 100, 255, 0.8);
-	background-color: #F8F8F8;
-}
-
-.texture.texture-selected.texture-hovered {
-
-	background-color: #F3F3F3;
-}
-
-.texture .caption {
-
-	padding: 9px 9px 0;
-}
-
 .texture-group {
+	white-space: normal;
+	display: inline;
 }
 
 .add-texture-button {
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	transition: none;
+	margin: -6px 1px 0px;
 }
 
-.add-texture-button:hover {
+.texture-group .btn, .add-texture-button {
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+	padding: 8px;
+}
+
+.texture-group .btn {
+	margin: 1px !important;
+}
+
+.texture-group .btn p, .add-texture-button p {
+	color: #555555;
+	padding: 8px 8px 0;
+}
+
+.texture-group .btn:hover, .add-texture-button:hover {
 	background-position: 0 -50px;
 }
 
@@ -50,7 +40,6 @@
 }
 
 #btn-edit .edit-normal {
-
 }
 
 .modal-inline > * {

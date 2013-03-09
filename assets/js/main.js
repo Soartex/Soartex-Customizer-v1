@@ -6,12 +6,12 @@ $(document).ready(function() {
 			$(this)
 				.text('Edit')
 				.removeClass("btn-primary edit-active");
-			$('.add-texture-button').hide();
+			$('.add-texture-button').fadeOut("fast");
 		} else {
 			$(this)
 				.text('Done')
 				.addClass("btn-primary edit-active")
-			$('.add-texture-button').show();
+			$('.add-texture-button').fadeIn("fast");
 		}
 	});
 
