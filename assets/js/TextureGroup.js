@@ -59,6 +59,7 @@ TextureGroup.prototype.resetTextureElements = function() {
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
+	this.elements.textures.children(":first").addClass("active");
 }
 
 TextureGroup.prototype.getHtml = function () {
