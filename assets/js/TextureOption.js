@@ -23,7 +23,8 @@ TextureOption.prototype.calculateHtmlData = function () {
 	this.elements = elements = {};
 	elements.container = $('<li class="">');
 	elements.thumbnail = $('<div class="thumbnail texture">')
-		.mousedown(function () {
+		.mousedown(function (e) {
+			e.preventDefault();
 			that.select();
 		})
 		.hover(function () {
