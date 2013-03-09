@@ -35,16 +35,14 @@
 }
 
 .add-texture-button {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
 }
 
 .add-texture-button:hover {
-	box-shadow: inset 0 2px 2px rgba(0, 0, 255, .10);
-	-moz-box-shadow: inset 0 0 2px rgba(0, 0, 255, 0.10);
-	background-color: rgba(0, 0, 0, .08);
-}
-
-.add-texture-button>img {
-	opacity: 0.5;
+	background-position: 0 -50px;
 }
 
 #btn-edit {

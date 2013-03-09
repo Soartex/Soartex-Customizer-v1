@@ -54,10 +54,15 @@ TextureGroup.prototype.resetTextureElements = function() {
 	for (var i in this.textures) {
 		this.elements.textures.append(this.textures[i].getHtml());
 	}
-	this.elements.addButton = $('<div class="thumbnail texture add-texture-button"><img src="assets/img/addtexture.png"/><div class="caption"><p>Add a Texture</p></div><div>')
+
+	this.elements.addButton = $('<div class="thumbnail texture btn add-texture-button"><img src="assets/img/addtexture.png"/><div class="caption"><p>Add a Texture</p></div><div>')
 		.click(function() {
 			that.showOptionForm();
 		})
+		.mousedown(function(e) {
+			e.preventDefault();
+		})
+		.prepend(this.elements.addButtonImage)
 		.hide();
 	$('<li>')
 		.append(this.elements.addButton)
@@ -91,13 +96,6 @@ TextureGroup.prototype.showOptionForm = function () {
 			modal.find(".modal-close").click(function() {
 				modal.modal("hide");
 			})
-			//wizard.setSubtitle("to " + that.elements.title.html());
-
-			/*wizard.cards["details"].on("validate", function(card) {
-				var input = card.el.find("#image");
-				card.wizard.errorPopover(input, "Test");
-				return false;
-			});*/
 		}
 	});
 
