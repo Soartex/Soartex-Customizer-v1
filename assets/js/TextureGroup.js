@@ -56,7 +56,7 @@ TextureGroup.prototype.resetTextureElements = function() {
 	}
 	this.elements.addButton = $('<div class="thumbnail texture add-texture-button"><img src="assets/img/addtexture.png"/><div class="caption"><p>Add a Texture</p></div><div>')
 		.click(function() {
-			that.createOptionForm().show();
+			that.showOptionForm();
 		})
 		.hide();
 	$('<li>')
@@ -75,27 +75,31 @@ TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	//this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
 
-TextureGroup.prototype.createOptionForm = function () {
+TextureGroup.prototype.showOptionForm = function () {
 	var that = this;
 
-	var wizard = null;
+	var modal = null;
 	$.ajax({
 		async: false,
 		type: "GET",
+		cache: false, // For testing (so that changes can be tested without content being cached)
 		url: WIZARD_PATH+this.wizardName,
 		success: function(data) {
-			wizard = $(data);
+			modal = $(data);
 
-			wizard = wizard.wizard();
-			wizard.setSubtitle("to " + that.elements.title.html());
+			modal.find(".modal-inline h5").text("to "+that.elements.title.html());
+			modal.find(".modal-close").click(function() {
+				modal.modal("hide");
+			})
+			//wizard.setSubtitle("to " + that.elements.title.html());
 
-			wizard.cards["details"].on("validate", function(card) {
+			/*wizard.cards["details"].on("validate", function(card) {
 				var input = card.el.find("#image");
 				card.wizard.errorPopover(input, "Test");
 				return false;
-			});
+			});*/
 		}
 	});
 
-	return wizard;
+	modal.modal("show");
 }
