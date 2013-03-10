@@ -7,23 +7,22 @@
 }
 
 .texture-group {
-	white-space: normal;
 	display: inline;
 }
 
 .add-texture-button {
-	margin: -6px 1px 0px;
+	vertical-align: bottom;
 }
 
 .texture-group .btn {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;
-	margin: 1px !important;
 }
 
 .texture-group .btn, .add-texture-button {
 	padding: 8px;
+	margin: 1px !important;
 }
 
 .texture-group .btn p, .add-texture-button p {
@@ -46,4 +45,8 @@
 	display: inline-block;
 	padding-right: 5px;
 	padding-left: 5px;
+}
+
+.password-popover {
+	width: auto;
 }
