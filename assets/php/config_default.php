@@ -4,9 +4,9 @@
 	
 	// Database connection.
 
-	$db_host = "[host]";
-	$db_username = "[user]";
-	$db_password = "[password]";
-	$db_database = "[database]";
+	define("DBHOST", "[host]");
+	define("DBUSERNAME", "[user]");
+	define("DBPASSWORD", "[password]");
+	define("DBDATABASE", "[database]");
 
 ?>
