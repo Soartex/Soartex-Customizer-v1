@@ -1,6 +1,11 @@
+# IDE's
+
+.project
+.settings
 .idea/
 *.iml
 *.iws
-.DS_Store
-.sass-cache
+
+# PHP Configuration
+
 *config.php
