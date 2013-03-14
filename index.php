@@ -168,6 +168,7 @@
 			<script type="text/javascript" src="assets/js/utils.js"></script>
 			<script type="text/javascript" src="assets/js/TextureOption.js"></script>
 			<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
+			<script type="text/javascript" src="assets/js/editButton.js"></script>
 			<script type="text/javascript" src="assets/js/main.js"></script>
 
 			<!-- Remove when texture rendering is done -->
