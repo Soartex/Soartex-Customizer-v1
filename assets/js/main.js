@@ -1,4 +1,4 @@
-var WIZARD_PATH = "assets/wizards/"
+var MODAL_PATH = "assets/modals/"
 
 $(document).ready(function() {
 	var passwordAccepted = false;

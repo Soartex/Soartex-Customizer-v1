@@ -8,7 +8,7 @@ function TextureGroup(parameters) {
 
 	this.selectedTexture = null;
 
-	this.wizardName = "standard.html";
+	this.modalName = "standard.html";
 
 	//this.createOptionForm().show();
 }
@@ -43,7 +43,7 @@ TextureGroup.prototype.calculateHtmlData = function () {
 		.appendTo(elements.container);
 	this.elements.addButton = $('<button class="btn add-texture-button"><img src="assets/img/addtexture.png"/><p>Add a Texture</p><div>')
 		.click(function() {
-			that.showOptionForm();
+			that.showUploadForm();
 		})
 		.mousedown(function(e) {
 			e.preventDefault();
@@ -73,7 +73,7 @@ TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	//this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
 
-TextureGroup.prototype.showOptionForm = function () {
+TextureGroup.prototype.showUploadForm = function () {
 	var that = this;
 
 	var modal = null;
@@ -81,7 +81,7 @@ TextureGroup.prototype.showOptionForm = function () {
 		async: false,
 		type: "GET",
 		cache: false, // For testing (so that changes can be tested without content being cached)
-		url: WIZARD_PATH+this.wizardName,
+		url: MODAL_PATH+this.modalName,
 		success: function(data) {
 			modal = $(data);
 
