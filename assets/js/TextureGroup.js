@@ -1,3 +1,7 @@
+/**
+ * This class holds data for an entire group (e.g. 'Grass', 'Sand', etc.)
+ */
+
 function TextureGroup(parameters) {
 	this.id = parameters.id; // Type int
 	this.groupName = parameters.groupName; // Type string

@@ -1,3 +1,7 @@
+/**
+ * This class holds data for a single texture inside a group, than can be selected (e.g. a specific grass texture)
+ */
+
 function TextureOption(parameters) {
 	this.id = parameters.id; // Type number
 	this.group = parameters.group; // Type TextureGroup
