@@ -56,6 +56,7 @@
 
 								<ul class="dropdown-menu">
 
+								<li><a href="../about-tools.html"><i class="icon-info-sign"></i> About our Tools</a></li>
 								<li><a href="../texture-patcher"><i class="icon-cog"></i> Texture-Patcher</a></li>
 								<li class="active"><a href="#"><i class="icon-list"></i> Customizer</a></li>
 
