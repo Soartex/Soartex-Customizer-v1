@@ -33,7 +33,7 @@ TextureGroup.prototype.setTextures = function(textures) {
 	this.resetTextureElements();
 }
 
-TextureGroup.prototype.calculateHtmlData = function () {
+TextureGroup.prototype.calculateHtmlData = function() {
 	var that = this;
 
 	this.elements = {};
@@ -66,8 +66,8 @@ TextureGroup.prototype.resetTextureElements = function() {
 	this.elements.textures.children(":first").addClass("active");
 }
 
-TextureGroup.prototype.getHtml = function () {
-	return this.elements.container.children();
+TextureGroup.prototype.getHtml = function() {
+	return this.elements.container;
 }
 
 TextureGroup.prototype.setDataFromJSON = function (JsonData) {
@@ -77,7 +77,7 @@ TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	//this.exportY = data.exportY; // The y position of the texture in the texture sheet
 }
 
-TextureGroup.prototype.showUploadForm = function () {
+TextureGroup.prototype.showUploadForm = function() {
 	var that = this;
 
 	var modal = null;
