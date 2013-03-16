@@ -46,7 +46,7 @@
 						<ul class="nav">
 
 							<li><a href=".."><i class="icon-home"></i> Home</a></li>
-							<li><a href="../forum"><i class="icon-pencil"></i> Forums</a></li>
+							<li><a href="../forum"><i class="icon-comment"></i> Forums</a></li>
 							<li><a href="../downloads.html"><i class="icon-download"></i> Downloads</a></li>
 							<li><a href="http://files.soartex.net/"><i class="icon-file"></i> File Server</a></li>
 							<li><a href="../links.html"><i class="icon-share"></i> Links</a></li>
