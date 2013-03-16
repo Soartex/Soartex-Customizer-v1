@@ -61,7 +61,7 @@
 					</ul>
 
 					<div class="tab-content" style="overflow: visible;">
-						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
+						<div class="tab-pane active" id="tab1">
 							<div class="tabbable tabs-left">
 								<ul class="nav nav-tabs" id="texture-tab">
 
