@@ -16,7 +16,6 @@ TextureCategory.prototype.select = function(groups) {
 
 TextureCategory.prototype.setGroups = function(groups) {
 	this.groups = groups;
-
 	this.resetGroupElements();
 }
 
@@ -31,15 +30,23 @@ TextureCategory.prototype.calculateHtmlData = function() {
 	this.contentElements = {};
 	var contentElements = this.contentElements;
 	contentElements.container = $("<div class='tab-pane' id='category-"+this.id+"'>");
+	contentElements.groups = $("<div>").appendTo(contentElements.container);
+
+	$('<hr class="btn-add">')
+		.hide()
+		.appendTo(contentElements.container);
+	contentElements.addButton = $("<button class='btn btn-large btn-add btn-add-group'>Add a group</button>")
+		.hide()
+		.appendTo(contentElements.container);
 
 	this.resetGroupElements();
 }
 
 // Called when a texture is added/deleted/modified
 TextureCategory.prototype.resetGroupElements = function() {
-	this.contentElements.container.empty();
+	this.contentElements.groups.empty();
 	for (var i in this.groups) {
-		this.contentElements.container.append(this.groups[i].getHtml());
+		this.contentElements.groups.append(this.groups[i].getHtml());
 	}
 }
 
