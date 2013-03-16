@@ -63,41 +63,12 @@
 					<div class="tab-content" style="overflow: visible;">
 						<div class="tab-pane active" id="tab1" style="margin-top: 70px;">
 							<div class="tabbable tabs-left">
-								<ul class="nav nav-tabs">
-
-									<li class="active">
-										<a data-toggle="tab" href="#stab1">Armor</a>
-									</li>
-
-									<li>
-										<a data-toggle="tab" href="#stab2">Art</a>
-									</li>
-
-									<li>
-										<a data-toggle="tab" href="#stab3">Items</a>
-									</li>
-
-									<li>
-										<a data-toggle="tab" href="#stab4">Blocks</a>
-									</li>
+								<ul class="nav nav-tabs" id="texture-tab">
 
 								</ul>
 
-								<div class="tab-content">
+								<div class="tab-content" id="texture-content">
 
-									<div class="tab-pane active" id="stab1"></div>
-
-									<div class="tab-pane" id="stab2">
-
-									</div>
-									<!--items-->
-									<div class="tab-pane" id="stab3">
-
-									</div>
-									<!--blocks-->
-									<div class="tab-pane" id="stab4">
-									
-									</div>
 								</div>
 							</div>
 						</div>
@@ -133,6 +104,7 @@
 		<script type="text/javascript" src="assets/js/utils.js"></script>
 		<script type="text/javascript" src="assets/js/TextureOption.js"></script>
 		<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
+		<script type="text/javascript" src="assets/js/TextureCategory.js"></script>
 		<script type="text/javascript" src="assets/js/setupEditButton.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
 		<!-- Remove the below when texture rendering is done -->
