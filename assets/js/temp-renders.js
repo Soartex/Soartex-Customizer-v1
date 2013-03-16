@@ -38,5 +38,8 @@ $(document).ready(function() {
 		$('#texture-tab').append(tab.getTabHtml());
 		$('#texture-content').append(tab.getContentHtml());
 	}
+	$('<button class="btn btn-add btn-add-category">Add a category</button>')
+		.hide()
+		.appendTo('#texture-tab');
 	$('a[href="#category-1"]').tab('show');
 }); 

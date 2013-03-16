@@ -10,7 +10,7 @@
 	display: inline;
 }
 
-.add-texture-button {
+.btn-add-texture {
 	vertical-align: bottom;
 }
 
@@ -20,18 +20,22 @@
 	border-radius: 0 !important;
 }
 
-.texture-group .btn, .add-texture-button {
+.texture-group .btn, .btn-add-texture {
 	padding: 8px;
 	margin: 1px !important;
 }
 
-.texture-group .btn p, .add-texture-button p {
+.texture-group .btn p, .btn-add-texture p {
 	color: #555555;
 	padding: 8px 8px 0;
 }
 
-.texture-group .btn:hover, .add-texture-button:hover {
+.texture-group .btn:hover, .btn-add-texture:hover {
 	background-position: 0 -50px;
+}
+
+.btn-add-category {
+	width: 100%;
 }
 
 #btn-edit {

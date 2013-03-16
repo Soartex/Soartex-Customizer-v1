@@ -42,13 +42,13 @@ function setupEditButton() {
 			$editButton
 				.text("Edit")
 				.removeClass("btn-primary edit-active");
-			$(".add-texture-button").fadeOut("fast");
+			$(".btn-add").fadeOut("fast");
 		} else {
 
 			$editButton
 				.text("Done")
 				.addClass("btn-primary edit-active");
-			$(".add-texture-button").fadeIn("fast");
+			$(".btn-add").fadeIn("fast");
 		}
 	}
 
