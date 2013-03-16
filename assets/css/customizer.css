@@ -6,6 +6,16 @@
 	margin-top: 30px;
 }
 
+.group-title {
+	font-size: 21px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.group-container:first-child > hr {
+	display: none;
+}
+
 .texture-group {
 	display: inline;
 }
@@ -14,23 +24,23 @@
 	vertical-align: bottom;
 }
 
-.texture-group .btn {
+.texture-group > .btn {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;
 }
 
-.texture-group .btn, .btn-add-texture {
+.texture-group > .btn, .btn-add-texture {
 	padding: 8px;
 	margin: 1px !important;
 }
 
-.texture-group .btn p, .btn-add-texture p {
+.texture-group > .btn > p, .btn-add-texture p {
 	color: #555555;
 	padding: 8px 8px 0;
 }
 
-.texture-group .btn:hover, .btn-add-texture:hover {
+.texture-group > .btn:hover, .btn-add-texture:hover {
 	background-position: 0 -50px;
 }
 
@@ -40,9 +50,6 @@
 
 #btn-edit {
 	float: right;
-}
-
-#btn-edit .edit-normal {
 }
 
 .modal-inline > * {
