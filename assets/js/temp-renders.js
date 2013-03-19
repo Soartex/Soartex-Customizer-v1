@@ -1,45 +1,51 @@
 $(document).ready(function() {
-	picGroups = [0, 16, 22, 28, 32, 41, 46, 50];
+	var picGroups = [0, 16, 22, 28, 32, 41, 46, 50];
+
+	var categories = [];
 
 	for (var i = 0; i < 4; i++) {
 		// Make the group
-		groupArray = [];
+		var groups = [];
 		for (var z = 0; z < picGroups.length - 1; z++) {
-			groupArray[z] = new TextureGroup({
+			var group = new TextureGroup({
 				id : z + 1,
 				groupName : 'Test group ' + (z + 1) + ' (in category '+ (i + 1) +')',
 				textures : [],
 				exportData : '{"exportPath":"gui/items.png", "exportX":768, "exportY":256}'
 			});
+			groups.push(group);
+
 			// Loop and get textures
-			tempArray = [];
+			var textures = [];
 			for (var j = picGroups[z]; j < picGroups[z + 1]; j++) {
-				var data = {
+				var texture = new TextureOption({
 					id : j + 1,
-					group : groupArray[z],
+					group : groups[z],
 					presets : [],
 					creator : "Texture " + (j - picGroups[z] + 1),
 					dateAdded : new Date(),
 					screenshots : [],
 					exportData : '{}',
 					path : "temp"
-				};
-				tempArray.push(new TextureOption(data));
+				});
+				textures.push(texture);
 			}
-			groupArray[z].setTextures(tempArray);
+			groups[z].setTextures(textures);
 		}
 
 		var tab = new TextureCategory({
 			id: i + 1,
 			categoryName: 'Test category ' + (i + 1),
-			groups: groupArray
+			groups: groups
 		})
 
-		$('#texture-tab').append(tab.getTabHtml());
-		$('#texture-content').append(tab.getContentHtml());
+		categories.push(tab)
 	}
-	$('<button class="btn btn-small btn-add btn-add-category"><i class="icon-plus"></i> Add a category</button>')
-		.hide()
-		.appendTo('#texture-tab');
-	$('a[href="#category-1"]').tab('show');
+
+	vanillaTab = new VanillaTab({
+		categories: categories
+	})
+	vanillaTab.getTabHtml().appendTo("#mod-tab");
+	vanillaTab.getContentHtml().appendTo("#mod-tab-content");
+
 }); 

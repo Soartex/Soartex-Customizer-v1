@@ -76,13 +76,7 @@
 
 			<section id="main">
 				<div class="tabbable">
-					<ul id="tab" class="nav nav-tabs">
-
-						<li class="active">
-							<a data-toggle="tab" href="#tab1">Soartex Fanver
-							Vanilla</a>
-						</li>
-
+					<ul id="mod-tab" class="nav nav-tabs">
 						<li>
 							<a data-toggle="tab" href="#tab2">Soartex Fanver
 							Modded</a>
@@ -93,19 +87,7 @@
 
 					</ul>
 
-					<div class="tab-content" style="overflow: visible;">
-						<div class="tab-pane active" id="tab1">
-							<div class="tabbable tabs-left">
-								<ul class="nav nav-tabs" id="texture-tab">
-
-								</ul>
-
-								<div class="tab-content" id="texture-content">
-
-								</div>
-							</div>
-						</div>
-
+					<div id="mod-tab-content" class="tab-content" style="overflow: visible;">
 						<!-- Modded Content -->
 
 						<div class="tab-pane" id="tab2">
@@ -125,9 +107,6 @@
 
 					<li class="pull-left"><a href="http://soartex.net/">&copy; Soartex 2013-</a></li>
 
-					<li class="pull-right"><a href="admin.php">Admin</a></li>
-					<li class="pull-right active"><a href="#">Home</a></li>
-
 				</ul>
 
 			</footer>
@@ -141,6 +120,7 @@
 			<script type="text/javascript" src="assets/js/TextureOption.js"></script>
 			<script type="text/javascript" src="assets/js/TextureGroup.js"></script>
 			<script type="text/javascript" src="assets/js/TextureCategory.js"></script>
+			<script type="text/javascript" src="assets/js/VanillaTab.js"></script>
 			<script type="text/javascript" src="assets/js/setupEditButton.js"></script>
 			<script type="text/javascript" src="assets/js/main.js"></script>
 

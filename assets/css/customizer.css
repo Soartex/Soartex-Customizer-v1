@@ -45,7 +45,7 @@
 }
 
 .btn-add-category {
-	width: 100%;
+	display: block;
 }
 
 #btn-edit {
@@ -60,4 +60,8 @@
 
 .password-popover {
 	width: auto;
+}
+
+#category-form {
+	margin: 0;
 }

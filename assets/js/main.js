@@ -1,6 +1,8 @@
-var MODAL_PATH = "assets/modals/"
+var MODAL_PATH = "assets/modals/";
+var groupTypes = [TextureGroup]; // Group types will be accessed through its index, and vice versa
 
 $(document).ready(function() {
+	setupGroupIndices(); // Assigns an index ID to each group type (equal to it's index in groupTypes)
 	setupEditButton();
 
 	/*
@@ -18,3 +20,9 @@ $(document).ready(function() {
 	 */
 
 });
+
+function setupGroupIndices() {
+	for (var i in groupTypes) {
+		groupTypes[i].index = Number(i);
+	}
+}
