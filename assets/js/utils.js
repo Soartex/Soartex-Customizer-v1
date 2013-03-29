@@ -18,3 +18,7 @@ function extend(subClass, superClass) {
 		superClass.prototype.constructor = superClass;
 	}
 }
+
+String.prototype.beginsWith = function(str) {
+	return this.indexOf(str) == 0;
+}
