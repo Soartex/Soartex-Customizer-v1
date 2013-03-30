@@ -1,7 +1,7 @@
 var Dropbox = function(element, options) {
 	this.$element = $(element);
 	this.options = $.extend({}, $.fn.button.defaults, options);
-	if (typeof(this.options.type) != "function") {
+	if (typeof(this.options.type) !== "function") {
 		this.options.type = this.options.type.toLowerCase();
 	}
 
@@ -21,7 +21,6 @@ var Dropbox = function(element, options) {
 	function onDrop(e) {
 		var reader = new FileReader();
 		var file = e.dataTransfer.files[0];
-		var type = that.options.type;
 
 		e.preventDefault();
 
@@ -32,7 +31,7 @@ var Dropbox = function(element, options) {
 
 		reader.onload = function(e) {
 
-			if (typeof(file.type) == "string" && file.type.beginsWith("image")) {
+			if (typeof(file.type) === "string" && file.type.beginsWith("image")) {
 				that.setDataAsImg(e.target.result);
 			} else {
 				that.setDataAsText(e.target.result);
@@ -49,16 +48,16 @@ var Dropbox = function(element, options) {
 	}
 
 	// Required for the 'drop' handler to work
-	$(element).get(0).addEventListener("dragenter", dragOut, false)
-	$(element).get(0).addEventListener("dragexit", dragOut, false)
-	$(element).get(0).addEventListener("dragover", dragOver, false)
+	$(element).get(0).addEventListener("dragenter", dragOut, false);
+	$(element).get(0).addEventListener("dragexit", dragOut, false);
+	$(element).get(0).addEventListener("dragover", dragOver, false);
 
 	$(element).get(0).addEventListener("drop", onDrop, false);
-}
+};
 
 Dropbox.prototype.isValidType = function(file) {
-	return (typeof(this.options.type) == "function") ? this.options.type(file) : file.type.beginsWith(this.options.type);
-}
+	return (typeof(this.options.type) === "function") ? this.options.type(file) : file.type.beginsWith(this.options.type);
+};
 
 Dropbox.prototype.setDataAsText = function(data) {
 	this.$element.css("background-image", "none");
@@ -67,7 +66,7 @@ Dropbox.prototype.setDataAsText = function(data) {
 	this.$element.resetImage();
 	this.setData(data);
 
-}
+};
 
 Dropbox.prototype.setDataAsImg = function(data) {
 	var that = this;
@@ -80,7 +79,7 @@ Dropbox.prototype.setDataAsImg = function(data) {
 	});
 	imgTemp.src = data;
 	this.setData(data);
-}
+};
 
 Dropbox.prototype.setImage = function(img, data) {
 	var $box = this.$element;
@@ -93,11 +92,12 @@ Dropbox.prototype.setImage = function(img, data) {
 		"background-image": "url('"+ data +"')",
 		"background-repeat": "no-repeat",
 		"background-position": "center",
-		"background-size": Math.min((boxHeight/img.height) * img.width, boxWidth, img.width) + "px " +
-						   Math.min((boxWidth/img.width) * img.height, boxHeight, img.height) + "px"
+		"background-size":
+			Math.min((boxHeight/img.height) * img.width, boxWidth, img.width) + "px " +
+			Math.min((boxWidth/img.width) * img.height, boxHeight, img.height) + "px"
 	});
 	this.resetText();
-}
+};
 
 Dropbox.prototype.reset = function() {
 	this.$element.attr("data", "");
@@ -105,7 +105,7 @@ Dropbox.prototype.reset = function() {
 	this.resetImage();
 	this.resetText();
 
-}
+};
 
 // To prevent flickering when adding text
 Dropbox.prototype.resetImage = function() {
@@ -115,32 +115,33 @@ Dropbox.prototype.resetImage = function() {
 		"background-position": "",
 		"background-size": ""
 	});
-}
+};
 
 // To prevent flickering when adding images
 Dropbox.prototype.resetText = function() {
 	this.$element.empty();
-}
+};
 
 Dropbox.prototype.setData = function(data) {
 	this.$element.attr("data", data);
-}
+};
 
 $.fn.dropbox = function(option) {
 	return this.each(function () {
-		var $this = $(this)
-		  , data = $this.data('dropbox')
-		  , options = $.extend({}, $.fn.dropbox.defaults, $this.data(), typeof option == 'object' && option);
+		var $this = $(this),
+			data = $this.data('dropbox'),
+			options = $.extend({}, $.fn.dropbox.defaults, $this.data(), typeof option === 'object' && option);
 		if (!data) {
 			$this.data('dropbox', (data = new Dropbox(this, options)));
 		}
-		if (typeof option == 'string') {
+		if (typeof option === 'string') {
 			data[option]();
 		}
-	})
-}
+	});
+};
 
 $.fn.dropbox.defaults = {
-	type: "" // Can be as specific as you want, e.g. "image" or "image/png".
-			 // It also supports a function as input. It should take the file as a parameter, and return a boolean.
+	// Can be as specific as you want, e.g. "image" or "image/png".
+	// It also supports a function as input. It should take the file as a parameter, and return a boolean.
+	type: ""
 };
