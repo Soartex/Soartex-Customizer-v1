@@ -22,3 +22,7 @@ function extend(subClass, superClass) {
 String.prototype.beginsWith = function(str) {
 	return this.indexOf(str) == 0;
 }
+
+String.prototype.endsWith = function(suffix) {
+	return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
