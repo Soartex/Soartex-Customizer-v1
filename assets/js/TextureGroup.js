@@ -91,7 +91,7 @@ TextureGroup.prototype.showUploadForm = function() {
 			modal = $(data);
 
 			modal.find(".modal-inline h5").text("to "+that.elements.title.html());
-			modal.find("#dropbox").dropbox();
+			modal.find("#dropbox").dropbox({type: "image/png"});
 			modal.find(".modal-close").click(function() {
 				modal.modal("hide");
 			});

@@ -1,9 +1,11 @@
 var Dropbox = function(element, options) {
 	this.$element = $(element);
 	this.options = $.extend({}, $.fn.button.defaults, options);
-	this.options.type = this.options.type.toLowerCase();
+	if (typeof(this.options.type) != "function") {
+		this.options.type = this.options.type.toLowerCase();
+	}
 
-	this.file = null;
+	this.setData("");
 
 	var that = this;
 
@@ -19,23 +21,29 @@ var Dropbox = function(element, options) {
 	function onDrop(e) {
 		var reader = new FileReader();
 		var file = e.dataTransfer.files[0];
+		var type = that.options.type;
 
 		e.preventDefault();
 
 		// If the file type does not begin with the required type, return
-		if (!file.type.beginsWith(that.options.type)) {
+		if (!that.isValidType(file)) {
 			return false;
 		}
-		this.file = file;
 
 		reader.onload = function(e) {
 
-			if (file.type.beginsWith("image")) {
-				that.dropDataAsImg(e.target.result);
+			if (typeof(file.type) == "string" && file.type.beginsWith("image")) {
+				that.setDataAsImg(e.target.result);
+			} else {
+				that.setDataAsText(e.target.result);
 			}
 		};
 
-		reader.readAsDataURL(file);
+		if (file.type.beginsWith("image")) {
+			reader.readAsDataURL(file);
+		} else {
+			reader.readAsText(file);
+		}
 
 		return true;
 	}
@@ -48,7 +56,20 @@ var Dropbox = function(element, options) {
 	$(element).get(0).addEventListener("drop", onDrop, false);
 }
 
-Dropbox.prototype.dropDataAsImg = function(data) {
+Dropbox.prototype.isValidType = function(file) {
+	return (typeof(this.options.type) == "function") ? this.options.type(file) : file.type.beginsWith(this.options.type);
+}
+
+Dropbox.prototype.setDataAsText = function(data) {
+	this.$element.css("background-image", "none");
+
+	this.$element.text(data);
+	this.$element.resetImage();
+	this.setData(data);
+
+}
+
+Dropbox.prototype.setDataAsImg = function(data) {
 	var that = this;
 
 	// A new image is made to get the image dimensions
@@ -58,6 +79,7 @@ Dropbox.prototype.dropDataAsImg = function(data) {
 		that.setImage(this, data);
 	});
 	imgTemp.src = data;
+	this.setData(data);
 }
 
 Dropbox.prototype.setImage = function(img, data) {
@@ -72,8 +94,36 @@ Dropbox.prototype.setImage = function(img, data) {
 		"background-repeat": "no-repeat",
 		"background-position": "center",
 		"background-size": Math.min((boxHeight/img.height) * img.width, boxWidth, img.width) + "px " +
-			Math.min((boxWidth/img.width) * img.height, boxHeight, img.height) + "px"
+						   Math.min((boxWidth/img.width) * img.height, boxHeight, img.height) + "px"
 	});
+	this.resetText();
+}
+
+Dropbox.prototype.reset = function() {
+	this.$element.attr("data", "");
+
+	this.resetImage();
+	this.resetText();
+
+}
+
+// To prevent flickering when adding text
+Dropbox.prototype.resetImage = function() {
+	this.$element.css({
+		"background-image": "",
+		"background-repeat": "",
+		"background-position": "",
+		"background-size": ""
+	});
+}
+
+// To prevent flickering when adding images
+Dropbox.prototype.resetText = function() {
+	this.$element.empty();
+}
+
+Dropbox.prototype.setData = function(data) {
+	this.$element.attr("data", data);
 }
 
 $.fn.dropbox = function(option) {
@@ -81,11 +131,16 @@ $.fn.dropbox = function(option) {
 		var $this = $(this)
 		  , data = $this.data('dropbox')
 		  , options = $.extend({}, $.fn.dropbox.defaults, $this.data(), typeof option == 'object' && option);
-		if (!data) $this.data('dropbox', (data = new Dropbox(this, options)));
-		if (typeof option == 'string') data[option]();
+		if (!data) {
+			$this.data('dropbox', (data = new Dropbox(this, options)));
+		}
+		if (typeof option == 'string') {
+			data[option]();
+		}
 	})
 }
 
 $.fn.dropbox.defaults = {
-	type: "" // can be as specific as you want, e.g. "image" or "image/png"
+	type: "" // Can be as specific as you want, e.g. "image" or "image/png".
+			 // It also supports a function as input. It should take the file as a parameter, and return a boolean.
 };

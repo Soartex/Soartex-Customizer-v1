@@ -77,7 +77,10 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-
+	font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+	font-size: 9px;
+	line-height: 13px;
+	overflow: hidden;
 	/*
 	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
 	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
