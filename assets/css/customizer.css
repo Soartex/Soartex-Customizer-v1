@@ -18,6 +18,7 @@
 
 .texture-group {
 	display: inline;
+	white-space: normal;
 }
 
 .btn-add-texture {
