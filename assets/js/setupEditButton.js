@@ -28,7 +28,17 @@ function setupEditButton() {
 	}
 
 	function submitAdminPassword() {
-		if ($("#admin-password-input").val() == "deinstitutionalization") {
+		var isValidPassword;
+		$.ajax({
+			async: false,
+			type: "POST",
+			cache: false,
+			url: "https://secure29.webhostinghub.com/~soarte5/new-site/customizer/assets/php/password_validation.php",
+			success: function(data) {
+				isValidPassword = (data == "1");
+			}
+		});
+		if (isValidPassword) {
 			passwordAccepted = true;
 			$editButton.popover("destroy");
 			toggleEditButtons();
