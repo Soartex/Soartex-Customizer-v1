@@ -4,7 +4,7 @@ function setupEditButton() {
 
 	var $editButton = $("#btn-edit");
 
-	var passwordPopover = "<div class='input-append'><input class='span2' type='password' placeholder='Password' id='admin-password-input' /><button class='btn' type='button' id='submit-admin-password'>Submit</button></div><small>(Password is 'deinstitutionalization')</small>"
+	var passwordPopover = "<div class='input-append'><input class='span2' type='password' placeholder='Password' id='admin-password-input' /><button class='btn' type='button' id='submit-admin-password'>Submit</button></div>"
 	$editButton.popover({
 		content: passwordPopover,
 		placement: "left",
@@ -32,7 +32,7 @@ function setupEditButton() {
 		$.ajax({
 			async: false,
 			type: "POST",
-			cache: false,
+			data: { password: $("#admin-password-input").val() },
 			url: "https://secure29.webhostinghub.com/~soarte5/new-site/customizer/assets/php/password_validation.php",
 			success: function(data) {
 				isValidPassword = (data == "1");
