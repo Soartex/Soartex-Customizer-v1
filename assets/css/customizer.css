@@ -31,11 +31,14 @@
 	border-radius: 0 !important;
 }
 
-.texture-group > .btn, .btn-add-texture {
+.group-container > .texture-group > .btn, .btn-add-texture {
 	padding: 8px;
-	margin: 1px !important;
+	margin: 1px;
 }
 
+/*
+ * Extra specificity is added to override Bootstrap styles
+ */
 .texture-group > .btn > p, .btn-add-texture p {
 	color: #555555;
 	padding: 8px 8px 0;
