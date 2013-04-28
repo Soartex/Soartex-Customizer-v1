@@ -117,6 +117,7 @@
 			<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 			
 			<script type="text/javascript" src="assets/js/utils.js"></script>
+			<script type="text/javascript" src="assets/js/slideAnim.js"></script>
 			<script type="text/javascript" src="assets/js/dropbox.js"></script>
 			<script type="text/javascript" src="assets/js/TextureOption.js"></script>
 			<script type="text/javascript" src="assets/js/TextureGroup.js"></script>

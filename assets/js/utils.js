@@ -26,3 +26,25 @@ String.prototype.beginsWith = function(str) {
 String.prototype.endsWith = function(suffix) {
 	return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
+
+$.fn.makeAbsolute = function(rebase, keepSize) {
+	return this.each(function() {
+		var el = $(this);
+		var width, height;
+		if (keepSize) {
+			width = el.outerWidth();
+			height = el.outerHeight();
+		}
+		var pos = el.position();
+		el.css({
+			position: "absolute",
+			top: pos.top,
+			left: pos.left,
+			width: width,
+			height: height
+		});
+		if (rebase) {
+			el.remove().appendTo("body");
+		}
+	});
+}
