@@ -33,13 +33,9 @@ function setupEditButton() {
 			async: false,
 			type: "POST",
 			data: { "password": $("#admin-password-input").val() },
-			url: httpsPath + "assets/php/password_validation.php",
+			url: HTTPS_PATH + "assets/php/password_validation.php",
 			success: function(data) {
-				console.log(data);
 				isValidPassword = (data == "1");
-			},
-			error: function(jqXHR, status, error) {
-				console.log(error.stack);
 			}
 		});
 		if (isValidPassword) {
