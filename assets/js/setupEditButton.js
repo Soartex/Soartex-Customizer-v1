@@ -33,10 +33,13 @@ function setupEditButton() {
 			async: false,
 			type: "POST",
 			data: { "password": $("#admin-password-input").val() },
-			url: httpsPath + "assets/php/password_validation",
+			url: httpsPath + "assets/php/password_validation.php",
 			success: function(data) {
 				console.log(data);
 				isValidPassword = (data == "1");
+			},
+			error: function(jqXHR, status, error) {
+				console.log(error.stack);
 			}
 		});
 		if (isValidPassword) {
@@ -55,7 +58,6 @@ function setupEditButton() {
 				.removeClass("btn-primary edit-active");
 			$(".btn-add").fadeOut("fast");
 		} else {
-
 			$editButton
 				.text("Done")
 				.addClass("btn-primary edit-active");
