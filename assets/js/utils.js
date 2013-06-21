@@ -1,3 +1,5 @@
+var httpsPath = "https://soartex.net/new-site/customizer/";
+
 function mixin(destination, source) {
 	for (var k in source) {
 		if (source.hasOwnProperty(k)) {

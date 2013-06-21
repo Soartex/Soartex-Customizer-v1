@@ -32,9 +32,10 @@ function setupEditButton() {
 		$.ajax({
 			async: false,
 			type: "POST",
-			data: { password: $("#admin-password-input").val() },
-			url: "https://secure29.webhostinghub.com/~soarte5/new-site/customizer/assets/php/password_validation.php",
+			data: { "password": $("#admin-password-input").val() },
+			url: httpsPath + "assets/php/password_validation",
 			success: function(data) {
+				console.log(data);
 				isValidPassword = (data == "1");
 			}
 		});
