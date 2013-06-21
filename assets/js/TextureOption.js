@@ -3,11 +3,11 @@
  */
 
 function TextureOption(parameters) {
-	this.id = parameters.id; // Type number
-	this.group = parameters.group; // Type TextureGroup
-	this.presets = parameters.presets; // Type list (containing strings)
-	this.creator = parameters.creator; // Type string
-	this.dateAdded = parameters.dateAdded; // Type Date
+	this.id          = parameters.id;          // Type number
+	this.group       = parameters.group;       // Type TextureGroup
+	this.presets     = parameters.presets;     // Type list (containing strings)
+	this.creator     = parameters.creator;     // Type string
+	this.dateAdded   = parameters.dateAdded;   // Type Date
 	this.screenshots = parameters.screenshots; // Type list (containing strings)
 
 	this.setDataFromJSON(parameters.exportData);
