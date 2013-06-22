@@ -4,17 +4,16 @@
 
 function TextureOption(parameters) {
 	this.id          = parameters.id;          // Type number
+	this.info        = parameters.info;        // Type string
 	this.group       = parameters.group;       // Type TextureGroup
-	this.presets     = parameters.presets;     // Type list (containing strings)
 	this.creator     = parameters.creator;     // Type string
 	this.dateAdded   = parameters.dateAdded;   // Type Date
 	this.screenshots = parameters.screenshots; // Type list (containing strings)
 
 	this.setDataFromJSON(parameters.exportData);
 
-	//this.imagePath = "assets/img";
-	this.imagePath = parameters.path;
-	this.screnshotPath = "data/screenshots";
+	this.imagePath = "temp/";
+	this.screnshotPath = "data/screenshots/";
 
 	this.calculateHtmlData();
 
@@ -40,11 +39,11 @@ TextureOption.prototype.getHtml = function () {
 }
 
 TextureOption.prototype.getFullImagePath = function () {
-	return this.imagePath + '/' + this.id + '.png';
+	return this.imagePath + this.id + '.png';
 }
 
 TextureOption.prototype.getFullScreenshotPath = function () {
-	return this.screenshotPath + this.this.screenshotName + 'png';
+	return this.screenshotPath + this.screenshotName + 'png';
 }
 
 TextureOption.prototype.setDataFromJSON = function (JsonData) {

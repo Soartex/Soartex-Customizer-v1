@@ -128,7 +128,7 @@
 
 			<!-- Remove when texture rendering is done -->
 
-			<script type="text/javascript" src="assets/js/temp-renders.js"></script>
+			<!-- <script type="text/javascript" src="assets/js/temp-renders.js"></script> -->
 
 		</div>
 

@@ -3,9 +3,9 @@
  */
 
 function TextureCategory(parameters) {
-	this.id = parameters.id; // Type int
+	this.id           = parameters.id;           // Type int
+	this.groups       = parameters.groups;       // Type array (containing textureGroups)
 	this.categoryName = parameters.categoryName; // Type string
-	this.groups = parameters.groups; // Type array (containing textureGroups)
 
 	this.calculateHtmlData();
 }

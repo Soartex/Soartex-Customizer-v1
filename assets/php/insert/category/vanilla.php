@@ -9,8 +9,7 @@ include_once("../validation.php");
 $name = $mysqli->real_escape_string($_POST["creator"]);
 assert(is_valid_string($name, 25));
 
-$mysqli->query("INSERT INTO Categories (name, creator, info, preset, group_id, date_added, export_data)
-					VALUES ('$name', '$creator', '$info', $preset, $group, '$export_data')");
+$mysqli->query("INSERT INTO Categories (name, is_vanilla) VALUES ('$name', 1)");
 
 $lastID = $mysqli->insert_id;
 

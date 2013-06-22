@@ -3,9 +3,9 @@
  */
 
 function TextureGroup(parameters) {
-	this.id = parameters.id; // Type int
+	this.id        = parameters.id;        // Type int
+	this.textures  = parameters.textures;  // Type array (containing textureOptions)
 	this.groupName = parameters.groupName; // Type string
-	this.textures = parameters.textures; // Type array (containing textureOptions)
 
 	this.setDataFromJSON(parameters.exportData); // Type string (encoded in JSON)
 	this.calculateHtmlData();
@@ -13,8 +13,6 @@ function TextureGroup(parameters) {
 	this.selectedTexture = null;
 
 	this.modalName = "standard.html";
-
-	//this.createOptionForm().show();
 }
 
 TextureGroup.prototype.select = function(texture) {
@@ -119,3 +117,5 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		win.document.close();
 	});
 }
+
+TextureGroup.optionType = TextureOption;
