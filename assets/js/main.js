@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 	/*
 	 // Adds a new texture to the database
-	 $.post('assets/php/insert/texture.php', {
+	 $.post('assets/php/insert/default.php', {
 	 name: 	 "Test",
 	 creator: "Nobody",
 	 info:	 "",
