@@ -2,6 +2,8 @@ var MODAL_PATH = "assets/modals/";
 var HTTPS_PATH = "https://soartex.net/new-site/customizer/";
 var groupTypes = [TextureGroup]; // Group types will be accessed through its index, and vice versa
 
+var password;
+
 $(document).ready(function() {
 
 	setupGroupIndices(); // Assigns an index ID to each group type (equal to it's index in groupTypes)

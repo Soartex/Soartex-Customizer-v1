@@ -92,6 +92,9 @@ TextureGroup.prototype.showUploadForm = function() {
 
 			modal.find(".modal-inline h5").text("to "+that.elements.title.html());
 			modal.find("#dropbox").dropbox({type: "image/png"});
+			modal.find(".btn-submit").click(function() {
+				that.uploadOption(modal);
+			})
 			modal.find(".modal-close").click(function() {
 				modal.modal("hide");
 			});
@@ -99,4 +102,20 @@ TextureGroup.prototype.showUploadForm = function() {
 	});
 
 	modal.modal("show");
+}
+
+TextureGroup.prototype.uploadOption = function(modal) {
+	var data = {
+		"password": password,
+		"creator": modal.find("#creator").val(),
+		"info": 	 modal.find("#info").val(),
+		"image_data": modal.find("#dropbox").attr("data"),
+		"group": this.id
+	};
+	$.post("assets/php/insert/option/default.php", data, function(data) {
+		var win=window.open('about:blank');
+		win.document.open()
+		win.document.write(data)
+		win.document.close();
+	});
 }

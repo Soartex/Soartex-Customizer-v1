@@ -29,10 +29,11 @@ function setupEditButton() {
 
 	function submitAdminPassword() {
 		var isValidPassword;
+		password = $("#admin-password-input").val();
 		$.ajax({
 			async: false,
 			type: "POST",
-			data: { "password": $("#admin-password-input").val() },
+			data: { "password": password },
 			url: HTTPS_PATH + "assets/php/password_validation.php",
 			success: function(data) {
 				isValidPassword = (data == "1");

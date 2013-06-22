@@ -8,29 +8,41 @@
 	include_once("../../validation.php");
 	require_once("../../config.php");
 
+    $valid = true;
+
     // Password must be correct
 
-	assert($_POST["password"] == ADMINPASSWORD);
+	$valid = $valid && $_POST["password"] == ADMINPASSWORD;
 
 	// Compile the texture record information.
 
 	$creator = $mysqli->real_escape_string($_POST["creator"]);
-	assert(is_valid_string($creator, 25));
+	$valid = $valid && is_valid_string($creator, 25);
 	
 	$info = $mysqli->real_escape_string($_POST["info"]);
 	
 	$group = $_POST["group"];
-	assert(is_valid_int($group));
+	$valid = $valid && is_valid_int($group);
 	
-	$export_data = $mysqli->real_escape_string($_POST["export_data"]);
-	assert(is_valid_string($export_data));
-	
-	$mysqli->query("INSERT INTO Textures (name, creator, info, group_id, date_added, export_data)
-					VALUES ('$name', '$creator', '$info', $group, '$export_data')");
+	$image_data = $mysqli->real_escape_string($_POST["image_data"]);
 
-	$lastID = $mysqli->insert_id;
-	
-	// Set the order to the ID
-	$mysqli->query("UPDATE Textures SET sort_order=$lastID WHERE texture_id=$lastID");
+	$image_data = substr($image_data, strpos($image_data, ",")+1);
+	$im = imagecreatefromstring(base64_decode($image_data));
+	if ($im == false) {
+		$valid = false;
+	}
+
+	if ($valid) {
+		$mysqli->query("INSERT INTO Textures (name, creator, info, group_id, date_added, export_data)
+						VALUES ('$name', '$creator', '$info', $group, '$export_data')");
+
+		$lastID = $mysqli->insert_id;
+
+		imagepng($im, "../../../img/options/$lastID.png");
+		imagedestroy($im);
+
+		// Set the order to the ID
+		$mysqli->query("UPDATE Textures SET sort_order=$lastID WHERE texture_id=$lastID");
+	}
 	
 ?>
