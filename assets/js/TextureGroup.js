@@ -44,7 +44,7 @@ TextureGroup.prototype.calculateHtmlData = function() {
 		.appendTo(elements.container);
 	elements.textures = $('<div class="btn-group texture-group" data-toggle="buttons-radio">')
 		.appendTo(elements.container);
-	this.elements.addButton = $('<button class="btn btn-add btn-add-texture"><img src="assets/img/addtexture.png"/><p>Add a Texture</p><div>')
+	this.elements.addButton = $('<button class="btn edit btn-add-texture"><img src="assets/img/addtexture.png"/><p>Add a Texture</p><div>')
 		.click(function() {
 			that.showUploadForm();
 		})

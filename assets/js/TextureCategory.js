@@ -32,10 +32,10 @@ TextureCategory.prototype.calculateHtmlData = function() {
 	contentElements.container = $("<div class='tab-pane' id='category-"+this.id+"'>");
 	contentElements.groups = $("<div>").appendTo(contentElements.container);
 
-	$('<hr class="btn-add">')
+	$('<hr class="edit">')
 		.hide()
 		.appendTo(contentElements.container);
-	contentElements.addButton = $("<button class='btn btn-large btn-add btn-add-group'>Add a group</button>")
+	contentElements.addButton = $("<button class='btn btn-large edit btn-add-group'>Add a group</button>")
 		.hide()
 		.appendTo(contentElements.container);
 

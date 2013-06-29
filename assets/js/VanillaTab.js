@@ -24,7 +24,7 @@ VanillaTab.prototype.calculateHtmlData = function() {
 	contentElements.categoryTab = $("<ul class='nav nav-tabs'>").appendTo(contentElements.categoryContainer);
 	contentElements.categoryContent = $("<ul class='tab-content'>").appendTo(contentElements.categoryContainer);
 
-	contentElements.addForm = $("<div class='input-append category-form btn-add'>'").hide();
+	contentElements.addForm = $("<div class='input-append category-form edit'>'").hide();
 	contentElements.nameInput = $("<input class='input-small' type='text' placeholder='Name'/>").appendTo(contentElements.addForm);
 	contentElements.addButton = $("<button class='btn btn-small btn-add-category'><i class='icon-plus'></i></button>").appendTo(contentElements.addForm);
 

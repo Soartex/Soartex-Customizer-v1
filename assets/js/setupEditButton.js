@@ -53,12 +53,12 @@ function setupEditButton() {
 			$editButton
 				.text("Edit")
 				.removeClass("btn-primary edit-active");
-			$(".btn-add").fadeOut("fast");
+			$(".edit").fadeOut("fast");
 		} else {
 			$editButton
 				.text("Done")
 				.addClass("btn-primary edit-active");
-			$(".btn-add").fadeIn("fast");
+			$(".edit").fadeIn("fast");
 		}
 	}
 
