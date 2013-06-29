@@ -33,10 +33,15 @@ VanillaTab.prototype.calculateHtmlData = function() {
 		$(this).attr("disabled", "disabled");
 
 		var data = {
+			password: password,
 			name: contentElements.nameInput.val()
 		};
 		$.post("assets/php/insert/category/vanilla.php", data, function(data) {
 			that.removeAttr("disabled");
+			var win=window.open('about:blank');
+			win.document.open()
+			win.document.write(data)
+			win.document.close();
 		});
 
 	})
