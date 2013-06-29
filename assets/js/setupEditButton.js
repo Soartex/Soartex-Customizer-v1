@@ -30,22 +30,25 @@ function setupEditButton() {
 	function submitAdminPassword() {
 		var isValidPassword;
 		password = $("#admin-password-input").val();
+		$("#submit-admin-password").attr("disabled", "disabled");
 		$.ajax({
-			async: false,
 			type: "POST",
 			data: { "password": password },
 			url: HTTPS_PATH + "assets/php/password_validation.php",
 			success: function(data) {
+				$("#submit-admin-password").removeAttr("disabled");
+
 				isValidPassword = (data == "1");
+
+				if (isValidPassword) {
+					passwordAccepted = true;
+					$editButton.popover("destroy");
+					toggleEditButtons();
+				} else {
+					$("#admin-password-input").val("");
+				}
 			}
 		});
-		if (isValidPassword) {
-			passwordAccepted = true;
-			$editButton.popover("destroy");
-			toggleEditButtons();
-		} else {
-			$("#admin-password-input").val("");
-		}
 	}
 
 	function toggleEditButtons() {
