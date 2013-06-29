@@ -1,4 +1,4 @@
-var MODAL_PATH = "assets/modals/";
+var OPTION_MODAL_PATH = "assets/modals/option/";
 var HTTPS_PATH = "https://soartex.net/new-site/customizer/";
 var GROUP_TYPES = [TextureGroup]; // Group types will be accessed through its index, and vice versa
 

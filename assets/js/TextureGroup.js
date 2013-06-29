@@ -12,7 +12,7 @@ function TextureGroup(parameters) {
 
 	this.selectedTexture = null;
 
-	this.modalName = "options/standard.html";
+	this.optionModalName = "standard.html";
 }
 
 TextureGroup.prototype.select = function(texture) {
@@ -38,7 +38,7 @@ TextureGroup.prototype.calculateHtmlData = function() {
 	var elements = this.elements;
 
 	elements.container = $('<div class="group-container">');
-	$('<hr>').appendTo(elements.container); // CSS is used to remove the first hr
+	$('<hr>').appendTo(elements.container); // CSS is used to remove the first <hr>
 	elements.title = $('<div class="group-title">')
 		.text(this.groupName)
 		.appendTo(elements.container);
@@ -83,8 +83,7 @@ TextureGroup.prototype.showUploadForm = function() {
 	$.ajax({
 		async: false,
 		type: "GET",
-		cache: false, // For testing (so that changes can be tested without content being cached)
-		url: MODAL_PATH+this.modalName,
+		url: OPTION_MODAL_PATH+this.optionModalName,
 		success: function(data) {
 			modal = $(data);
 
@@ -119,3 +118,4 @@ TextureGroup.prototype.uploadOption = function(modal) {
 }
 
 TextureGroup.optionType = TextureOption;
+TextureGroup.name = "Standard";
