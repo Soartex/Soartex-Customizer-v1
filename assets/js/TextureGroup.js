@@ -12,7 +12,7 @@ function TextureGroup(parameters) {
 
 	this.selectedTexture = null;
 
-	this.modalName = "standard.html";
+	this.modalName = "options/standard.html";
 }
 
 TextureGroup.prototype.select = function(texture) {
