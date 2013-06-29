@@ -36,10 +36,6 @@ VanillaTab.prototype.calculateHtmlData = function() {
 			name: contentElements.nameInput.val()
 		};
 		$.post("assets/php/insert/category/vanilla.php", data, function(data) {
-			var win=window.open('about:blank');
-			win.document.open()
-			win.document.write(data)
-			win.document.close();
 			that.removeAttr("disabled");
 		});
 
