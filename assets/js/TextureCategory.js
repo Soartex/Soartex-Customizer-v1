@@ -20,6 +20,8 @@ TextureCategory.prototype.setGroups = function(groups) {
 }
 
 TextureCategory.prototype.calculateHtmlData = function() {
+	var that = this;
+
 	this.tabElements = {};
 	var tabElements = this.tabElements;
 	tabElements.container = $("<li>")
@@ -37,7 +39,10 @@ TextureCategory.prototype.calculateHtmlData = function() {
 		.appendTo(contentElements.container);
 	contentElements.addButton = $("<button class='btn btn-large edit btn-add-group'>Add a group</button>")
 		.hide()
-		.appendTo(contentElements.container);
+		.appendTo(contentElements.container)
+		.click(function() {
+			that.showUploadForm();
+		});
 
 	this.resetGroupElements();
 }
@@ -56,4 +61,54 @@ TextureCategory.prototype.getTabHtml = function () {
 
 TextureCategory.prototype.getContentHtml = function () {
 	return this.contentElements.container;
+}
+
+TextureCategory.prototype.showUploadForm = function() {
+	var that = this;
+
+	var modal = null;
+	$.ajax({
+		async: false,
+		type: "GET",
+		cache: false,
+		url: CATEGORY_MODAL_PATH+"template.html",
+		success: function(data) {
+			modal = $(data);
+
+			modal.find(".modal-inline h5").text("to "+that.categoryName);
+
+			var select = modal.find("#option-type");
+			for (i in GROUP_TYPES) {
+				name = GROUP_TYPES[i].typeName;
+				select.append("<option value='"+i+"'>"+name+"</option>");
+			}
+			select.change(function() {
+				var form = modal.find("#custom-form");
+				form.fadeOut("fast", function() {
+					form.empty();
+
+					groupType = GROUP_TYPES[select.val()];
+					$.ajax({
+						type: "GET",
+						cache: false,
+						url: CATEGORY_MODAL_PATH+groupType.groupModalPath,
+						success: function(data) {
+							form.html(data);
+							form.fadeIn("fast");
+						}
+					});
+				});
+
+			});
+
+			modal.find(".btn-submit").click(function() {
+
+			})
+			modal.find(".modal-close").click(function() {
+				modal.modal("hide");
+			});
+		}
+	});
+
+	modal.modal("show");
 }

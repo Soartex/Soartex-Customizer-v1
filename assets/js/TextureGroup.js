@@ -118,4 +118,5 @@ TextureGroup.prototype.uploadOption = function(modal) {
 }
 
 TextureGroup.optionType = TextureOption;
-TextureGroup.name = "Standard";
+TextureGroup.groupModalPath = "standard";
+TextureGroup.typeName = "Stand-alone texture";
