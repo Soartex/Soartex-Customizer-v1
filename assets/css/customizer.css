@@ -48,8 +48,14 @@
 	background-position: 0 -50px;
 }
 
-.btn-add-category {
-	display: block;
+.category-form {
+	margin-right: 2px;
+}
+
+.category-form input {
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 #btn-edit {

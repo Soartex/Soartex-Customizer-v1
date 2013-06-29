@@ -1,17 +1,29 @@
 <?php
+
+header("Access-Control-Allow-Origin: *"); // NOTE: MUST BE CHANGED TO "http://soartex.net" BEFORE RELEASE
+
 // Connect to database; include validation scripts.
 
-require_once("../db_connect.php");
-include_once("../validation.php");
+require_once("../../db_connect.php");
+include_once("../../validation.php");
+require_once("../../config.php");
 
-// Compile the texture record information.
+$valid = true;
 
-$name = $mysqli->real_escape_string($_POST["creator"]);
-assert(is_valid_string($name, 25));
+// Password must be correct
 
-$mysqli->query("INSERT INTO Categories (name, is_vanilla) VALUES ('$name', 1)");
+$valid = $valid && $_POST["password"] == ADMINPASSWORD;
 
-$lastID = $mysqli->insert_id;
+// Add the information to the database
 
-// Set the order to the ID
-$mysqli->query("UPDATE Textures SET sort_order=$lastID WHERE texture_id=$lastID");
+if ($valid) {
+	$name = $mysqli->real_escape_string($_POST["name"]);
+	$valid = $valid && is_valid_string($name, 25);
+
+	$mysqli->query("INSERT INTO Categories (name, is_vanilla) VALUES ('$name', 1)");
+
+	$lastID = $mysqli->insert_id;
+
+	// Set the order to the ID
+	$mysqli->query("UPDATE Textures SET sort_order=$lastID WHERE texture_id=$lastID");
+}

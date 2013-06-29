@@ -9,6 +9,8 @@ TextureCategory.prototype.setCategories = function(categories) {
 }
 
 VanillaTab.prototype.calculateHtmlData = function() {
+	var that = this;
+
 	this.tabElements = {};
 	var tabElements = this.tabElements;
 
@@ -22,17 +24,28 @@ VanillaTab.prototype.calculateHtmlData = function() {
 	contentElements.categoryTab = $("<ul class='nav nav-tabs'>").appendTo(contentElements.categoryContainer);
 	contentElements.categoryContent = $("<ul class='tab-content'>").appendTo(contentElements.categoryContainer);
 
-	contentElements.addButton = $("<button class='btn btn-small btn-add btn-add-category'><i class='icon-plus'></i> Add a category</button>")
-		.hide();
-	var popover = "<div class='input-append' id='category-form'><input class='span2' type='password' placeholder='Name' maxlength='25' id='category-name' /><button class='btn' type='button' id='submit-category'>Submit</button></div>"
-	contentElements.addButton.popover({
-		content: popover,
-		placement: "right",
-		html: true,
-		template: '<div class="popover password-popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
-	});
+	contentElements.addForm = $("<div class='input-append category-form btn-add'>'").hide();
+	contentElements.nameInput = $("<input class='input-small' type='text' placeholder='Name'/>").appendTo(contentElements.addForm);
+	contentElements.addButton = $("<button class='btn btn-small btn-add-category'><i class='icon-plus'></i></button>").appendTo(contentElements.addForm);
 
-	this.resetCategoryElements()
+	contentElements.addButton.click(function() {
+		var that = $(this);
+		$(this).attr("disabled", "disabled");
+
+		var data = {
+			name: contentElements.nameInput.val()
+		};
+		$.post("assets/php/insert/category/vanilla.php", data, function(data) {
+			var win=window.open('about:blank');
+			win.document.open()
+			win.document.write(data)
+			win.document.close();
+			that.removeAttr("disabled");
+		});
+
+	})
+
+	this.resetCategoryElements();
 }
 
 VanillaTab.prototype.resetCategoryElements = function() {
@@ -45,7 +58,7 @@ VanillaTab.prototype.resetCategoryElements = function() {
 	this.contentElements.categoryTab.children(":first").addClass("active");
 	this.contentElements.categoryContent.children(":first").addClass("active");
 
-	this.contentElements.addButton.appendTo(this.contentElements.categoryTab);
+	this.contentElements.addForm.appendTo(this.contentElements.categoryTab);
 }
 
 VanillaTab.prototype.getTabHtml = function() {
@@ -54,4 +67,11 @@ VanillaTab.prototype.getTabHtml = function() {
 
 VanillaTab.prototype.getContentHtml = function() {
 	return this.contentElements.container;
+}
+
+VanillaTab.prototype.uploadCategory = function() {
+	var data = {
+		name: $('#category-form').val()
+	};
+	console.log(data);
 }
