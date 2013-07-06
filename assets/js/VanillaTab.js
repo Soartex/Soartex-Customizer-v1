@@ -38,10 +38,6 @@ VanillaTab.prototype.calculateHtmlData = function() {
 		};
 		$.post("assets/php/insert/category/vanilla.php", data, function(data) {
 			that.removeAttr("disabled");
-			var win=window.open('about:blank');
-			win.document.open()
-			win.document.write(data)
-			win.document.close();
 		});
 
 	})
