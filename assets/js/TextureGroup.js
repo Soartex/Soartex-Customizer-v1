@@ -90,6 +90,7 @@ TextureGroup.prototype.showUploadForm = function() {
 			modal.find(".modal-inline h5").text("to "+that.elements.title.html());
 			modal.find("#dropbox").dropbox({type: "image/png"});
 			modal.find(".btn-submit").click(function() {
+				$(this).attr("disabled", "disabled");
 				that.uploadOption(modal);
 			})
 			modal.find(".modal-close").click(function() {
@@ -110,6 +111,7 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		"group":      this.id
 	};
 	$.post("assets/php/insert/option/group.php", data, function(data) {
+		modal.modal(hide);
 	});
 }
 

@@ -102,6 +102,7 @@ TextureCategory.prototype.showUploadForm = function() {
 			});
 
 			modal.find(".btn-submit").click(function() {
+				$(this).attr("disabled", "disabled");
 				that.uploadGroup(modal);
 
 			});
@@ -123,5 +124,6 @@ TextureCategory.prototype.uploadGroup = function(modal) {
 	}
 	$.extend(data, GROUP_TYPES[modal.find("#option-type").val()].getExportData(modal));
 	$.post("assets/php/insert/group/group.php", data, function(data) {
+		modal.modal("hide");
 	});
 }
