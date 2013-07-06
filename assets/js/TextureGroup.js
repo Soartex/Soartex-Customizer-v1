@@ -110,7 +110,7 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		"image_data": modal.find("#dropbox").attr("data"),
 		"group":      this.id
 	};
-	$.post("assets/php/insert/option/group.php", data, function(data) {
+	$.post(HTTPS_PATH+"assets/php/insert/option/group.php", data, function(data) {
 		modal.modal(hide);
 	});
 }

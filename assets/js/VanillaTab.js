@@ -36,7 +36,7 @@ VanillaTab.prototype.calculateHtmlData = function() {
 			password: password,
 			name: contentElements.nameInput.val()
 		};
-		$.post("assets/php/insert/category/vanilla.php", data, function(data) {
+		$.post(HTTPS_PATH+"assets/php/insert/category/vanilla.php", data, function(data) {
 			that.removeAttr("disabled");
 		});
 

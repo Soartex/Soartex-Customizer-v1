@@ -123,7 +123,7 @@ TextureCategory.prototype.uploadGroup = function(modal) {
 		"category": this.id
 	}
 	$.extend(data, GROUP_TYPES[modal.find("#option-type").val()].getExportData(modal));
-	$.post("assets/php/insert/group/group.php", data, function(data) {
+	$.post(HTTPS_PATH+"assets/php/insert/group/group.php", data, function(data) {
 		modal.modal("hide");
 	});
 }
