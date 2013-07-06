@@ -16,9 +16,10 @@ $valid = $valid && $_POST["password"] == ADMINPASSWORD;
 
 // Add the information to the database
 
+$name = $mysqli->real_escape_string($_POST["name"]);
+$valid = $valid && is_valid_string($name, 25);
+
 if ($valid) {
-	$name = $mysqli->real_escape_string($_POST["name"]);
-	$valid = $valid && is_valid_string($name, 25);
 
 	$mysqli->query("INSERT INTO Categories (name, is_vanilla) VALUES ('$name', 1)");
 
