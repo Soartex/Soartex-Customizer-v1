@@ -124,5 +124,5 @@ TextureGroup.getExportData = function(modal) {
 }
 
 TextureGroup.optionType = TextureOption;
-TextureGroup.groupModalPath = "standard";
+TextureGroup.groupModalPath = "standard.html";
 TextureGroup.typeName = "Stand-alone texture";
