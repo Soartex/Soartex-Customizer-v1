@@ -79,7 +79,7 @@ TextureCategory.prototype.showUploadForm = function() {
 
 			var select = modal.find("#option-type");
 			for (i in GROUP_TYPES) {
-				name = GROUP_TYPES[i].typeName;
+				var name = GROUP_TYPES[i].typeName;
 				select.append("<option value='"+i+"'>"+name+"</option>");
 			}
 			select.change(function() {
@@ -87,7 +87,7 @@ TextureCategory.prototype.showUploadForm = function() {
 				form.fadeOut("fast", function() {
 					form.empty();
 
-					groupType = GROUP_TYPES[select.val()];
+					var groupType = GROUP_TYPES[select.val()];
 					$.ajax({
 						type: "GET",
 						cache: false,
@@ -102,8 +102,9 @@ TextureCategory.prototype.showUploadForm = function() {
 			});
 
 			modal.find(".btn-submit").click(function() {
+				that.uploadGroup(modal);
 
-			})
+			});
 			modal.find(".modal-close").click(function() {
 				modal.modal("hide");
 			});
@@ -111,4 +112,16 @@ TextureCategory.prototype.showUploadForm = function() {
 	});
 
 	modal.modal("show");
+}
+
+TextureCategory.prototype.uploadGroup = function(modal) {
+	var data = {
+		"password": password,
+		"name": 	modal.find("#name").val(),
+		"type_id":  modal.find("#option-type").val(),
+		"category": this.id
+	}
+	$.extend(data, GROUP_TYPES[modal.find("#option-type").val()].getExportData(modal));
+	$.post("assets/php/insert/group/group.php", data, function(data) {
+	});
 }

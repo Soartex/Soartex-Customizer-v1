@@ -72,8 +72,8 @@ TextureGroup.prototype.getHtml = function() {
 TextureGroup.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
 	this.exportPath = data.exportPath; // The image that the texture goes to, eg. 'gui/items.png'
-	//this.exportX = data.exportX; // The x position of the texture in the texture sheet
-	//this.exportY = data.exportY; // The y position of the texture in the texture sheet
+	this.width = data.width; // The x position of the texture in the texture sheet
+	this.height = data.height; // The y position of the texture in the texture sheet
 }
 
 TextureGroup.prototype.showUploadForm = function() {
@@ -103,18 +103,22 @@ TextureGroup.prototype.showUploadForm = function() {
 
 TextureGroup.prototype.uploadOption = function(modal) {
 	var data = {
-		"password": password,
-		"creator": modal.find("#creator").val(),
-		"info": 	 modal.find("#info").val(),
+		"password":   password,
+		"creator":    modal.find("#creator").val(),
+		"info": 	  modal.find("#info").val(),
 		"image_data": modal.find("#dropbox").attr("data"),
-		"group": this.id
+		"group":      this.id
 	};
-	$.post("assets/php/insert/option/default.php", data, function(data) {
-		var win=window.open('about:blank');
-		win.document.open()
-		win.document.write(data)
-		win.document.close();
+	$.post("assets/php/insert/option/group.php", data, function(data) {
 	});
+}
+
+TextureGroup.getExportData = function(modal) {
+	return {
+		width: modal.find("#width").val(),
+		height: modal.find("#height").val(),
+		exportPath: modal.find("#path").val()
+	};
 }
 
 TextureGroup.optionType = TextureOption;
