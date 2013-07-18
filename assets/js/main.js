@@ -19,9 +19,13 @@ function setupGroupIndices() {
 }
 
 function setupTextures() {
-	$.post("assets/php/get/all.php", "", function(data) {
+	$.get("assets/php/get/all.php", function(data) {
 		processTextures(JSON.parse(data));
 	});
+}
+
+function removeProgressBar() {
+	$("#texture-progress").fadeOut();
 }
 
 function processTextures(data) {
@@ -70,5 +74,5 @@ function processTextures(data) {
 	})
 	vanillaTab.getTabHtml().appendTo("#mod-tab");
 	vanillaTab.getContentHtml().appendTo("#mod-tab-content");
-	console.log(vanillaTab);
+	removeProgressBar();
 }

@@ -97,6 +97,9 @@
 						</div>
 					</div>
 				</div>
+				<div class="progress progress-striped active" id="texture-progress">
+					<div class="bar" style="width: 100%;"></div>
+				</div>
 			</section>
 
 			<hr/>
