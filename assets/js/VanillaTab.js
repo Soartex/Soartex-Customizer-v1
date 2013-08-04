@@ -57,6 +57,8 @@ VanillaTab.prototype.getContentHtml = function() {
 }
 
 VanillaTab.prototype.uploadCategory = function() {
+	var that = this;
+
 	this.contentElements.submitButton.attr("disabled", "disabled");
 
 	var data = {
@@ -64,6 +66,7 @@ VanillaTab.prototype.uploadCategory = function() {
 		name: this.contentElements.nameInput.val()
 	};
 	$.post(HTTPS_PATH+"assets/php/insert/category/vanilla.php", data, function(data) {
-		this.contentElements.submitButton.removeAttr("disabled");
+		that.contentElements.submitButton.removeAttr("disabled");
+		resetCustomizer();
 	});
 }
