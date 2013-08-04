@@ -13,7 +13,7 @@ $valid = true;
 $valid = $valid && $_POST["password"] == ADMINPASSWORD;
 
 $id = $_POST["id"];
-$valid = $valid && is_valid_int("id");
+$valid = $valid && is_valid_int($id);
 
 if ($valid) {
 	$result = $mysqli->query("DELETE FROM Textures WHERE texture_id = $id");
