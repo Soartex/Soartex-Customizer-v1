@@ -28,6 +28,12 @@ TextureCategory.prototype.calculateHtmlData = function() {
 	tabElements.link = $("<a data-toggle='tab' href='#category-"+this.id+"'>")
 		.text(this.categoryName)
 		.appendTo(tabElements.container);
+	tabElements.remove = $("<i class='icon-remove edit remove'>")
+		.click(function() {
+			that.delete();
+		})
+		.appendTo(tabElements.link)
+		.hide();
 
 	this.contentElements = {};
 	var contentElements = this.contentElements;
@@ -125,5 +131,15 @@ TextureCategory.prototype.uploadGroup = function(modal) {
 	$.extend(data, GROUP_TYPES[modal.find("#option-type").val()].getExportData(modal));
 	$.post(HTTPS_PATH+"assets/php/insert/group/group.php", data, function(data) {
 		modal.modal("hide");
+		resetCustomizer();
+	});
+}
+
+TextureCategory.prototype.delete = function() {
+	$.post("assets/php/delete/category.php", {
+		"password": password,
+		"id":       this.id
+	}, function(data) {
+		resetCustomizer();
 	});
 }
