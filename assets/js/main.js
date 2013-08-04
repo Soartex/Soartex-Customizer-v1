@@ -6,11 +6,28 @@ var GROUP_TYPES = [TextureGroup]; // Group types will be accessed through its in
 var password;
 
 $(document).ready(function() {
-
 	setupGroupIndices(); // Assigns an index ID to each group type (equal to it's index in GROUP_TYPES)
-	setupTextures();
 	setupEditButton();
+	createCustomizer();
 });
+
+function createCustomizer() {
+	emptyCustomizer();
+	setupTextures();
+	$("#texture-progress").fadeIn();
+}
+
+function resetCustomizer() {
+	$("#btn-edit")
+		.text("Edit")
+		.removeClass("btn-primary edit-active");
+	createCustomizer();
+}
+
+function emptyCustomizer() {
+	$("#mod-tab > li").remove();
+	$("#mod-tab-content").empty();
+}
 
 function setupGroupIndices() {
 	for (var i in GROUP_TYPES) {
