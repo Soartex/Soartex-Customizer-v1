@@ -26,20 +26,10 @@ VanillaTab.prototype.calculateHtmlData = function() {
 
 	contentElements.addForm = $("<div class='input-append category-form edit'>'").hide();
 	contentElements.nameInput = $("<input class='input-small' type='text' placeholder='Name'/>").appendTo(contentElements.addForm);
-	contentElements.addButton = $("<button class='btn btn-small btn-add-category'><i class='icon-plus'></i></button>").appendTo(contentElements.addForm);
+	contentElements.submitButton = $("<button class='btn btn-small btn-add-category'><i class='icon-plus'></i></button>").appendTo(contentElements.addForm);
 
-	contentElements.addButton.click(function() {
-		var that = $(this);
-		$(this).attr("disabled", "disabled");
-
-		var data = {
-			password: password,
-			name: contentElements.nameInput.val()
-		};
-		$.post(HTTPS_PATH+"assets/php/insert/category/vanilla.php", data, function(data) {
-			that.removeAttr("disabled");
-		});
-
+	contentElements.submitButton.click(function() {
+		that.uploadCategory();
 	})
 
 	this.resetCategoryElements();
@@ -67,8 +57,13 @@ VanillaTab.prototype.getContentHtml = function() {
 }
 
 VanillaTab.prototype.uploadCategory = function() {
+	this.contentElements.submitButton.attr("disabled", "disabled");
+
 	var data = {
-		name: $('#category-form').val()
+		password: password,
+		name: this.contentElements.nameInput.val()
 	};
-	console.log(data);
+	$.post(HTTPS_PATH+"assets/php/insert/category/vanilla.php", data, function(data) {
+		this.contentElements.submitButton.removeAttr("disabled");
+	});
 }
