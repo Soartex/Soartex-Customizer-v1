@@ -42,6 +42,12 @@ TextureGroup.prototype.calculateHtmlData = function() {
 	elements.title = $('<div class="group-title">')
 		.text(this.groupName)
 		.appendTo(elements.container);
+	elements.remove = $("<i class='icon-remove edit remove'>")
+		.click(function() {
+			that.delete();
+		})
+		.appendTo(elements.title)
+		.hide();
 	elements.textures = $('<div class="btn-group texture-group" data-toggle="buttons-radio">')
 		.appendTo(elements.container);
 	this.elements.addButton = $('<button class="btn edit btn-add-texture"><img src="assets/img/addtexture.png"/><p>Add a Texture</p><div>')
@@ -87,7 +93,7 @@ TextureGroup.prototype.showUploadForm = function() {
 		success: function(data) {
 			modal = $(data);
 
-			modal.find(".modal-inline h5").text("to "+that.elements.title.html());
+			modal.find(".modal-inline h5").text("to "+that.groupName);
 			modal.find("#dropbox").dropbox({type: "image/png"});
 			modal.find(".btn-submit").click(function() {
 				$(this).attr("disabled", "disabled");
@@ -108,10 +114,16 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		"creator":    modal.find("#creator").val(),
 		"info": 	  modal.find("#info").val(),
 		"image_data": modal.find("#dropbox").attr("data"),
+		"export_data": "{}",
 		"group":      this.id
 	};
-	$.post(HTTPS_PATH+"assets/php/insert/option/group.php", data, function(data) {
-		modal.modal(hide);
+	$.post(/*HTTPS_PATH+*/"assets/php/insert/option/default.php", data, function(data) {
+		var newWindow = window.open("");
+		newWindow .document.open()
+		newWindow .document.write(data)
+		newWindow .document.close()
+		modal.modal("hide");
+		resetCustomizer();
 	});
 }
 
@@ -121,6 +133,15 @@ TextureGroup.getExportData = function(modal) {
 		height: modal.find("#height").val(),
 		exportPath: modal.find("#path").val()
 	};
+}
+
+TextureGroup.prototype.delete = function() {
+	$.post("assets/php/delete/group.php", {
+		"password": password,
+		"id":       this.id
+	}, function(data) {
+		resetCustomizer();
+	});
 }
 
 TextureGroup.optionType = TextureOption;

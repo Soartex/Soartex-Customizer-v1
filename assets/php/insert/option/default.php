@@ -30,11 +30,16 @@
 	$im = imagecreatefromstring(base64_decode($image_data));
 	if ($im == false) {
 		$valid = false;
+	} else {
+		imageAlphaBlending($im, true);
+		imageSaveAlpha($im, true);
 	}
 
+	$export_data = '{}';
+
 	if ($valid) {
-		$mysqli->query("INSERT INTO Textures (name, creator, info, group_id, date_added, export_data)
-						VALUES ('$name', '$creator', '$info', $group, '$export_data')");
+		$mysqli->query("INSERT INTO Textures (creator, info, group_id, export_data)
+						VALUES ('$creator', '$info', '$group', '$export_data')");
 
 		$lastID = $mysqli->insert_id;
 
