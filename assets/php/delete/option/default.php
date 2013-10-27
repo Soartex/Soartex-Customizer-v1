@@ -16,6 +16,6 @@ $id = $_POST["id"];
 $valid = $valid && is_valid_int($id);
 
 if ($valid) {
-	unlink($im, "../../../img/options/$lastID.png");
+	unlink("../../../img/options/$lastID.png");
 	$result = $mysqli->query("DELETE FROM Textures WHERE texture_id = $id");
 }
