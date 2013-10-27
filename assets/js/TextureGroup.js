@@ -117,7 +117,7 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		"export_data": "{}",
 		"group":      this.id
 	};
-	$.post(/*HTTPS_PATH+*/"assets/php/insert/option/default.php", data, function(data) {
+	$.post(HTTPS_PATH+"assets/php/insert/option/default.php", data, function(data) {
 		var newWindow = window.open("");
 		newWindow .document.open()
 		newWindow .document.write(data)
