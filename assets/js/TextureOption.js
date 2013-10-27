@@ -55,7 +55,7 @@ TextureOption.prototype.setDataFromJSON = function (JsonData) {
 }
 
 TextureOption.prototype.delete = function() {
-	$.post("assets/php/delete/option.php", {
+	$.post(HTTPS_PATH+"assets/php/delete/option.php", {
 		"password": password,
 		"id":       this.id
 	}, function(data) {

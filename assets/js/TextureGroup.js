@@ -136,7 +136,7 @@ TextureGroup.getExportData = function(modal) {
 }
 
 TextureGroup.prototype.delete = function() {
-	$.post("assets/php/delete/group.php", {
+	$.post(HTTPS_PATH+"assets/php/delete/group.php", {
 		"password": password,
 		"id":       this.id
 	}, function(data) {

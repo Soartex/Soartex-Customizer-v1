@@ -136,7 +136,7 @@ TextureCategory.prototype.uploadGroup = function(modal) {
 }
 
 TextureCategory.prototype.delete = function() {
-	$.post("assets/php/delete/category.php", {
+	$.post(HTTPS_PATH+"assets/php/delete/category.php", {
 		"password": password,
 		"id":       this.id
 	}, function(data) {
