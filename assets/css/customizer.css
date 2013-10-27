@@ -125,3 +125,9 @@
 .remove:hover {
 	opacity: 1;
 }
+
+.remove-option {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+}

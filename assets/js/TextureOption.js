@@ -27,6 +27,10 @@ TextureOption.prototype.calculateHtmlData = function () {
 	elements.container = $('<button type="button" class="btn">')
 		.append($('<img src="' + this.getFullImagePath() + '">'))
 		.append($('<p>- '+this.creator+'</p>'))
+	elements.remove = $("<i class='icon-remove edit remove remove-option'>")
+		.click(function() {that.delete();})
+		.prependTo(elements.container)
+		.hide();
 }
 
 TextureOption.prototype.setCreator = function (val) {
@@ -48,4 +52,13 @@ TextureOption.prototype.getFullScreenshotPath = function () {
 
 TextureOption.prototype.setDataFromJSON = function (JsonData) {
 	data = $.parseJSON(JsonData);
+}
+
+TextureOption.prototype.delete = function() {
+	$.post("assets/php/delete/option.php", {
+		"password": password,
+		"id":       this.id
+	}, function(data) {
+		resetCustomizer();
+	});
 }
