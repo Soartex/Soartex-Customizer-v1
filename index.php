@@ -102,6 +102,8 @@
 				</div>
 			</section>
 
+			<button id="btn-download" class="btn btn-large">Download Pack</button>
+
 			<hr/>
 
 			<footer>

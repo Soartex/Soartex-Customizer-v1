@@ -10,6 +10,7 @@ function TextureGroup(parameters) {
 	this.setDataFromJSON(parameters.exportData); // Type string (encoded in JSON)
 	this.calculateHtmlData();
 
+	this.index = TextureGroup.index;
 	this.selectedTexture = null;
 
 	this.optionModalName = "standard.html";
@@ -118,11 +119,6 @@ TextureGroup.prototype.uploadOption = function(modal) {
 		"group":      this.id
 	};
 	$.post(HTTPS_PATH+"assets/php/insert/option/default.php", data, function(data) {
-		var newWindow = window.open("");
-		newWindow .document.open()
-		newWindow .document.write(data)
-		newWindow .document.close()
-		modal.modal("hide");
 		resetCustomizer();
 	});
 }
@@ -142,6 +138,24 @@ TextureGroup.prototype.delete = function() {
 	}, function(data) {
 		resetCustomizer();
 	});
+}
+
+TextureGroup.prototype.getCurrentOption = function() {
+	for (i in this.textures) {
+		if (this.textures[i].elements.container.hasClass("active")) {
+			return this.textures[i];
+		}
+	}
+	return null;
+}
+
+
+TextureGroup.prototype.getDownloadData = function() {
+	return {
+		type: this.index,
+		image: this.getCurrentOption().getFullImagePath(),
+		export: this.exportPath
+	}
 }
 
 TextureGroup.optionType = TextureOption;

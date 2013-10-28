@@ -3,12 +3,18 @@ var CATEGORY_MODAL_PATH = "assets/modals/group/";
 var HTTPS_PATH = "https://soartex.net/new-site/customizer/";
 var GROUP_TYPES = [TextureGroup]; // Group types will be accessed through its index, and vice versa
 
+var vanillaTab;
+
 var password;
 
 $(document).ready(function() {
 	setupGroupIndices(); // Assigns an index ID to each group type (equal to it's index in GROUP_TYPES)
 	setupEditButton();
 	createCustomizer();
+
+	$('#btn-download').click(function() {
+		vanillaTab.download();
+	})
 });
 
 function createCustomizer() {
@@ -86,7 +92,7 @@ function processTextures(data) {
 			categoryName: categoryObj.name
 		}));
 	}
-	var vanillaTab = new VanillaTab({
+	vanillaTab = new VanillaTab({
 		categories: categories
 	})
 	vanillaTab.getTabHtml().appendTo("#mod-tab");

@@ -70,3 +70,19 @@ VanillaTab.prototype.uploadCategory = function() {
 		resetCustomizer();
 	});
 }
+
+VanillaTab.prototype.getDownloadJSON = function() {
+	var data = [];
+	for (i in this.categories) {
+		for (j in this.categories[i].groups) {
+			data.push(this.categories[i].groups[j].getDownloadData());
+		}
+	}
+	return JSON.stringify(data);
+}
+
+VanillaTab.prototype.download = function() {
+	post_to_url("assets/php/download.php", {
+		data: this.getDownloadJSON()
+	});
+}
