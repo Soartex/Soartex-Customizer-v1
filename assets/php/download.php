@@ -13,7 +13,7 @@ $zip->open($zipname, ZipArchive::CREATE);
 
 foreach ($data as $option) {
 	if ($option['type'] == 0) { // Option is from the default group type
-		$zip->addFromString($option['export'], $option['image']);
+		$zip->addFromString($option['export'], file_get_contents('../../'.$option['image']));
 	}
 }
 $zip->addFromString('info.txt', 'test');
